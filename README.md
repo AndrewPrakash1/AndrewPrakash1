@@ -2,7 +2,7 @@
 
 # Andrew Prakash
 
-**Computer Vision · 3D Reconstruction · ML**
+**Computer Vision · ML**
 
 Engineering student at [Thapar Institute of Engineering and Technology](https://www.thapar.edu/)
 
@@ -18,7 +18,6 @@ Engineering student at [Thapar Institute of Engineering and Technology](https://
 
 I'm building systems that turn real-world signals into **measurable** models — not just demos.
 
-Right now that's **[OnePass](https://github.com/AndrewPrakash1/drone-video-3d)**: a single-pass drone video pipeline that reconstructs a scene in 3D, scales it onto GPS, and produces geometry you can measure in metres (Smart India Hackathon, PS 26158 · Team Nishchay).
 
 ### Featured work
 
@@ -60,6 +59,6 @@ Right now that's **[OnePass](https://github.com/AndrewPrakash1/drone-video-3d)**
 
 <div align="center">
 
-Open to collaborations on computer vision, 3D reconstruction, and ML systems that have to be correct.
+Open to collaborations on computer vision and ML systems that have to be correct.
 
 </div>
