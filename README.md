@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="./assets/shark.svg" alt="Swimming ASCII Shark" width="100%"/>
+
 # Andrew Prakash
 
 **Computer Vision · ML**

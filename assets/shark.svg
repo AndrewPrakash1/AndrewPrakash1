@@ -1,0 +1,115 @@
+<svg width="800" height="200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes swim {
+      0% {
+        transform: translateX(-150px);
+      }
+      100% {
+        transform: translateX(850px);
+      }
+    }
+    
+    @keyframes bubble-rise {
+      0% {
+        transform: translateY(0);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-80px);
+        opacity: 0;
+      }
+    }
+    
+    @keyframes wave {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-3px);
+      }
+    }
+    
+    .shark {
+      animation: swim 8s linear infinite;
+    }
+    
+    .bubble {
+      animation: bubble-rise 3s ease-in infinite;
+    }
+    
+    .bubble-1 { animation-delay: 0s; }
+    .bubble-2 { animation-delay: 0.5s; }
+    .bubble-3 { animation-delay: 1s; }
+    .bubble-4 { animation-delay: 1.5s; }
+    .bubble-5 { animation-delay: 2s; }
+    .bubble-6 { animation-delay: 2.5s; }
+    
+    .wave-line {
+      animation: wave 2s ease-in-out infinite;
+    }
+    
+    .wave-1 { animation-delay: 0s; }
+    .wave-2 { animation-delay: 0.3s; }
+    .wave-3 { animation-delay: 0.6s; }
+    
+    text {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    
+    /* Light theme (default) */
+    .shark-body { fill: #2c3e50; }
+    .bubble-char { fill: #3498db; }
+    .wave-char { fill: #16a085; }
+    
+    /* Dark theme */
+    @media (prefers-color-scheme: dark) {
+      .shark-body { fill: #ecf0f1; }
+      .bubble-char { fill: #5dade2; }
+      .wave-char { fill: #1abc9c; }
+    }
+  </style>
+  
+  <!-- Background waves -->
+  <g class="waves">
+    <text x="50" y="140" class="wave-char wave-line wave-1" xml:space="preserve">~~~~~</text>
+    <text x="200" y="145" class="wave-char wave-line wave-2" xml:space="preserve">~~~~~~</text>
+    <text x="400" y="138" class="wave-char wave-line wave-3" xml:space="preserve">~~~~~</text>
+    <text x="600" y="143" class="wave-char wave-line wave-1" xml:space="preserve">~~~~~~</text>
+  </g>
+  
+  <!-- Animated shark -->
+  <g class="shark">
+    <!-- Main shark body -->
+    <g class="shark-body">
+      <!-- Line 1: Top fin -->
+      <text x="0" y="20" xml:space="preserve">              __</text>
+      <text x="0" y="32" xml:space="preserve">         _.--'  `--._</text>
+      
+      <!-- Line 2-3: Head and body -->
+      <text x="0" y="44" xml:space="preserve">       .'  \_   o   _/  `.</text>
+      <text x="0" y="56" xml:space="preserve">      /     _\  :  /_     \</text>
+      <text x="0" y="68" xml:space="preserve">     /__.-'`  `'||'`  `'-.__\</text>
+      
+      <!-- Line 4-5: Tail -->
+      <text x="0" y="80" xml:space="preserve">           __  ||  __</text>
+      <text x="0" y="92" xml:space="preserve">          /  `./  \.`  \</text>
+      <text x="0" y="104" xml:space="preserve">         |  .-'    '-.  |</text>
+      <text x="0" y="116" xml:space="preserve">         |.'          '.|</text>
+    </g>
+    
+    <!-- Bubbles trailing the shark -->
+    <g class="bubbles">
+      <text x="-30" y="40" class="bubble-char bubble bubble-1" xml:space="preserve">o</text>
+      <text x="-40" y="55" class="bubble-char bubble bubble-2" xml:space="preserve">°</text>
+      <text x="-25" y="70" class="bubble-char bubble bubble-3" xml:space="preserve">o</text>
+      <text x="-50" y="50" class="bubble-char bubble bubble-4" xml:space="preserve">°</text>
+      <text x="-35" y="85" class="bubble-char bubble bubble-5" xml:space="preserve">o</text>
+      <text x="-45" y="65" class="bubble-char bubble bubble-6" xml:space="preserve">°</text>
+    </g>
+  </g>
+  
+  <!-- Bottom decoration -->
+  <text x="20" y="180" class="wave-char" xml:space="preserve">_.-~^~-._.-~^~-._.-~^~-._.-~^~-._.-~^~-._.-~^~-._.-~^~-._.-~^~-._.-~^~-._.-~^~-._</text>
+</svg>
