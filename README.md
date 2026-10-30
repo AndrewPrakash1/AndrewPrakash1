@@ -1,7 +1,7 @@
 <div align="center">
 
-<img src="./assets/haj-sharks-light.svg#gh-light-mode-only" alt="Swimming ASCII mosaic sharks" width="100%"/>
-<img src="./assets/haj-sharks-dark.svg#gh-dark-mode-only" alt="Swimming ASCII mosaic sharks" width="100%"/>
+<img src="./assets/haj-sharks-light.svg?v=blahaj#gh-light-mode-only" alt="Swimming ASCII mosaic sharks" width="100%"/>
+<img src="./assets/haj-sharks-dark.svg?v=blahaj#gh-dark-mode-only" alt="Swimming ASCII mosaic sharks" width="100%"/>
 
 # Andrew Prakash
 

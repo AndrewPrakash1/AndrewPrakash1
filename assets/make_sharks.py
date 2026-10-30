@@ -113,32 +113,28 @@ def shark_parts(nx: float, ny: float, flip_x: bool = False) -> str | None:
 
 
 def shade_at(nx: float, ny: float, part: str, flip_x: bool = False) -> int:
-    """0 lightest … 3 darkest. Lighting from upper-left, darker belly and eye."""
+    """0 belly/white … 3 back/deep blue. Blahaj: pale underside, cyan back."""
     if flip_x:
         nx = 1.0 - nx
     bend = 0.048 * math.sin(nx * math.pi)
     y = ny - bend
     ymid = 0.50
-    # vertical lighting
     v = (y - (ymid - 0.22)) / 0.44
-    v = max(0.0, min(1.0, v))  # 0 top (light), 1 belly (dark)
-    shade = 0.35 + 0.55 * v
-    # snout a touch darker
+    v = max(0.0, min(1.0, v))  # 0 back/top, 1 belly
+    shade = 0.22 + 0.78 * (1.0 - v)
     if nx < 0.16:
-        shade += 0.12
-    # gill slit band
+        shade += 0.08
     if 0.22 < nx < 0.27 and abs(y - ymid) < 0.12:
-        shade += 0.18
+        shade += 0.10
     if part == "eye":
         return 3
     if part == "tail":
-        shade += 0.08
-    # edge highlight: cells near boundary slightly lighter — approximated by noise
+        shade += 0.12
     n = sample_hash("shade", round(nx, 3), round(ny, 3))
-    shade = shade * 0.88 + n * 0.22
-    if shade < 0.42:
+    shade = shade * 0.90 + n * 0.16
+    if shade < 0.40:
         return 0
-    if shade < 0.60:
+    if shade < 0.58:
         return 1
     if shade < 0.78:
         return 2
@@ -219,8 +215,9 @@ def shark_group_svg(prefix: str, twinkle_every: int = 7, flip_x: bool = False) -
         x = i * CELL_W
         y = (j + 1) * CELL_H
         tw = " tw" if (n % twinkle_every == 0 and part != "eye") else ""
+        cls = "eye" if part == "eye" else f"s{shade}"
         node = (
-            f'<text x="{x:.1f}" y="{y:.1f}" class="s{shade}{tw}">{xml_escape(ch)}</text>'
+            f'<text x="{x:.1f}" y="{y:.1f}" class="{cls}{tw}">{xml_escape(ch)}</text>'
         )
         if part == "tail":
             tail_chars.append(node)
@@ -267,18 +264,20 @@ def grid_svg() -> str:
 
 THEMES = {
     "light": {
-        "grid": "#d4d2cc",
-        "s0": "#8d8b84",
-        "s1": "#5f5d58",
-        "s2": "#353430",
-        "s3": "#141413",
+        "grid": "#cfe4ef",
+        "s0": "#eef8fc",
+        "s1": "#8fd4ee",
+        "s2": "#3aa8d8",
+        "s3": "#1d6fa3",
+        "eye": "#16324a",
     },
     "dark": {
-        "grid": "#2a2f38",
-        "s0": "#5c6570",
-        "s1": "#8b95a3",
-        "s2": "#c5ced8",
-        "s3": "#eef3f7",
+        "grid": "#1a3344",
+        "s0": "#d9f3fb",
+        "s1": "#7ec8e8",
+        "s2": "#4eb3dc",
+        "s3": "#9fe4f7",
+        "eye": "#0b1e2c",
     },
 }
 
@@ -294,6 +293,7 @@ def build_svg(theme: str = "light") -> str:
     .s1 {{ fill: {pal["s1"]}; }}
     .s2 {{ fill: {pal["s2"]}; }}
     .s3 {{ fill: {pal["s3"]}; }}
+    .eye {{ fill: {pal["eye"]}; }}
 '''
 
     return f'''<?xml version="1.0" encoding="UTF-8"?>
