@@ -3,10 +3,10 @@
   <style>
     @keyframes swim {
       0% {
-        transform: translateX(-280px);
+        transform: translateX(0);
       }
       100% {
-        transform: translateX(1150px);
+        transform: translateX(900px);
       }
     }
     
@@ -31,7 +31,8 @@
     }
     
     .shark-group {
-      animation: swim 11s linear infinite;
+      animation: swim 12s linear infinite;
+      animation-delay: -1s;
     }
     
     .bubble {
@@ -85,28 +86,29 @@
     <text x="860" y="170" class="wave-fill wave wave-6" xml:space="preserve">~~~~~~~</text>
   </g>
   
-  <!-- Swimming shark with bubbles -->
+  <!-- Swimming shark - continuous torpedo body -->
   <g class="shark-group">
-    <!-- ASCII shark: side-profile, pointing right, clear dorsal fin and tail -->
     <g class="shark-body">
-      <text x="0" y="40" class="shark-fill" xml:space="preserve">             ,|\</text>
-      <text x="0" y="55" class="shark-fill" xml:space="preserve">            / | \</text>
-      <text x="0" y="70" class="shark-fill" xml:space="preserve">           /  |  \          __</text>
-      <text x="0" y="85" class="shark-fill" xml:space="preserve">  ^       |   |   |    ___/  `\.</text>
-      <text x="0" y="100" class="shark-fill" xml:space="preserve"> / \      |   |   |   / o  __   `-._</text>
-      <text x="0" y="115" class="shark-fill" xml:space="preserve">|   |     |   |   |  |    /  \      `\</text>
-      <text x="0" y="130" class="shark-fill" xml:space="preserve"> \_/       \_____/    \   \__/   ,---'</text>
-      <text x="0" y="145" class="shark-fill" xml:space="preserve">                        `-.__,--'</text>
+      <!-- Continuous shark body: tail (left) to head (right) -->
+      <text x="0" y="60" class="shark-fill" xml:space="preserve">                             /\</text>
+      <text x="0" y="73" class="shark-fill" xml:space="preserve">                            /  \</text>
+      <text x="0" y="86" class="shark-fill" xml:space="preserve">                    _______/    \                      ___</text>
+      <text x="0" y="99" class="shark-fill" xml:space="preserve">          ___,,---''                ``---._        _,-'o  `-._</text>
+      <text x="0" y="112" class="shark-fill" xml:space="preserve">     ___/                                   `----''    ^    _))</text>
+      <text x="0" y="125" class="shark-fill" xml:space="preserve">  &lt;&lt;&lt;                                                 VVV</text>
+      <text x="0" y="138" class="shark-fill" xml:space="preserve">     ```\___                                ____    _.--'`</text>
+      <text x="0" y="151" class="shark-fill" xml:space="preserve">          ```''---...__                _.--'   `''`</text>
+      <text x="0" y="164" class="shark-fill" xml:space="preserve">                      ``'''''''''''''`</text>
     </g>
     
-    <!-- Trailing bubbles - using 'o' for all bubbles to avoid encoding issues -->
+    <!-- Trailing bubbles -->
     <g class="bubbles">
-      <text x="-35" y="75" class="bubble-fill bubble bubble-1" xml:space="preserve">o</text>
-      <text x="-50" y="95" class="bubble-fill bubble bubble-2" xml:space="preserve">o</text>
-      <text x="-28" y="110" class="bubble-fill bubble bubble-3" xml:space="preserve">o</text>
-      <text x="-60" y="85" class="bubble-fill bubble bubble-4" xml:space="preserve">o</text>
-      <text x="-42" y="120" class="bubble-fill bubble bubble-5" xml:space="preserve">o</text>
-      <text x="-55" y="105" class="bubble-fill bubble bubble-6" xml:space="preserve">o</text>
+      <text x="-35" y="95" class="bubble-fill bubble bubble-1" xml:space="preserve">o</text>
+      <text x="-50" y="110" class="bubble-fill bubble bubble-2" xml:space="preserve">o</text>
+      <text x="-28" y="125" class="bubble-fill bubble bubble-3" xml:space="preserve">o</text>
+      <text x="-60" y="100" class="bubble-fill bubble bubble-4" xml:space="preserve">o</text>
+      <text x="-42" y="135" class="bubble-fill bubble bubble-5" xml:space="preserve">o</text>
+      <text x="-55" y="118" class="bubble-fill bubble bubble-6" xml:space="preserve">o</text>
     </g>
   </g>
 </svg>
