@@ -1,0 +1,2275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1100" height="340" viewBox="0 0 1100 340" role="img"
+     aria-label="Swimming ASCII mosaic sharks">
+  <title>ASCII sharks</title>
+  <style>
+    text {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+    .grid {
+      font-size: 9px;
+      font-weight: 400;
+    }
+
+    .grid { fill: #d4d2cc; }
+    .s0 { fill: #8d8b84; }
+    .s1 { fill: #5f5d58; }
+    .s2 { fill: #353430; }
+    .s3 { fill: #141413; }
+
+
+    /* Glyphs stay upright. Direction comes from a left-facing vs right-facing mosaic. */
+    @keyframes swim-a {
+      0%   { transform: translate(-420px, 210px) rotate(-7deg) scale(1.08, 1.08); }
+      45%  { transform: translate( 180px,  95px) rotate(  3deg) scale(1.08, 1.08); }
+      100% { transform: translate(1200px, -50px) rotate( -6deg) scale(1.08, 1.08); }
+    }
+    @keyframes swim-b {
+      0%   { transform: translate(1150px, -10px) rotate(  4deg) scale(0.58, 0.58); }
+      100% { transform: translate(-560px, 230px) rotate(  5deg) scale(0.58, 0.58); }
+    }
+    @keyframes swim-c {
+      0%   { transform: translate(-260px, -30px) rotate(  3deg) scale(0.40, 0.40); }
+      100% { transform: translate(1220px,  90px) rotate( -2deg) scale(0.40, 0.40); }
+    }
+    @keyframes swim-d {
+      0%   { transform: translate(1100px, 250px) rotate( -3deg) scale(0.28, 0.28); }
+      100% { transform: translate(-420px,  40px) rotate(  3deg) scale(0.28, 0.28); }
+    }
+    @keyframes wag {
+      0%, 100% { transform: rotate(-3deg); }
+      50%      { transform: rotate(3deg); }
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 1; }
+      50%      { opacity: 0.42; }
+    }
+
+    .swimmer { transform-box: fill-box; transform-origin: center; }
+    .a { animation: swim-a 22s linear infinite; animation-delay: -8s; }
+    .b { animation: swim-b 29s linear infinite; animation-delay: -2s; }
+    .c { animation: swim-c 36s linear infinite; animation-delay: -22s; opacity: 0.65; }
+    .d { animation: swim-d 41s linear infinite; animation-delay: -30s; opacity: 0.45; }
+    .tail {
+      transform-box: fill-box;
+      animation: wag 0.8s ease-in-out infinite;
+    }
+    .tw { animation: twinkle 3s steps(2, end) infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .a, .b, .c, .d, .tail, .tw { animation: none !important; }
+      .a { transform: translate(90px, 120px) rotate(-5deg) scale(1.08, 1.08); }
+      .b { transform: translate(680px, 20px) rotate(4deg) scale(0.58, 0.58); }
+      .c { transform: translate(20px, 10px) rotate(3deg) scale(0.40, 0.40); }
+      .d { transform: translate(820px, 230px) rotate(-3deg) scale(0.28, 0.28); }
+    }
+  </style>
+
+  <rect width="100%" height="100%" fill="transparent"/>
+  <g class="paper"><text x="0" y="0" class="grid">+</text>
+    <text x="0" y="22" class="grid">·</text>
+    <text x="0" y="44" class="grid">·</text>
+    <text x="0" y="66" class="grid">+</text>
+    <text x="0" y="88" class="grid">·</text>
+    <text x="0" y="110" class="grid">·</text>
+    <text x="0" y="132" class="grid">+</text>
+    <text x="0" y="154" class="grid">·</text>
+    <text x="0" y="176" class="grid">·</text>
+    <text x="0" y="198" class="grid">+</text>
+    <text x="0" y="220" class="grid">·</text>
+    <text x="0" y="242" class="grid">·</text>
+    <text x="0" y="264" class="grid">+</text>
+    <text x="0" y="286" class="grid">·</text>
+    <text x="0" y="308" class="grid">·</text>
+    <text x="0" y="330" class="grid">+</text>
+    <text x="22" y="0" class="grid">·</text>
+    <text x="22" y="22" class="grid">·</text>
+    <text x="22" y="44" class="grid">+</text>
+    <text x="22" y="66" class="grid">·</text>
+    <text x="22" y="88" class="grid">·</text>
+    <text x="22" y="110" class="grid">+</text>
+    <text x="22" y="132" class="grid">·</text>
+    <text x="22" y="154" class="grid">·</text>
+    <text x="22" y="176" class="grid">+</text>
+    <text x="22" y="198" class="grid">·</text>
+    <text x="22" y="220" class="grid">·</text>
+    <text x="22" y="242" class="grid">+</text>
+    <text x="22" y="264" class="grid">·</text>
+    <text x="22" y="286" class="grid">·</text>
+    <text x="22" y="308" class="grid">+</text>
+    <text x="22" y="330" class="grid">·</text>
+    <text x="44" y="0" class="grid">·</text>
+    <text x="44" y="22" class="grid">+</text>
+    <text x="44" y="44" class="grid">·</text>
+    <text x="44" y="66" class="grid">·</text>
+    <text x="44" y="88" class="grid">+</text>
+    <text x="44" y="110" class="grid">·</text>
+    <text x="44" y="132" class="grid">·</text>
+    <text x="44" y="154" class="grid">+</text>
+    <text x="44" y="176" class="grid">·</text>
+    <text x="44" y="198" class="grid">·</text>
+    <text x="44" y="220" class="grid">+</text>
+    <text x="44" y="242" class="grid">·</text>
+    <text x="44" y="264" class="grid">·</text>
+    <text x="44" y="286" class="grid">+</text>
+    <text x="44" y="308" class="grid">·</text>
+    <text x="44" y="330" class="grid">·</text>
+    <text x="66" y="0" class="grid">+</text>
+    <text x="66" y="22" class="grid">·</text>
+    <text x="66" y="44" class="grid">·</text>
+    <text x="66" y="66" class="grid">+</text>
+    <text x="66" y="88" class="grid">·</text>
+    <text x="66" y="110" class="grid">·</text>
+    <text x="66" y="132" class="grid">+</text>
+    <text x="66" y="154" class="grid">·</text>
+    <text x="66" y="176" class="grid">·</text>
+    <text x="66" y="198" class="grid">+</text>
+    <text x="66" y="220" class="grid">·</text>
+    <text x="66" y="242" class="grid">·</text>
+    <text x="66" y="264" class="grid">+</text>
+    <text x="66" y="286" class="grid">·</text>
+    <text x="66" y="308" class="grid">·</text>
+    <text x="66" y="330" class="grid">+</text>
+    <text x="88" y="0" class="grid">·</text>
+    <text x="88" y="22" class="grid">·</text>
+    <text x="88" y="44" class="grid">+</text>
+    <text x="88" y="66" class="grid">·</text>
+    <text x="88" y="88" class="grid">·</text>
+    <text x="88" y="110" class="grid">+</text>
+    <text x="88" y="132" class="grid">·</text>
+    <text x="88" y="154" class="grid">·</text>
+    <text x="88" y="176" class="grid">+</text>
+    <text x="88" y="198" class="grid">·</text>
+    <text x="88" y="220" class="grid">·</text>
+    <text x="88" y="242" class="grid">+</text>
+    <text x="88" y="264" class="grid">·</text>
+    <text x="88" y="286" class="grid">·</text>
+    <text x="88" y="308" class="grid">+</text>
+    <text x="88" y="330" class="grid">·</text>
+    <text x="110" y="0" class="grid">·</text>
+    <text x="110" y="22" class="grid">+</text>
+    <text x="110" y="44" class="grid">·</text>
+    <text x="110" y="66" class="grid">·</text>
+    <text x="110" y="88" class="grid">+</text>
+    <text x="110" y="110" class="grid">·</text>
+    <text x="110" y="132" class="grid">·</text>
+    <text x="110" y="154" class="grid">+</text>
+    <text x="110" y="176" class="grid">·</text>
+    <text x="110" y="198" class="grid">·</text>
+    <text x="110" y="220" class="grid">+</text>
+    <text x="110" y="242" class="grid">·</text>
+    <text x="110" y="264" class="grid">·</text>
+    <text x="110" y="286" class="grid">+</text>
+    <text x="110" y="308" class="grid">·</text>
+    <text x="110" y="330" class="grid">·</text>
+    <text x="132" y="0" class="grid">+</text>
+    <text x="132" y="22" class="grid">·</text>
+    <text x="132" y="44" class="grid">·</text>
+    <text x="132" y="66" class="grid">+</text>
+    <text x="132" y="88" class="grid">·</text>
+    <text x="132" y="110" class="grid">·</text>
+    <text x="132" y="132" class="grid">+</text>
+    <text x="132" y="154" class="grid">·</text>
+    <text x="132" y="176" class="grid">·</text>
+    <text x="132" y="198" class="grid">+</text>
+    <text x="132" y="220" class="grid">·</text>
+    <text x="132" y="242" class="grid">·</text>
+    <text x="132" y="264" class="grid">+</text>
+    <text x="132" y="286" class="grid">·</text>
+    <text x="132" y="308" class="grid">·</text>
+    <text x="132" y="330" class="grid">+</text>
+    <text x="154" y="0" class="grid">·</text>
+    <text x="154" y="22" class="grid">·</text>
+    <text x="154" y="44" class="grid">+</text>
+    <text x="154" y="66" class="grid">·</text>
+    <text x="154" y="88" class="grid">·</text>
+    <text x="154" y="110" class="grid">+</text>
+    <text x="154" y="132" class="grid">·</text>
+    <text x="154" y="154" class="grid">·</text>
+    <text x="154" y="176" class="grid">+</text>
+    <text x="154" y="198" class="grid">·</text>
+    <text x="154" y="220" class="grid">·</text>
+    <text x="154" y="242" class="grid">+</text>
+    <text x="154" y="264" class="grid">·</text>
+    <text x="154" y="286" class="grid">·</text>
+    <text x="154" y="308" class="grid">+</text>
+    <text x="154" y="330" class="grid">·</text>
+    <text x="176" y="0" class="grid">·</text>
+    <text x="176" y="22" class="grid">+</text>
+    <text x="176" y="44" class="grid">·</text>
+    <text x="176" y="66" class="grid">·</text>
+    <text x="176" y="88" class="grid">+</text>
+    <text x="176" y="110" class="grid">·</text>
+    <text x="176" y="132" class="grid">·</text>
+    <text x="176" y="154" class="grid">+</text>
+    <text x="176" y="176" class="grid">·</text>
+    <text x="176" y="198" class="grid">·</text>
+    <text x="176" y="220" class="grid">+</text>
+    <text x="176" y="242" class="grid">·</text>
+    <text x="176" y="264" class="grid">·</text>
+    <text x="176" y="286" class="grid">+</text>
+    <text x="176" y="308" class="grid">·</text>
+    <text x="176" y="330" class="grid">·</text>
+    <text x="198" y="0" class="grid">+</text>
+    <text x="198" y="22" class="grid">·</text>
+    <text x="198" y="44" class="grid">·</text>
+    <text x="198" y="66" class="grid">+</text>
+    <text x="198" y="88" class="grid">·</text>
+    <text x="198" y="110" class="grid">·</text>
+    <text x="198" y="132" class="grid">+</text>
+    <text x="198" y="154" class="grid">·</text>
+    <text x="198" y="176" class="grid">·</text>
+    <text x="198" y="198" class="grid">+</text>
+    <text x="198" y="220" class="grid">·</text>
+    <text x="198" y="242" class="grid">·</text>
+    <text x="198" y="264" class="grid">+</text>
+    <text x="198" y="286" class="grid">·</text>
+    <text x="198" y="308" class="grid">·</text>
+    <text x="198" y="330" class="grid">+</text>
+    <text x="220" y="0" class="grid">·</text>
+    <text x="220" y="22" class="grid">·</text>
+    <text x="220" y="44" class="grid">+</text>
+    <text x="220" y="66" class="grid">·</text>
+    <text x="220" y="88" class="grid">·</text>
+    <text x="220" y="110" class="grid">+</text>
+    <text x="220" y="132" class="grid">·</text>
+    <text x="220" y="154" class="grid">·</text>
+    <text x="220" y="176" class="grid">+</text>
+    <text x="220" y="198" class="grid">·</text>
+    <text x="220" y="220" class="grid">·</text>
+    <text x="220" y="242" class="grid">+</text>
+    <text x="220" y="264" class="grid">·</text>
+    <text x="220" y="286" class="grid">·</text>
+    <text x="220" y="308" class="grid">+</text>
+    <text x="220" y="330" class="grid">·</text>
+    <text x="242" y="0" class="grid">·</text>
+    <text x="242" y="22" class="grid">+</text>
+    <text x="242" y="44" class="grid">·</text>
+    <text x="242" y="66" class="grid">·</text>
+    <text x="242" y="88" class="grid">+</text>
+    <text x="242" y="110" class="grid">·</text>
+    <text x="242" y="132" class="grid">·</text>
+    <text x="242" y="154" class="grid">+</text>
+    <text x="242" y="176" class="grid">·</text>
+    <text x="242" y="198" class="grid">·</text>
+    <text x="242" y="220" class="grid">+</text>
+    <text x="242" y="242" class="grid">·</text>
+    <text x="242" y="264" class="grid">·</text>
+    <text x="242" y="286" class="grid">+</text>
+    <text x="242" y="308" class="grid">·</text>
+    <text x="242" y="330" class="grid">·</text>
+    <text x="264" y="0" class="grid">+</text>
+    <text x="264" y="22" class="grid">·</text>
+    <text x="264" y="44" class="grid">·</text>
+    <text x="264" y="66" class="grid">+</text>
+    <text x="264" y="88" class="grid">·</text>
+    <text x="264" y="110" class="grid">·</text>
+    <text x="264" y="132" class="grid">+</text>
+    <text x="264" y="154" class="grid">·</text>
+    <text x="264" y="176" class="grid">·</text>
+    <text x="264" y="198" class="grid">+</text>
+    <text x="264" y="220" class="grid">·</text>
+    <text x="264" y="242" class="grid">·</text>
+    <text x="264" y="264" class="grid">+</text>
+    <text x="264" y="286" class="grid">·</text>
+    <text x="264" y="308" class="grid">·</text>
+    <text x="264" y="330" class="grid">+</text>
+    <text x="286" y="0" class="grid">·</text>
+    <text x="286" y="22" class="grid">·</text>
+    <text x="286" y="44" class="grid">+</text>
+    <text x="286" y="66" class="grid">·</text>
+    <text x="286" y="88" class="grid">·</text>
+    <text x="286" y="110" class="grid">+</text>
+    <text x="286" y="132" class="grid">·</text>
+    <text x="286" y="154" class="grid">·</text>
+    <text x="286" y="176" class="grid">+</text>
+    <text x="286" y="198" class="grid">·</text>
+    <text x="286" y="220" class="grid">·</text>
+    <text x="286" y="242" class="grid">+</text>
+    <text x="286" y="264" class="grid">·</text>
+    <text x="286" y="286" class="grid">·</text>
+    <text x="286" y="308" class="grid">+</text>
+    <text x="286" y="330" class="grid">·</text>
+    <text x="308" y="0" class="grid">·</text>
+    <text x="308" y="22" class="grid">+</text>
+    <text x="308" y="44" class="grid">·</text>
+    <text x="308" y="66" class="grid">·</text>
+    <text x="308" y="88" class="grid">+</text>
+    <text x="308" y="110" class="grid">·</text>
+    <text x="308" y="132" class="grid">·</text>
+    <text x="308" y="154" class="grid">+</text>
+    <text x="308" y="176" class="grid">·</text>
+    <text x="308" y="198" class="grid">·</text>
+    <text x="308" y="220" class="grid">+</text>
+    <text x="308" y="242" class="grid">·</text>
+    <text x="308" y="264" class="grid">·</text>
+    <text x="308" y="286" class="grid">+</text>
+    <text x="308" y="308" class="grid">·</text>
+    <text x="308" y="330" class="grid">·</text>
+    <text x="330" y="0" class="grid">+</text>
+    <text x="330" y="22" class="grid">·</text>
+    <text x="330" y="44" class="grid">·</text>
+    <text x="330" y="66" class="grid">+</text>
+    <text x="330" y="88" class="grid">·</text>
+    <text x="330" y="110" class="grid">·</text>
+    <text x="330" y="132" class="grid">+</text>
+    <text x="330" y="154" class="grid">·</text>
+    <text x="330" y="176" class="grid">·</text>
+    <text x="330" y="198" class="grid">+</text>
+    <text x="330" y="220" class="grid">·</text>
+    <text x="330" y="242" class="grid">·</text>
+    <text x="330" y="264" class="grid">+</text>
+    <text x="330" y="286" class="grid">·</text>
+    <text x="330" y="308" class="grid">·</text>
+    <text x="330" y="330" class="grid">+</text>
+    <text x="352" y="0" class="grid">·</text>
+    <text x="352" y="22" class="grid">·</text>
+    <text x="352" y="44" class="grid">+</text>
+    <text x="352" y="66" class="grid">·</text>
+    <text x="352" y="88" class="grid">·</text>
+    <text x="352" y="110" class="grid">+</text>
+    <text x="352" y="132" class="grid">·</text>
+    <text x="352" y="154" class="grid">·</text>
+    <text x="352" y="176" class="grid">+</text>
+    <text x="352" y="198" class="grid">·</text>
+    <text x="352" y="220" class="grid">·</text>
+    <text x="352" y="242" class="grid">+</text>
+    <text x="352" y="264" class="grid">·</text>
+    <text x="352" y="286" class="grid">·</text>
+    <text x="352" y="308" class="grid">+</text>
+    <text x="352" y="330" class="grid">·</text>
+    <text x="374" y="0" class="grid">·</text>
+    <text x="374" y="22" class="grid">+</text>
+    <text x="374" y="44" class="grid">·</text>
+    <text x="374" y="66" class="grid">·</text>
+    <text x="374" y="88" class="grid">+</text>
+    <text x="374" y="110" class="grid">·</text>
+    <text x="374" y="132" class="grid">·</text>
+    <text x="374" y="154" class="grid">+</text>
+    <text x="374" y="176" class="grid">·</text>
+    <text x="374" y="198" class="grid">·</text>
+    <text x="374" y="220" class="grid">+</text>
+    <text x="374" y="242" class="grid">·</text>
+    <text x="374" y="264" class="grid">·</text>
+    <text x="374" y="286" class="grid">+</text>
+    <text x="374" y="308" class="grid">·</text>
+    <text x="374" y="330" class="grid">·</text>
+    <text x="396" y="0" class="grid">+</text>
+    <text x="396" y="22" class="grid">·</text>
+    <text x="396" y="44" class="grid">·</text>
+    <text x="396" y="66" class="grid">+</text>
+    <text x="396" y="88" class="grid">·</text>
+    <text x="396" y="110" class="grid">·</text>
+    <text x="396" y="132" class="grid">+</text>
+    <text x="396" y="154" class="grid">·</text>
+    <text x="396" y="176" class="grid">·</text>
+    <text x="396" y="198" class="grid">+</text>
+    <text x="396" y="220" class="grid">·</text>
+    <text x="396" y="242" class="grid">·</text>
+    <text x="396" y="264" class="grid">+</text>
+    <text x="396" y="286" class="grid">·</text>
+    <text x="396" y="308" class="grid">·</text>
+    <text x="396" y="330" class="grid">+</text>
+    <text x="418" y="0" class="grid">·</text>
+    <text x="418" y="22" class="grid">·</text>
+    <text x="418" y="44" class="grid">+</text>
+    <text x="418" y="66" class="grid">·</text>
+    <text x="418" y="88" class="grid">·</text>
+    <text x="418" y="110" class="grid">+</text>
+    <text x="418" y="132" class="grid">·</text>
+    <text x="418" y="154" class="grid">·</text>
+    <text x="418" y="176" class="grid">+</text>
+    <text x="418" y="198" class="grid">·</text>
+    <text x="418" y="220" class="grid">·</text>
+    <text x="418" y="242" class="grid">+</text>
+    <text x="418" y="264" class="grid">·</text>
+    <text x="418" y="286" class="grid">·</text>
+    <text x="418" y="308" class="grid">+</text>
+    <text x="418" y="330" class="grid">·</text>
+    <text x="440" y="0" class="grid">·</text>
+    <text x="440" y="22" class="grid">+</text>
+    <text x="440" y="44" class="grid">·</text>
+    <text x="440" y="66" class="grid">·</text>
+    <text x="440" y="88" class="grid">+</text>
+    <text x="440" y="110" class="grid">·</text>
+    <text x="440" y="132" class="grid">·</text>
+    <text x="440" y="154" class="grid">+</text>
+    <text x="440" y="176" class="grid">·</text>
+    <text x="440" y="198" class="grid">·</text>
+    <text x="440" y="220" class="grid">+</text>
+    <text x="440" y="242" class="grid">·</text>
+    <text x="440" y="264" class="grid">·</text>
+    <text x="440" y="286" class="grid">+</text>
+    <text x="440" y="308" class="grid">·</text>
+    <text x="440" y="330" class="grid">·</text>
+    <text x="462" y="0" class="grid">+</text>
+    <text x="462" y="22" class="grid">·</text>
+    <text x="462" y="44" class="grid">·</text>
+    <text x="462" y="66" class="grid">+</text>
+    <text x="462" y="88" class="grid">·</text>
+    <text x="462" y="110" class="grid">·</text>
+    <text x="462" y="132" class="grid">+</text>
+    <text x="462" y="154" class="grid">·</text>
+    <text x="462" y="176" class="grid">·</text>
+    <text x="462" y="198" class="grid">+</text>
+    <text x="462" y="220" class="grid">·</text>
+    <text x="462" y="242" class="grid">·</text>
+    <text x="462" y="264" class="grid">+</text>
+    <text x="462" y="286" class="grid">·</text>
+    <text x="462" y="308" class="grid">·</text>
+    <text x="462" y="330" class="grid">+</text>
+    <text x="484" y="0" class="grid">·</text>
+    <text x="484" y="22" class="grid">·</text>
+    <text x="484" y="44" class="grid">+</text>
+    <text x="484" y="66" class="grid">·</text>
+    <text x="484" y="88" class="grid">·</text>
+    <text x="484" y="110" class="grid">+</text>
+    <text x="484" y="132" class="grid">·</text>
+    <text x="484" y="154" class="grid">·</text>
+    <text x="484" y="176" class="grid">+</text>
+    <text x="484" y="198" class="grid">·</text>
+    <text x="484" y="220" class="grid">·</text>
+    <text x="484" y="242" class="grid">+</text>
+    <text x="484" y="264" class="grid">·</text>
+    <text x="484" y="286" class="grid">·</text>
+    <text x="484" y="308" class="grid">+</text>
+    <text x="484" y="330" class="grid">·</text>
+    <text x="506" y="0" class="grid">·</text>
+    <text x="506" y="22" class="grid">+</text>
+    <text x="506" y="44" class="grid">·</text>
+    <text x="506" y="66" class="grid">·</text>
+    <text x="506" y="88" class="grid">+</text>
+    <text x="506" y="110" class="grid">·</text>
+    <text x="506" y="132" class="grid">·</text>
+    <text x="506" y="154" class="grid">+</text>
+    <text x="506" y="176" class="grid">·</text>
+    <text x="506" y="198" class="grid">·</text>
+    <text x="506" y="220" class="grid">+</text>
+    <text x="506" y="242" class="grid">·</text>
+    <text x="506" y="264" class="grid">·</text>
+    <text x="506" y="286" class="grid">+</text>
+    <text x="506" y="308" class="grid">·</text>
+    <text x="506" y="330" class="grid">·</text>
+    <text x="528" y="0" class="grid">+</text>
+    <text x="528" y="22" class="grid">·</text>
+    <text x="528" y="44" class="grid">·</text>
+    <text x="528" y="66" class="grid">+</text>
+    <text x="528" y="88" class="grid">·</text>
+    <text x="528" y="110" class="grid">·</text>
+    <text x="528" y="132" class="grid">+</text>
+    <text x="528" y="154" class="grid">·</text>
+    <text x="528" y="176" class="grid">·</text>
+    <text x="528" y="198" class="grid">+</text>
+    <text x="528" y="220" class="grid">·</text>
+    <text x="528" y="242" class="grid">·</text>
+    <text x="528" y="264" class="grid">+</text>
+    <text x="528" y="286" class="grid">·</text>
+    <text x="528" y="308" class="grid">·</text>
+    <text x="528" y="330" class="grid">+</text>
+    <text x="550" y="0" class="grid">·</text>
+    <text x="550" y="22" class="grid">·</text>
+    <text x="550" y="44" class="grid">+</text>
+    <text x="550" y="66" class="grid">·</text>
+    <text x="550" y="88" class="grid">·</text>
+    <text x="550" y="110" class="grid">+</text>
+    <text x="550" y="132" class="grid">·</text>
+    <text x="550" y="154" class="grid">·</text>
+    <text x="550" y="176" class="grid">+</text>
+    <text x="550" y="198" class="grid">·</text>
+    <text x="550" y="220" class="grid">·</text>
+    <text x="550" y="242" class="grid">+</text>
+    <text x="550" y="264" class="grid">·</text>
+    <text x="550" y="286" class="grid">·</text>
+    <text x="550" y="308" class="grid">+</text>
+    <text x="550" y="330" class="grid">·</text>
+    <text x="572" y="0" class="grid">·</text>
+    <text x="572" y="22" class="grid">+</text>
+    <text x="572" y="44" class="grid">·</text>
+    <text x="572" y="66" class="grid">·</text>
+    <text x="572" y="88" class="grid">+</text>
+    <text x="572" y="110" class="grid">·</text>
+    <text x="572" y="132" class="grid">·</text>
+    <text x="572" y="154" class="grid">+</text>
+    <text x="572" y="176" class="grid">·</text>
+    <text x="572" y="198" class="grid">·</text>
+    <text x="572" y="220" class="grid">+</text>
+    <text x="572" y="242" class="grid">·</text>
+    <text x="572" y="264" class="grid">·</text>
+    <text x="572" y="286" class="grid">+</text>
+    <text x="572" y="308" class="grid">·</text>
+    <text x="572" y="330" class="grid">·</text>
+    <text x="594" y="0" class="grid">+</text>
+    <text x="594" y="22" class="grid">·</text>
+    <text x="594" y="44" class="grid">·</text>
+    <text x="594" y="66" class="grid">+</text>
+    <text x="594" y="88" class="grid">·</text>
+    <text x="594" y="110" class="grid">·</text>
+    <text x="594" y="132" class="grid">+</text>
+    <text x="594" y="154" class="grid">·</text>
+    <text x="594" y="176" class="grid">·</text>
+    <text x="594" y="198" class="grid">+</text>
+    <text x="594" y="220" class="grid">·</text>
+    <text x="594" y="242" class="grid">·</text>
+    <text x="594" y="264" class="grid">+</text>
+    <text x="594" y="286" class="grid">·</text>
+    <text x="594" y="308" class="grid">·</text>
+    <text x="594" y="330" class="grid">+</text>
+    <text x="616" y="0" class="grid">·</text>
+    <text x="616" y="22" class="grid">·</text>
+    <text x="616" y="44" class="grid">+</text>
+    <text x="616" y="66" class="grid">·</text>
+    <text x="616" y="88" class="grid">·</text>
+    <text x="616" y="110" class="grid">+</text>
+    <text x="616" y="132" class="grid">·</text>
+    <text x="616" y="154" class="grid">·</text>
+    <text x="616" y="176" class="grid">+</text>
+    <text x="616" y="198" class="grid">·</text>
+    <text x="616" y="220" class="grid">·</text>
+    <text x="616" y="242" class="grid">+</text>
+    <text x="616" y="264" class="grid">·</text>
+    <text x="616" y="286" class="grid">·</text>
+    <text x="616" y="308" class="grid">+</text>
+    <text x="616" y="330" class="grid">·</text>
+    <text x="638" y="0" class="grid">·</text>
+    <text x="638" y="22" class="grid">+</text>
+    <text x="638" y="44" class="grid">·</text>
+    <text x="638" y="66" class="grid">·</text>
+    <text x="638" y="88" class="grid">+</text>
+    <text x="638" y="110" class="grid">·</text>
+    <text x="638" y="132" class="grid">·</text>
+    <text x="638" y="154" class="grid">+</text>
+    <text x="638" y="176" class="grid">·</text>
+    <text x="638" y="198" class="grid">·</text>
+    <text x="638" y="220" class="grid">+</text>
+    <text x="638" y="242" class="grid">·</text>
+    <text x="638" y="264" class="grid">·</text>
+    <text x="638" y="286" class="grid">+</text>
+    <text x="638" y="308" class="grid">·</text>
+    <text x="638" y="330" class="grid">·</text>
+    <text x="660" y="0" class="grid">+</text>
+    <text x="660" y="22" class="grid">·</text>
+    <text x="660" y="44" class="grid">·</text>
+    <text x="660" y="66" class="grid">+</text>
+    <text x="660" y="88" class="grid">·</text>
+    <text x="660" y="110" class="grid">·</text>
+    <text x="660" y="132" class="grid">+</text>
+    <text x="660" y="154" class="grid">·</text>
+    <text x="660" y="176" class="grid">·</text>
+    <text x="660" y="198" class="grid">+</text>
+    <text x="660" y="220" class="grid">·</text>
+    <text x="660" y="242" class="grid">·</text>
+    <text x="660" y="264" class="grid">+</text>
+    <text x="660" y="286" class="grid">·</text>
+    <text x="660" y="308" class="grid">·</text>
+    <text x="660" y="330" class="grid">+</text>
+    <text x="682" y="0" class="grid">·</text>
+    <text x="682" y="22" class="grid">·</text>
+    <text x="682" y="44" class="grid">+</text>
+    <text x="682" y="66" class="grid">·</text>
+    <text x="682" y="88" class="grid">·</text>
+    <text x="682" y="110" class="grid">+</text>
+    <text x="682" y="132" class="grid">·</text>
+    <text x="682" y="154" class="grid">·</text>
+    <text x="682" y="176" class="grid">+</text>
+    <text x="682" y="198" class="grid">·</text>
+    <text x="682" y="220" class="grid">·</text>
+    <text x="682" y="242" class="grid">+</text>
+    <text x="682" y="264" class="grid">·</text>
+    <text x="682" y="286" class="grid">·</text>
+    <text x="682" y="308" class="grid">+</text>
+    <text x="682" y="330" class="grid">·</text>
+    <text x="704" y="0" class="grid">·</text>
+    <text x="704" y="22" class="grid">+</text>
+    <text x="704" y="44" class="grid">·</text>
+    <text x="704" y="66" class="grid">·</text>
+    <text x="704" y="88" class="grid">+</text>
+    <text x="704" y="110" class="grid">·</text>
+    <text x="704" y="132" class="grid">·</text>
+    <text x="704" y="154" class="grid">+</text>
+    <text x="704" y="176" class="grid">·</text>
+    <text x="704" y="198" class="grid">·</text>
+    <text x="704" y="220" class="grid">+</text>
+    <text x="704" y="242" class="grid">·</text>
+    <text x="704" y="264" class="grid">·</text>
+    <text x="704" y="286" class="grid">+</text>
+    <text x="704" y="308" class="grid">·</text>
+    <text x="704" y="330" class="grid">·</text>
+    <text x="726" y="0" class="grid">+</text>
+    <text x="726" y="22" class="grid">·</text>
+    <text x="726" y="44" class="grid">·</text>
+    <text x="726" y="66" class="grid">+</text>
+    <text x="726" y="88" class="grid">·</text>
+    <text x="726" y="110" class="grid">·</text>
+    <text x="726" y="132" class="grid">+</text>
+    <text x="726" y="154" class="grid">·</text>
+    <text x="726" y="176" class="grid">·</text>
+    <text x="726" y="198" class="grid">+</text>
+    <text x="726" y="220" class="grid">·</text>
+    <text x="726" y="242" class="grid">·</text>
+    <text x="726" y="264" class="grid">+</text>
+    <text x="726" y="286" class="grid">·</text>
+    <text x="726" y="308" class="grid">·</text>
+    <text x="726" y="330" class="grid">+</text>
+    <text x="748" y="0" class="grid">·</text>
+    <text x="748" y="22" class="grid">·</text>
+    <text x="748" y="44" class="grid">+</text>
+    <text x="748" y="66" class="grid">·</text>
+    <text x="748" y="88" class="grid">·</text>
+    <text x="748" y="110" class="grid">+</text>
+    <text x="748" y="132" class="grid">·</text>
+    <text x="748" y="154" class="grid">·</text>
+    <text x="748" y="176" class="grid">+</text>
+    <text x="748" y="198" class="grid">·</text>
+    <text x="748" y="220" class="grid">·</text>
+    <text x="748" y="242" class="grid">+</text>
+    <text x="748" y="264" class="grid">·</text>
+    <text x="748" y="286" class="grid">·</text>
+    <text x="748" y="308" class="grid">+</text>
+    <text x="748" y="330" class="grid">·</text>
+    <text x="770" y="0" class="grid">·</text>
+    <text x="770" y="22" class="grid">+</text>
+    <text x="770" y="44" class="grid">·</text>
+    <text x="770" y="66" class="grid">·</text>
+    <text x="770" y="88" class="grid">+</text>
+    <text x="770" y="110" class="grid">·</text>
+    <text x="770" y="132" class="grid">·</text>
+    <text x="770" y="154" class="grid">+</text>
+    <text x="770" y="176" class="grid">·</text>
+    <text x="770" y="198" class="grid">·</text>
+    <text x="770" y="220" class="grid">+</text>
+    <text x="770" y="242" class="grid">·</text>
+    <text x="770" y="264" class="grid">·</text>
+    <text x="770" y="286" class="grid">+</text>
+    <text x="770" y="308" class="grid">·</text>
+    <text x="770" y="330" class="grid">·</text>
+    <text x="792" y="0" class="grid">+</text>
+    <text x="792" y="22" class="grid">·</text>
+    <text x="792" y="44" class="grid">·</text>
+    <text x="792" y="66" class="grid">+</text>
+    <text x="792" y="88" class="grid">·</text>
+    <text x="792" y="110" class="grid">·</text>
+    <text x="792" y="132" class="grid">+</text>
+    <text x="792" y="154" class="grid">·</text>
+    <text x="792" y="176" class="grid">·</text>
+    <text x="792" y="198" class="grid">+</text>
+    <text x="792" y="220" class="grid">·</text>
+    <text x="792" y="242" class="grid">·</text>
+    <text x="792" y="264" class="grid">+</text>
+    <text x="792" y="286" class="grid">·</text>
+    <text x="792" y="308" class="grid">·</text>
+    <text x="792" y="330" class="grid">+</text>
+    <text x="814" y="0" class="grid">·</text>
+    <text x="814" y="22" class="grid">·</text>
+    <text x="814" y="44" class="grid">+</text>
+    <text x="814" y="66" class="grid">·</text>
+    <text x="814" y="88" class="grid">·</text>
+    <text x="814" y="110" class="grid">+</text>
+    <text x="814" y="132" class="grid">·</text>
+    <text x="814" y="154" class="grid">·</text>
+    <text x="814" y="176" class="grid">+</text>
+    <text x="814" y="198" class="grid">·</text>
+    <text x="814" y="220" class="grid">·</text>
+    <text x="814" y="242" class="grid">+</text>
+    <text x="814" y="264" class="grid">·</text>
+    <text x="814" y="286" class="grid">·</text>
+    <text x="814" y="308" class="grid">+</text>
+    <text x="814" y="330" class="grid">·</text>
+    <text x="836" y="0" class="grid">·</text>
+    <text x="836" y="22" class="grid">+</text>
+    <text x="836" y="44" class="grid">·</text>
+    <text x="836" y="66" class="grid">·</text>
+    <text x="836" y="88" class="grid">+</text>
+    <text x="836" y="110" class="grid">·</text>
+    <text x="836" y="132" class="grid">·</text>
+    <text x="836" y="154" class="grid">+</text>
+    <text x="836" y="176" class="grid">·</text>
+    <text x="836" y="198" class="grid">·</text>
+    <text x="836" y="220" class="grid">+</text>
+    <text x="836" y="242" class="grid">·</text>
+    <text x="836" y="264" class="grid">·</text>
+    <text x="836" y="286" class="grid">+</text>
+    <text x="836" y="308" class="grid">·</text>
+    <text x="836" y="330" class="grid">·</text>
+    <text x="858" y="0" class="grid">+</text>
+    <text x="858" y="22" class="grid">·</text>
+    <text x="858" y="44" class="grid">·</text>
+    <text x="858" y="66" class="grid">+</text>
+    <text x="858" y="88" class="grid">·</text>
+    <text x="858" y="110" class="grid">·</text>
+    <text x="858" y="132" class="grid">+</text>
+    <text x="858" y="154" class="grid">·</text>
+    <text x="858" y="176" class="grid">·</text>
+    <text x="858" y="198" class="grid">+</text>
+    <text x="858" y="220" class="grid">·</text>
+    <text x="858" y="242" class="grid">·</text>
+    <text x="858" y="264" class="grid">+</text>
+    <text x="858" y="286" class="grid">·</text>
+    <text x="858" y="308" class="grid">·</text>
+    <text x="858" y="330" class="grid">+</text>
+    <text x="880" y="0" class="grid">·</text>
+    <text x="880" y="22" class="grid">·</text>
+    <text x="880" y="44" class="grid">+</text>
+    <text x="880" y="66" class="grid">·</text>
+    <text x="880" y="88" class="grid">·</text>
+    <text x="880" y="110" class="grid">+</text>
+    <text x="880" y="132" class="grid">·</text>
+    <text x="880" y="154" class="grid">·</text>
+    <text x="880" y="176" class="grid">+</text>
+    <text x="880" y="198" class="grid">·</text>
+    <text x="880" y="220" class="grid">·</text>
+    <text x="880" y="242" class="grid">+</text>
+    <text x="880" y="264" class="grid">·</text>
+    <text x="880" y="286" class="grid">·</text>
+    <text x="880" y="308" class="grid">+</text>
+    <text x="880" y="330" class="grid">·</text>
+    <text x="902" y="0" class="grid">·</text>
+    <text x="902" y="22" class="grid">+</text>
+    <text x="902" y="44" class="grid">·</text>
+    <text x="902" y="66" class="grid">·</text>
+    <text x="902" y="88" class="grid">+</text>
+    <text x="902" y="110" class="grid">·</text>
+    <text x="902" y="132" class="grid">·</text>
+    <text x="902" y="154" class="grid">+</text>
+    <text x="902" y="176" class="grid">·</text>
+    <text x="902" y="198" class="grid">·</text>
+    <text x="902" y="220" class="grid">+</text>
+    <text x="902" y="242" class="grid">·</text>
+    <text x="902" y="264" class="grid">·</text>
+    <text x="902" y="286" class="grid">+</text>
+    <text x="902" y="308" class="grid">·</text>
+    <text x="902" y="330" class="grid">·</text>
+    <text x="924" y="0" class="grid">+</text>
+    <text x="924" y="22" class="grid">·</text>
+    <text x="924" y="44" class="grid">·</text>
+    <text x="924" y="66" class="grid">+</text>
+    <text x="924" y="88" class="grid">·</text>
+    <text x="924" y="110" class="grid">·</text>
+    <text x="924" y="132" class="grid">+</text>
+    <text x="924" y="154" class="grid">·</text>
+    <text x="924" y="176" class="grid">·</text>
+    <text x="924" y="198" class="grid">+</text>
+    <text x="924" y="220" class="grid">·</text>
+    <text x="924" y="242" class="grid">·</text>
+    <text x="924" y="264" class="grid">+</text>
+    <text x="924" y="286" class="grid">·</text>
+    <text x="924" y="308" class="grid">·</text>
+    <text x="924" y="330" class="grid">+</text>
+    <text x="946" y="0" class="grid">·</text>
+    <text x="946" y="22" class="grid">·</text>
+    <text x="946" y="44" class="grid">+</text>
+    <text x="946" y="66" class="grid">·</text>
+    <text x="946" y="88" class="grid">·</text>
+    <text x="946" y="110" class="grid">+</text>
+    <text x="946" y="132" class="grid">·</text>
+    <text x="946" y="154" class="grid">·</text>
+    <text x="946" y="176" class="grid">+</text>
+    <text x="946" y="198" class="grid">·</text>
+    <text x="946" y="220" class="grid">·</text>
+    <text x="946" y="242" class="grid">+</text>
+    <text x="946" y="264" class="grid">·</text>
+    <text x="946" y="286" class="grid">·</text>
+    <text x="946" y="308" class="grid">+</text>
+    <text x="946" y="330" class="grid">·</text>
+    <text x="968" y="0" class="grid">·</text>
+    <text x="968" y="22" class="grid">+</text>
+    <text x="968" y="44" class="grid">·</text>
+    <text x="968" y="66" class="grid">·</text>
+    <text x="968" y="88" class="grid">+</text>
+    <text x="968" y="110" class="grid">·</text>
+    <text x="968" y="132" class="grid">·</text>
+    <text x="968" y="154" class="grid">+</text>
+    <text x="968" y="176" class="grid">·</text>
+    <text x="968" y="198" class="grid">·</text>
+    <text x="968" y="220" class="grid">+</text>
+    <text x="968" y="242" class="grid">·</text>
+    <text x="968" y="264" class="grid">·</text>
+    <text x="968" y="286" class="grid">+</text>
+    <text x="968" y="308" class="grid">·</text>
+    <text x="968" y="330" class="grid">·</text>
+    <text x="990" y="0" class="grid">+</text>
+    <text x="990" y="22" class="grid">·</text>
+    <text x="990" y="44" class="grid">·</text>
+    <text x="990" y="66" class="grid">+</text>
+    <text x="990" y="88" class="grid">·</text>
+    <text x="990" y="110" class="grid">·</text>
+    <text x="990" y="132" class="grid">+</text>
+    <text x="990" y="154" class="grid">·</text>
+    <text x="990" y="176" class="grid">·</text>
+    <text x="990" y="198" class="grid">+</text>
+    <text x="990" y="220" class="grid">·</text>
+    <text x="990" y="242" class="grid">·</text>
+    <text x="990" y="264" class="grid">+</text>
+    <text x="990" y="286" class="grid">·</text>
+    <text x="990" y="308" class="grid">·</text>
+    <text x="990" y="330" class="grid">+</text>
+    <text x="1012" y="0" class="grid">·</text>
+    <text x="1012" y="22" class="grid">·</text>
+    <text x="1012" y="44" class="grid">+</text>
+    <text x="1012" y="66" class="grid">·</text>
+    <text x="1012" y="88" class="grid">·</text>
+    <text x="1012" y="110" class="grid">+</text>
+    <text x="1012" y="132" class="grid">·</text>
+    <text x="1012" y="154" class="grid">·</text>
+    <text x="1012" y="176" class="grid">+</text>
+    <text x="1012" y="198" class="grid">·</text>
+    <text x="1012" y="220" class="grid">·</text>
+    <text x="1012" y="242" class="grid">+</text>
+    <text x="1012" y="264" class="grid">·</text>
+    <text x="1012" y="286" class="grid">·</text>
+    <text x="1012" y="308" class="grid">+</text>
+    <text x="1012" y="330" class="grid">·</text>
+    <text x="1034" y="0" class="grid">·</text>
+    <text x="1034" y="22" class="grid">+</text>
+    <text x="1034" y="44" class="grid">·</text>
+    <text x="1034" y="66" class="grid">·</text>
+    <text x="1034" y="88" class="grid">+</text>
+    <text x="1034" y="110" class="grid">·</text>
+    <text x="1034" y="132" class="grid">·</text>
+    <text x="1034" y="154" class="grid">+</text>
+    <text x="1034" y="176" class="grid">·</text>
+    <text x="1034" y="198" class="grid">·</text>
+    <text x="1034" y="220" class="grid">+</text>
+    <text x="1034" y="242" class="grid">·</text>
+    <text x="1034" y="264" class="grid">·</text>
+    <text x="1034" y="286" class="grid">+</text>
+    <text x="1034" y="308" class="grid">·</text>
+    <text x="1034" y="330" class="grid">·</text>
+    <text x="1056" y="0" class="grid">+</text>
+    <text x="1056" y="22" class="grid">·</text>
+    <text x="1056" y="44" class="grid">·</text>
+    <text x="1056" y="66" class="grid">+</text>
+    <text x="1056" y="88" class="grid">·</text>
+    <text x="1056" y="110" class="grid">·</text>
+    <text x="1056" y="132" class="grid">+</text>
+    <text x="1056" y="154" class="grid">·</text>
+    <text x="1056" y="176" class="grid">·</text>
+    <text x="1056" y="198" class="grid">+</text>
+    <text x="1056" y="220" class="grid">·</text>
+    <text x="1056" y="242" class="grid">·</text>
+    <text x="1056" y="264" class="grid">+</text>
+    <text x="1056" y="286" class="grid">·</text>
+    <text x="1056" y="308" class="grid">·</text>
+    <text x="1056" y="330" class="grid">+</text>
+    <text x="1078" y="0" class="grid">·</text>
+    <text x="1078" y="22" class="grid">·</text>
+    <text x="1078" y="44" class="grid">+</text>
+    <text x="1078" y="66" class="grid">·</text>
+    <text x="1078" y="88" class="grid">·</text>
+    <text x="1078" y="110" class="grid">+</text>
+    <text x="1078" y="132" class="grid">·</text>
+    <text x="1078" y="154" class="grid">·</text>
+    <text x="1078" y="176" class="grid">+</text>
+    <text x="1078" y="198" class="grid">·</text>
+    <text x="1078" y="220" class="grid">·</text>
+    <text x="1078" y="242" class="grid">+</text>
+    <text x="1078" y="264" class="grid">·</text>
+    <text x="1078" y="286" class="grid">·</text>
+    <text x="1078" y="308" class="grid">+</text>
+    <text x="1078" y="330" class="grid">·</text></g>
+
+  <defs>
+  <g id="shark-r">
+    <g class="body">
+      <text x="352.8" y="10.6" class="s1 tw">2</text>
+      <text x="345.6" y="21.2" class="s1">&gt;</text>
+      <text x="352.8" y="21.2" class="s0">b</text>
+      <text x="338.4" y="31.8" class="s1">9</text>
+      <text x="345.6" y="31.8" class="s1">9</text>
+      <text x="352.8" y="31.8" class="s0">*</text>
+      <text x="360.0" y="31.8" class="s0">y</text>
+      <text x="331.2" y="42.4" class="s0 tw">^</text>
+      <text x="338.4" y="42.4" class="s1">9</text>
+      <text x="345.6" y="42.4" class="s1">c</text>
+      <text x="352.8" y="42.4" class="s1">n</text>
+      <text x="360.0" y="42.4" class="s1">a</text>
+      <text x="367.2" y="42.4" class="s0">z</text>
+      <text x="324.0" y="53.0" class="s0">~</text>
+      <text x="331.2" y="53.0" class="s1 tw">7</text>
+      <text x="338.4" y="53.0" class="s0">n</text>
+      <text x="345.6" y="53.0" class="s1">&lt;</text>
+      <text x="352.8" y="53.0" class="s0">m</text>
+      <text x="360.0" y="53.0" class="s1">+</text>
+      <text x="367.2" y="53.0" class="s0">r</text>
+      <text x="374.4" y="53.0" class="s0">w</text>
+      <text x="316.8" y="63.6" class="s1">y</text>
+      <text x="324.0" y="63.6" class="s1">c</text>
+      <text x="331.2" y="63.6" class="s1">~</text>
+      <text x="338.4" y="63.6" class="s0">t</text>
+      <text x="345.6" y="63.6" class="s1">g</text>
+      <text x="352.8" y="63.6" class="s0">j</text>
+      <text x="360.0" y="63.6" class="s1 tw">c</text>
+      <text x="367.2" y="63.6" class="s0">p</text>
+      <text x="374.4" y="63.6" class="s0">=</text>
+      <text x="381.6" y="63.6" class="s0">%</text>
+      <text x="309.6" y="74.2" class="s1 tw">~</text>
+      <text x="316.8" y="74.2" class="s1">y</text>
+      <text x="324.0" y="74.2" class="s1">i</text>
+      <text x="331.2" y="74.2" class="s1">6</text>
+      <text x="338.4" y="74.2" class="s0">9</text>
+      <text x="345.6" y="74.2" class="s1">+</text>
+      <text x="352.8" y="74.2" class="s1">a</text>
+      <text x="360.0" y="74.2" class="s0 tw">*</text>
+      <text x="367.2" y="74.2" class="s1">9</text>
+      <text x="374.4" y="74.2" class="s1">n</text>
+      <text x="381.6" y="74.2" class="s0">f</text>
+      <text x="388.8" y="74.2" class="s1">z</text>
+      <text x="302.4" y="84.8" class="s0">n</text>
+      <text x="309.6" y="84.8" class="s1">g</text>
+      <text x="316.8" y="84.8" class="s1">b</text>
+      <text x="324.0" y="84.8" class="s1">a</text>
+      <text x="331.2" y="84.8" class="s0">.</text>
+      <text x="338.4" y="84.8" class="s1 tw">u</text>
+      <text x="345.6" y="84.8" class="s1">c</text>
+      <text x="352.8" y="84.8" class="s0">=</text>
+      <text x="360.0" y="84.8" class="s0">y</text>
+      <text x="367.2" y="84.8" class="s0">i</text>
+      <text x="374.4" y="84.8" class="s1">+</text>
+      <text x="381.6" y="84.8" class="s1">r</text>
+      <text x="388.8" y="84.8" class="s1 tw">8</text>
+      <text x="396.0" y="84.8" class="s0">x</text>
+      <text x="295.2" y="95.4" class="s0">2</text>
+      <text x="302.4" y="95.4" class="s1">h</text>
+      <text x="309.6" y="95.4" class="s1">o</text>
+      <text x="316.8" y="95.4" class="s1">c</text>
+      <text x="324.0" y="95.4" class="s1">u</text>
+      <text x="331.2" y="95.4" class="s1">n</text>
+      <text x="338.4" y="95.4" class="s1 tw">m</text>
+      <text x="345.6" y="95.4" class="s1">~</text>
+      <text x="352.8" y="95.4" class="s1">u</text>
+      <text x="360.0" y="95.4" class="s1">=</text>
+      <text x="367.2" y="95.4" class="s1">7</text>
+      <text x="374.4" y="95.4" class="s1">n</text>
+      <text x="381.6" y="95.4" class="s1">m</text>
+      <text x="388.8" y="95.4" class="s1 tw">9</text>
+      <text x="396.0" y="95.4" class="s1">e</text>
+      <text x="403.2" y="95.4" class="s1">#</text>
+      <text x="288.0" y="106.0" class="s1">~</text>
+      <text x="295.2" y="106.0" class="s1">r</text>
+      <text x="302.4" y="106.0" class="s0 tw">6</text>
+      <text x="309.6" y="106.0" class="s1">6</text>
+      <text x="316.8" y="106.0" class="s1">o</text>
+      <text x="324.0" y="106.0" class="s0">5</text>
+      <text x="331.2" y="106.0" class="s0">.</text>
+      <text x="338.4" y="106.0" class="s1">~</text>
+      <text x="345.6" y="106.0" class="s1">9</text>
+      <text x="352.8" y="106.0" class="s1 tw">b</text>
+      <text x="360.0" y="106.0" class="s0">i</text>
+      <text x="367.2" y="106.0" class="s1">f</text>
+      <text x="374.4" y="106.0" class="s1">3</text>
+      <text x="381.6" y="106.0" class="s1">m</text>
+      <text x="388.8" y="106.0" class="s1">=</text>
+      <text x="396.0" y="106.0" class="s0">h</text>
+      <text x="403.2" y="106.0" class="s1 tw">k</text>
+      <text x="410.4" y="106.0" class="s1">j</text>
+      <text x="273.6" y="116.6" class="s1">a</text>
+      <text x="280.8" y="116.6" class="s1">w</text>
+      <text x="288.0" y="116.6" class="s1 tw">e</text>
+      <text x="295.2" y="116.6" class="s1">n</text>
+      <text x="302.4" y="116.6" class="s1">6</text>
+      <text x="309.6" y="116.6" class="s1">m</text>
+      <text x="316.8" y="116.6" class="s1">r</text>
+      <text x="324.0" y="116.6" class="s1">&gt;</text>
+      <text x="331.2" y="116.6" class="s1">e</text>
+      <text x="338.4" y="116.6" class="s1 tw">a</text>
+      <text x="345.6" y="116.6" class="s1">2</text>
+      <text x="352.8" y="116.6" class="s2">o</text>
+      <text x="360.0" y="116.6" class="s1">f</text>
+      <text x="367.2" y="116.6" class="s1">o</text>
+      <text x="374.4" y="116.6" class="s1">g</text>
+      <text x="381.6" y="116.6" class="s0">k</text>
+      <text x="388.8" y="116.6" class="s1 tw">7</text>
+      <text x="396.0" y="116.6" class="s1">r</text>
+      <text x="403.2" y="116.6" class="s2">#</text>
+      <text x="410.4" y="116.6" class="s1">p</text>
+      <text x="417.6" y="116.6" class="s1">e</text>
+      <text x="424.8" y="116.6" class="s1">w</text>
+      <text x="432.0" y="116.6" class="s1">i</text>
+      <text x="439.2" y="116.6" class="s1 tw">b</text>
+      <text x="446.4" y="116.6" class="s1">r</text>
+      <text x="453.6" y="116.6" class="s1">%</text>
+      <text x="460.8" y="116.6" class="s1">2</text>
+      <text x="468.0" y="116.6" class="s1">v</text>
+      <text x="475.2" y="116.6" class="s2">q</text>
+      <text x="482.4" y="116.6" class="s2">#</text>
+      <text x="489.6" y="116.6" class="s1 tw">o</text>
+      <text x="496.8" y="116.6" class="s2">x</text>
+      <text x="504.0" y="116.6" class="s2">u</text>
+      <text x="187.2" y="127.2" class="s2">i</text>
+      <text x="194.4" y="127.2" class="s2">b</text>
+      <text x="201.6" y="127.2" class="s1">q</text>
+      <text x="208.8" y="127.2" class="s1">&gt;</text>
+      <text x="216.0" y="127.2" class="s1">f</text>
+      <text x="223.2" y="127.2" class="s1 tw">t</text>
+      <text x="230.4" y="127.2" class="s2">s</text>
+      <text x="237.6" y="127.2" class="s2">p</text>
+      <text x="244.8" y="127.2" class="s1">*</text>
+      <text x="252.0" y="127.2" class="s1">n</text>
+      <text x="259.2" y="127.2" class="s1">=</text>
+      <text x="266.4" y="127.2" class="s1">c</text>
+      <text x="273.6" y="127.2" class="s2 tw">x</text>
+      <text x="280.8" y="127.2" class="s1">8</text>
+      <text x="288.0" y="127.2" class="s1">v</text>
+      <text x="295.2" y="127.2" class="s2">=</text>
+      <text x="302.4" y="127.2" class="s1">c</text>
+      <text x="309.6" y="127.2" class="s1">h</text>
+      <text x="316.8" y="127.2" class="s1">=</text>
+      <text x="324.0" y="127.2" class="s1 tw">b</text>
+      <text x="331.2" y="127.2" class="s1">n</text>
+      <text x="338.4" y="127.2" class="s1">g</text>
+      <text x="345.6" y="127.2" class="s2">7</text>
+      <text x="352.8" y="127.2" class="s1">w</text>
+      <text x="360.0" y="127.2" class="s1">9</text>
+      <text x="367.2" y="127.2" class="s2">n</text>
+      <text x="374.4" y="127.2" class="s2 tw">a</text>
+      <text x="381.6" y="127.2" class="s2">d</text>
+      <text x="388.8" y="127.2" class="s2">z</text>
+      <text x="396.0" y="127.2" class="s1">%</text>
+      <text x="403.2" y="127.2" class="s1">n</text>
+      <text x="410.4" y="127.2" class="s1">5</text>
+      <text x="417.6" y="127.2" class="s1">j</text>
+      <text x="424.8" y="127.2" class="s1 tw">o</text>
+      <text x="432.0" y="127.2" class="s1">#</text>
+      <text x="439.2" y="127.2" class="s1">&lt;</text>
+      <text x="446.4" y="127.2" class="s1">o</text>
+      <text x="453.6" y="127.2" class="s1">~</text>
+      <text x="460.8" y="127.2" class="s1">d</text>
+      <text x="468.0" y="127.2" class="s2">v</text>
+      <text x="475.2" y="127.2" class="s3 tw">v</text>
+      <text x="482.4" y="127.2" class="s2">w</text>
+      <text x="489.6" y="127.2" class="s2">t</text>
+      <text x="496.8" y="127.2" class="s2">&lt;</text>
+      <text x="504.0" y="127.2" class="s2">&gt;</text>
+      <text x="511.2" y="127.2" class="s1">d</text>
+      <text x="518.4" y="127.2" class="s2">&gt;</text>
+      <text x="525.6" y="127.2" class="s1 tw">*</text>
+      <text x="532.8" y="127.2" class="s1">c</text>
+      <text x="540.0" y="127.2" class="s1">s</text>
+      <text x="547.2" y="127.2" class="s3">@</text>
+      <text x="554.4" y="127.2" class="s3">@</text>
+      <text x="561.6" y="127.2" class="s3">@</text>
+      <text x="568.8" y="127.2" class="s1">&gt;</text>
+      <text x="576.0" y="127.2" class="s2 tw">9</text>
+      <text x="583.2" y="127.2" class="s2">v</text>
+      <text x="590.4" y="127.2" class="s1">y</text>
+      <text x="597.6" y="127.2" class="s2">v</text>
+      <text x="604.8" y="127.2" class="s2">+</text>
+      <text x="180.0" y="137.8" class="s1">~</text>
+      <text x="187.2" y="137.8" class="s2">%</text>
+      <text x="194.4" y="137.8" class="s2">m</text>
+      <text x="201.6" y="137.8" class="s2">x</text>
+      <text x="208.8" y="137.8" class="s1 tw">x</text>
+      <text x="216.0" y="137.8" class="s1">d</text>
+      <text x="223.2" y="137.8" class="s1">8</text>
+      <text x="230.4" y="137.8" class="s1">c</text>
+      <text x="237.6" y="137.8" class="s1">&lt;</text>
+      <text x="244.8" y="137.8" class="s2">y</text>
+      <text x="252.0" y="137.8" class="s1">~</text>
+      <text x="259.2" y="137.8" class="s2 tw">m</text>
+      <text x="266.4" y="137.8" class="s2">a</text>
+      <text x="273.6" y="137.8" class="s1">%</text>
+      <text x="280.8" y="137.8" class="s1">m</text>
+      <text x="288.0" y="137.8" class="s1">5</text>
+      <text x="295.2" y="137.8" class="s1">5</text>
+      <text x="302.4" y="137.8" class="s1">m</text>
+      <text x="309.6" y="137.8" class="s1 tw">e</text>
+      <text x="316.8" y="137.8" class="s2">g</text>
+      <text x="324.0" y="137.8" class="s1">q</text>
+      <text x="331.2" y="137.8" class="s2">r</text>
+      <text x="338.4" y="137.8" class="s2">6</text>
+      <text x="345.6" y="137.8" class="s2">d</text>
+      <text x="352.8" y="137.8" class="s1">c</text>
+      <text x="360.0" y="137.8" class="s1 tw">f</text>
+      <text x="367.2" y="137.8" class="s2">6</text>
+      <text x="374.4" y="137.8" class="s1">=</text>
+      <text x="381.6" y="137.8" class="s1">4</text>
+      <text x="388.8" y="137.8" class="s2">c</text>
+      <text x="396.0" y="137.8" class="s2">#</text>
+      <text x="403.2" y="137.8" class="s2">v</text>
+      <text x="410.4" y="137.8" class="s1 tw">s</text>
+      <text x="417.6" y="137.8" class="s1">e</text>
+      <text x="424.8" y="137.8" class="s1">+</text>
+      <text x="432.0" y="137.8" class="s1">6</text>
+      <text x="439.2" y="137.8" class="s2">t</text>
+      <text x="446.4" y="137.8" class="s1">a</text>
+      <text x="453.6" y="137.8" class="s1">j</text>
+      <text x="460.8" y="137.8" class="s1 tw">6</text>
+      <text x="468.0" y="137.8" class="s2">p</text>
+      <text x="475.2" y="137.8" class="s2">&gt;</text>
+      <text x="482.4" y="137.8" class="s2">=</text>
+      <text x="489.6" y="137.8" class="s2">+</text>
+      <text x="496.8" y="137.8" class="s2">&gt;</text>
+      <text x="504.0" y="137.8" class="s2">~</text>
+      <text x="511.2" y="137.8" class="s1 tw">x</text>
+      <text x="518.4" y="137.8" class="s2">b</text>
+      <text x="525.6" y="137.8" class="s1">a</text>
+      <text x="532.8" y="137.8" class="s2">w</text>
+      <text x="540.0" y="137.8" class="s3">@</text>
+      <text x="547.2" y="137.8" class="s3">@</text>
+      <text x="554.4" y="137.8" class="s3">@</text>
+      <text x="561.6" y="137.8" class="s3">@</text>
+      <text x="568.8" y="137.8" class="s3">@</text>
+      <text x="576.0" y="137.8" class="s2">w</text>
+      <text x="583.2" y="137.8" class="s2">6</text>
+      <text x="590.4" y="137.8" class="s2">r</text>
+      <text x="597.6" y="137.8" class="s2">d</text>
+      <text x="604.8" y="137.8" class="s2">p</text>
+      <text x="612.0" y="137.8" class="s2 tw">d</text>
+      <text x="619.2" y="137.8" class="s2">h</text>
+      <text x="626.4" y="137.8" class="s2">o</text>
+      <text x="633.6" y="137.8" class="s2">u</text>
+      <text x="180.0" y="148.4" class="s2">w</text>
+      <text x="187.2" y="148.4" class="s1 tw">%</text>
+      <text x="194.4" y="148.4" class="s1">8</text>
+      <text x="201.6" y="148.4" class="s1">6</text>
+      <text x="208.8" y="148.4" class="s2">4</text>
+      <text x="216.0" y="148.4" class="s2">3</text>
+      <text x="223.2" y="148.4" class="s2">%</text>
+      <text x="230.4" y="148.4" class="s2">=</text>
+      <text x="237.6" y="148.4" class="s1 tw">a</text>
+      <text x="244.8" y="148.4" class="s1">n</text>
+      <text x="252.0" y="148.4" class="s2">=</text>
+      <text x="259.2" y="148.4" class="s1">9</text>
+      <text x="266.4" y="148.4" class="s2">i</text>
+      <text x="273.6" y="148.4" class="s2">y</text>
+      <text x="280.8" y="148.4" class="s1">d</text>
+      <text x="288.0" y="148.4" class="s1 tw">8</text>
+      <text x="295.2" y="148.4" class="s2">h</text>
+      <text x="302.4" y="148.4" class="s2">&gt;</text>
+      <text x="309.6" y="148.4" class="s1">a</text>
+      <text x="316.8" y="148.4" class="s2">6</text>
+      <text x="324.0" y="148.4" class="s2">4</text>
+      <text x="331.2" y="148.4" class="s1">=</text>
+      <text x="338.4" y="148.4" class="s1 tw">n</text>
+      <text x="345.6" y="148.4" class="s1">d</text>
+      <text x="352.8" y="148.4" class="s2">b</text>
+      <text x="360.0" y="148.4" class="s2">h</text>
+      <text x="367.2" y="148.4" class="s2">h</text>
+      <text x="374.4" y="148.4" class="s2">v</text>
+      <text x="381.6" y="148.4" class="s1">&gt;</text>
+      <text x="388.8" y="148.4" class="s2 tw">y</text>
+      <text x="396.0" y="148.4" class="s2">u</text>
+      <text x="403.2" y="148.4" class="s1">=</text>
+      <text x="410.4" y="148.4" class="s2">5</text>
+      <text x="417.6" y="148.4" class="s2">k</text>
+      <text x="424.8" y="148.4" class="s2">j</text>
+      <text x="432.0" y="148.4" class="s2">j</text>
+      <text x="439.2" y="148.4" class="s1 tw">s</text>
+      <text x="446.4" y="148.4" class="s2">6</text>
+      <text x="453.6" y="148.4" class="s2">w</text>
+      <text x="460.8" y="148.4" class="s2">%</text>
+      <text x="468.0" y="148.4" class="s2">%</text>
+      <text x="475.2" y="148.4" class="s2">=</text>
+      <text x="482.4" y="148.4" class="s2">#</text>
+      <text x="489.6" y="148.4" class="s3 tw">m</text>
+      <text x="496.8" y="148.4" class="s3">&gt;</text>
+      <text x="504.0" y="148.4" class="s3">v</text>
+      <text x="511.2" y="148.4" class="s2">2</text>
+      <text x="518.4" y="148.4" class="s1">u</text>
+      <text x="525.6" y="148.4" class="s2">y</text>
+      <text x="532.8" y="148.4" class="s2">b</text>
+      <text x="540.0" y="148.4" class="s2 tw">r</text>
+      <text x="547.2" y="148.4" class="s2">o</text>
+      <text x="554.4" y="148.4" class="s2">8</text>
+      <text x="561.6" y="148.4" class="s3">c</text>
+      <text x="568.8" y="148.4" class="s3">g</text>
+      <text x="576.0" y="148.4" class="s3">z</text>
+      <text x="583.2" y="148.4" class="s2">4</text>
+      <text x="590.4" y="148.4" class="s2 tw">r</text>
+      <text x="597.6" y="148.4" class="s2">w</text>
+      <text x="604.8" y="148.4" class="s3">&gt;</text>
+      <text x="612.0" y="148.4" class="s2">9</text>
+      <text x="619.2" y="148.4" class="s2">u</text>
+      <text x="626.4" y="148.4" class="s2">2</text>
+      <text x="633.6" y="148.4" class="s3">z</text>
+      <text x="180.0" y="159.0" class="s2">r</text>
+      <text x="187.2" y="159.0" class="s2">5</text>
+      <text x="194.4" y="159.0" class="s2">w</text>
+      <text x="201.6" y="159.0" class="s2">s</text>
+      <text x="208.8" y="159.0" class="s2 tw">c</text>
+      <text x="216.0" y="159.0" class="s2">2</text>
+      <text x="223.2" y="159.0" class="s2">3</text>
+      <text x="230.4" y="159.0" class="s1">&gt;</text>
+      <text x="237.6" y="159.0" class="s2">8</text>
+      <text x="244.8" y="159.0" class="s2">%</text>
+      <text x="252.0" y="159.0" class="s1">c</text>
+      <text x="259.2" y="159.0" class="s2 tw">z</text>
+      <text x="266.4" y="159.0" class="s2">r</text>
+      <text x="273.6" y="159.0" class="s2">p</text>
+      <text x="280.8" y="159.0" class="s1">s</text>
+      <text x="288.0" y="159.0" class="s1">=</text>
+      <text x="295.2" y="159.0" class="s1">r</text>
+      <text x="302.4" y="159.0" class="s2">&lt;</text>
+      <text x="309.6" y="159.0" class="s2 tw">7</text>
+      <text x="316.8" y="159.0" class="s2">y</text>
+      <text x="324.0" y="159.0" class="s1">c</text>
+      <text x="331.2" y="159.0" class="s1">r</text>
+      <text x="338.4" y="159.0" class="s2">%</text>
+      <text x="345.6" y="159.0" class="s2">v</text>
+      <text x="352.8" y="159.0" class="s2">m</text>
+      <text x="360.0" y="159.0" class="s2 tw">j</text>
+      <text x="367.2" y="159.0" class="s1">n</text>
+      <text x="374.4" y="159.0" class="s2">#</text>
+      <text x="381.6" y="159.0" class="s2">#</text>
+      <text x="388.8" y="159.0" class="s2">%</text>
+      <text x="396.0" y="159.0" class="s2">4</text>
+      <text x="403.2" y="159.0" class="s2">&gt;</text>
+      <text x="410.4" y="159.0" class="s2 tw">a</text>
+      <text x="417.6" y="159.0" class="s2">e</text>
+      <text x="424.8" y="159.0" class="s2">o</text>
+      <text x="432.0" y="159.0" class="s2">w</text>
+      <text x="439.2" y="159.0" class="s2">3</text>
+      <text x="446.4" y="159.0" class="s2">t</text>
+      <text x="453.6" y="159.0" class="s2">e</text>
+      <text x="460.8" y="159.0" class="s2 tw">&gt;</text>
+      <text x="468.0" y="159.0" class="s1">8</text>
+      <text x="475.2" y="159.0" class="s3">&gt;</text>
+      <text x="482.4" y="159.0" class="s2">5</text>
+      <text x="489.6" y="159.0" class="s3">@</text>
+      <text x="496.8" y="159.0" class="s3">6</text>
+      <text x="504.0" y="159.0" class="s2">*</text>
+      <text x="511.2" y="159.0" class="s2 tw">j</text>
+      <text x="518.4" y="159.0" class="s2">n</text>
+      <text x="525.6" y="159.0" class="s2">x</text>
+      <text x="532.8" y="159.0" class="s3">y</text>
+      <text x="540.0" y="159.0" class="s3">2</text>
+      <text x="547.2" y="159.0" class="s3">x</text>
+      <text x="554.4" y="159.0" class="s2">m</text>
+      <text x="561.6" y="159.0" class="s3 tw">8</text>
+      <text x="568.8" y="159.0" class="s3">s</text>
+      <text x="576.0" y="159.0" class="s3">x</text>
+      <text x="583.2" y="159.0" class="s2">e</text>
+      <text x="590.4" y="159.0" class="s3">~</text>
+      <text x="597.6" y="159.0" class="s2">3</text>
+      <text x="604.8" y="159.0" class="s3">u</text>
+      <text x="612.0" y="159.0" class="s3 tw">x</text>
+      <text x="619.2" y="159.0" class="s2">7</text>
+      <text x="180.0" y="169.6" class="s3">&amp;</text>
+      <text x="187.2" y="169.6" class="s2">=</text>
+      <text x="194.4" y="169.6" class="s2">x</text>
+      <text x="201.6" y="169.6" class="s2">3</text>
+      <text x="208.8" y="169.6" class="s3">r</text>
+      <text x="216.0" y="169.6" class="s2 tw">6</text>
+      <text x="223.2" y="169.6" class="s2">6</text>
+      <text x="230.4" y="169.6" class="s2">7</text>
+      <text x="237.6" y="169.6" class="s3">h</text>
+      <text x="244.8" y="169.6" class="s2">~</text>
+      <text x="252.0" y="169.6" class="s2">=</text>
+      <text x="259.2" y="169.6" class="s2">t</text>
+      <text x="266.4" y="169.6" class="s3 tw">8</text>
+      <text x="273.6" y="169.6" class="s2">=</text>
+      <text x="280.8" y="169.6" class="s2">w</text>
+      <text x="288.0" y="169.6" class="s3">c</text>
+      <text x="295.2" y="169.6" class="s2">c</text>
+      <text x="302.4" y="169.6" class="s2">k</text>
+      <text x="309.6" y="169.6" class="s2">4</text>
+      <text x="316.8" y="169.6" class="s2 tw">k</text>
+      <text x="324.0" y="169.6" class="s2">=</text>
+      <text x="331.2" y="169.6" class="s2">p</text>
+      <text x="338.4" y="169.6" class="s2">&gt;</text>
+      <text x="345.6" y="169.6" class="s2">%</text>
+      <text x="352.8" y="169.6" class="s2">v</text>
+      <text x="360.0" y="169.6" class="s3">h</text>
+      <text x="367.2" y="169.6" class="s2 tw">u</text>
+      <text x="374.4" y="169.6" class="s2">k</text>
+      <text x="381.6" y="169.6" class="s2">d</text>
+      <text x="388.8" y="169.6" class="s2">=</text>
+      <text x="396.0" y="169.6" class="s2">n</text>
+      <text x="403.2" y="169.6" class="s2">w</text>
+      <text x="410.4" y="169.6" class="s2">y</text>
+      <text x="417.6" y="169.6" class="s2 tw">#</text>
+      <text x="424.8" y="169.6" class="s2">=</text>
+      <text x="432.0" y="169.6" class="s2">b</text>
+      <text x="439.2" y="169.6" class="s2">b</text>
+      <text x="446.4" y="169.6" class="s2">v</text>
+      <text x="453.6" y="169.6" class="s2">c</text>
+      <text x="460.8" y="169.6" class="s2">b</text>
+      <text x="468.0" y="169.6" class="s2 tw">3</text>
+      <text x="475.2" y="169.6" class="s3">8</text>
+      <text x="482.4" y="169.6" class="s2">p</text>
+      <text x="489.6" y="169.6" class="s3">i</text>
+      <text x="496.8" y="169.6" class="s3">6</text>
+      <text x="504.0" y="169.6" class="s3">h</text>
+      <text x="511.2" y="169.6" class="s2">9</text>
+      <text x="518.4" y="169.6" class="s3 tw">z</text>
+      <text x="525.6" y="169.6" class="s2">a</text>
+      <text x="532.8" y="169.6" class="s2">q</text>
+      <text x="540.0" y="169.6" class="s2">4</text>
+      <text x="547.2" y="169.6" class="s3">t</text>
+      <text x="554.4" y="169.6" class="s3">H</text>
+      <text x="561.6" y="169.6" class="s3">p</text>
+      <text x="568.8" y="169.6" class="s2 tw">y</text>
+      <text x="576.0" y="169.6" class="s3">t</text>
+      <text x="583.2" y="169.6" class="s3">m</text>
+      <text x="590.4" y="169.6" class="s3">7</text>
+      <text x="597.6" y="169.6" class="s3">=</text>
+      <text x="187.2" y="180.2" class="s2">u</text>
+      <text x="194.4" y="180.2" class="s2">p</text>
+      <text x="201.6" y="180.2" class="s2">m</text>
+      <text x="208.8" y="180.2" class="s3 tw">s</text>
+      <text x="216.0" y="180.2" class="s2">a</text>
+      <text x="223.2" y="180.2" class="s2">8</text>
+      <text x="230.4" y="180.2" class="s2">m</text>
+      <text x="237.6" y="180.2" class="s2">~</text>
+      <text x="244.8" y="180.2" class="s2">x</text>
+      <text x="252.0" y="180.2" class="s3">4</text>
+      <text x="259.2" y="180.2" class="s2 tw">c</text>
+      <text x="266.4" y="180.2" class="s3">m</text>
+      <text x="273.6" y="180.2" class="s2">x</text>
+      <text x="280.8" y="180.2" class="s3">2</text>
+      <text x="288.0" y="180.2" class="s3">q</text>
+      <text x="295.2" y="180.2" class="s2">s</text>
+      <text x="302.4" y="180.2" class="s3">o</text>
+      <text x="309.6" y="180.2" class="s2 tw">~</text>
+      <text x="316.8" y="180.2" class="s2">u</text>
+      <text x="324.0" y="180.2" class="s2">j</text>
+      <text x="331.2" y="180.2" class="s2">x</text>
+      <text x="338.4" y="180.2" class="s2">5</text>
+      <text x="345.6" y="180.2" class="s2">i</text>
+      <text x="352.8" y="180.2" class="s2">3</text>
+      <text x="360.0" y="180.2" class="s2 tw">k</text>
+      <text x="367.2" y="180.2" class="s2">j</text>
+      <text x="374.4" y="180.2" class="s3">=</text>
+      <text x="381.6" y="180.2" class="s3">7</text>
+      <text x="388.8" y="180.2" class="s2">y</text>
+      <text x="396.0" y="180.2" class="s3">d</text>
+      <text x="403.2" y="180.2" class="s2">c</text>
+      <text x="410.4" y="180.2" class="s2 tw">8</text>
+      <text x="417.6" y="180.2" class="s3">~</text>
+      <text x="424.8" y="180.2" class="s3">a</text>
+      <text x="432.0" y="180.2" class="s3">d</text>
+      <text x="439.2" y="180.2" class="s2">&gt;</text>
+      <text x="446.4" y="180.2" class="s2">q</text>
+      <text x="453.6" y="180.2" class="s2">8</text>
+      <text x="460.8" y="180.2" class="s2 tw">g</text>
+      <text x="468.0" y="180.2" class="s2">7</text>
+      <text x="475.2" y="180.2" class="s3">u</text>
+      <text x="482.4" y="180.2" class="s3">4</text>
+      <text x="489.6" y="180.2" class="s3">k</text>
+      <text x="496.8" y="180.2" class="s3">f</text>
+      <text x="504.0" y="180.2" class="s3">&lt;</text>
+      <text x="511.2" y="180.2" class="s2 tw">g</text>
+      <text x="518.4" y="180.2" class="s3">a</text>
+      <text x="525.6" y="180.2" class="s3">5</text>
+      <text x="532.8" y="180.2" class="s3">#</text>
+      <text x="540.0" y="180.2" class="s2">p</text>
+      <text x="547.2" y="180.2" class="s3">~</text>
+      <text x="244.8" y="190.8" class="s2">7</text>
+      <text x="252.0" y="190.8" class="s2">i</text>
+      <text x="259.2" y="190.8" class="s3">t</text>
+      <text x="266.4" y="190.8" class="s2">b</text>
+      <text x="273.6" y="190.8" class="s3">n</text>
+      <text x="280.8" y="190.8" class="s2 tw">=</text>
+      <text x="288.0" y="190.8" class="s2">%</text>
+      <text x="295.2" y="190.8" class="s3">w</text>
+      <text x="302.4" y="190.8" class="s2">4</text>
+      <text x="309.6" y="190.8" class="s2">v</text>
+      <text x="316.8" y="190.8" class="s2">+</text>
+      <text x="324.0" y="190.8" class="s3">f</text>
+      <text x="331.2" y="190.8" class="s3 tw">+</text>
+      <text x="338.4" y="190.8" class="s2">3</text>
+      <text x="345.6" y="190.8" class="s2">x</text>
+      <text x="352.8" y="190.8" class="s3">2</text>
+      <text x="360.0" y="190.8" class="s3">y</text>
+      <text x="367.2" y="190.8" class="s3">u</text>
+      <text x="374.4" y="190.8" class="s2">v</text>
+      <text x="381.6" y="190.8" class="s2 tw">2</text>
+      <text x="388.8" y="190.8" class="s2">y</text>
+      <text x="396.0" y="190.8" class="s3">c</text>
+      <text x="403.2" y="190.8" class="s3">b</text>
+      <text x="410.4" y="190.8" class="s2">r</text>
+      <text x="417.6" y="190.8" class="s3">5</text>
+      <text x="424.8" y="190.8" class="s3">c</text>
+      <text x="432.0" y="190.8" class="s2 tw">z</text>
+      <text x="439.2" y="190.8" class="s3">n</text>
+      <text x="446.4" y="190.8" class="s3">f</text>
+      <text x="453.6" y="190.8" class="s3">6</text>
+      <text x="460.8" y="190.8" class="s3">#</text>
+      <text x="468.0" y="190.8" class="s3">M</text>
+      <text x="475.2" y="190.8" class="s3">9</text>
+      <text x="482.4" y="190.8" class="s3 tw">7</text>
+      <text x="489.6" y="190.8" class="s3">H</text>
+      <text x="496.8" y="190.8" class="s3">y</text>
+      <text x="288.0" y="201.4" class="s2">b</text>
+      <text x="295.2" y="201.4" class="s2">j</text>
+      <text x="302.4" y="201.4" class="s2">m</text>
+      <text x="309.6" y="201.4" class="s3">y</text>
+      <text x="316.8" y="201.4" class="s3 tw">q</text>
+      <text x="324.0" y="201.4" class="s3">W</text>
+      <text x="331.2" y="201.4" class="s3">5</text>
+      <text x="338.4" y="201.4" class="s3">f</text>
+      <text x="345.6" y="201.4" class="s3">g</text>
+      <text x="352.8" y="201.4" class="s2">z</text>
+      <text x="360.0" y="201.4" class="s3">f</text>
+      <text x="367.2" y="201.4" class="s3 tw">&lt;</text>
+      <text x="374.4" y="201.4" class="s2">a</text>
+      <text x="381.6" y="201.4" class="s3">7</text>
+      <text x="388.8" y="201.4" class="s2">#</text>
+      <text x="396.0" y="201.4" class="s3">2</text>
+      <text x="403.2" y="201.4" class="s3">h</text>
+      <text x="410.4" y="201.4" class="s3">t</text>
+      <text x="417.6" y="201.4" class="s3 tw">p</text>
+      <text x="424.8" y="201.4" class="s3">i</text>
+      <text x="432.0" y="201.4" class="s3">*</text>
+      <text x="439.2" y="201.4" class="s3">H</text>
+      <text x="446.4" y="201.4" class="s3">p</text>
+      <text x="295.2" y="212.0" class="s2">q</text>
+      <text x="302.4" y="212.0" class="s2">n</text>
+      <text x="410.4" y="212.0" class="s3">*</text>
+      <text x="417.6" y="212.0" class="s2">#</text>
+      <text x="424.8" y="212.0" class="s3">&gt;</text>
+      <text x="432.0" y="212.0" class="s3 tw">m</text>
+      <text x="439.2" y="212.0" class="s3">2</text>
+      <text x="446.4" y="212.0" class="s3">x</text>
+      <text x="453.6" y="212.0" class="s3">N</text>
+      <text x="424.8" y="222.6" class="s3">~</text>
+      <text x="432.0" y="222.6" class="s3">&amp;</text>
+      <text x="439.2" y="222.6" class="s3">7</text>
+      <text x="446.4" y="222.6" class="s3 tw">w</text>
+      <text x="453.6" y="222.6" class="s3">*</text>
+      <text x="460.8" y="222.6" class="s3">m</text>
+      <text x="439.2" y="233.2" class="s3">&lt;</text>
+      <text x="446.4" y="233.2" class="s3">c</text>
+      <text x="453.6" y="233.2" class="s3">s</text>
+      <text x="460.8" y="233.2" class="s3">n</text>
+      <text x="453.6" y="243.8" class="s3 tw">#</text>
+      <text x="460.8" y="243.8" class="s3">N</text>
+      <text x="468.0" y="243.8" class="s3">h</text>
+      <text x="468.0" y="254.4" class="s3">x</text>
+      <text x="475.2" y="254.4" class="s3">%</text>
+    </g>
+    <g class="tail" style="transform-origin: 172.8px 147.5px;">
+      <text x="0.0" y="63.6" class="s0 tw">h</text>
+      <text x="14.4" y="74.2" class="s1">e</text>
+      <text x="21.6" y="74.2" class="s1">c</text>
+      <text x="28.8" y="74.2" class="s1">4</text>
+      <text x="28.8" y="84.8" class="s1">4</text>
+      <text x="36.0" y="84.8" class="s1">e</text>
+      <text x="43.2" y="84.8" class="s1 tw">v</text>
+      <text x="50.4" y="84.8" class="s1">q</text>
+      <text x="43.2" y="95.4" class="s2">#</text>
+      <text x="50.4" y="95.4" class="s1">4</text>
+      <text x="57.6" y="95.4" class="s1">c</text>
+      <text x="64.8" y="95.4" class="s2">d</text>
+      <text x="72.0" y="95.4" class="s1">r</text>
+      <text x="79.2" y="95.4" class="s1 tw">c</text>
+      <text x="50.4" y="106.0" class="s2">z</text>
+      <text x="57.6" y="106.0" class="s2">r</text>
+      <text x="64.8" y="106.0" class="s1">j</text>
+      <text x="72.0" y="106.0" class="s2">m</text>
+      <text x="79.2" y="106.0" class="s2 tw">#</text>
+      <text x="86.4" y="106.0" class="s2">x</text>
+      <text x="93.6" y="106.0" class="s2">f</text>
+      <text x="100.8" y="106.0" class="s1">x</text>
+      <text x="108.0" y="106.0" class="s1">#</text>
+      <text x="64.8" y="116.6" class="s2">6</text>
+      <text x="72.0" y="116.6" class="s2">e</text>
+      <text x="79.2" y="116.6" class="s2">4</text>
+      <text x="86.4" y="116.6" class="s1">5</text>
+      <text x="93.6" y="116.6" class="s1">t</text>
+      <text x="100.8" y="116.6" class="s2 tw">t</text>
+      <text x="108.0" y="116.6" class="s1">w</text>
+      <text x="115.2" y="116.6" class="s2">v</text>
+      <text x="122.4" y="116.6" class="s2">+</text>
+      <text x="129.6" y="116.6" class="s1">*</text>
+      <text x="79.2" y="127.2" class="s2">q</text>
+      <text x="86.4" y="127.2" class="s1">2</text>
+      <text x="93.6" y="127.2" class="s2">3</text>
+      <text x="100.8" y="127.2" class="s2">t</text>
+      <text x="108.0" y="127.2" class="s1 tw">f</text>
+      <text x="115.2" y="127.2" class="s2">6</text>
+      <text x="122.4" y="127.2" class="s1">6</text>
+      <text x="129.6" y="127.2" class="s2">v</text>
+      <text x="136.8" y="127.2" class="s1">9</text>
+      <text x="144.0" y="127.2" class="s2">%</text>
+      <text x="151.2" y="127.2" class="s2">r</text>
+      <text x="158.4" y="127.2" class="s1 tw">z</text>
+      <text x="165.6" y="127.2" class="s2">u</text>
+      <text x="93.6" y="137.8" class="s2">x</text>
+      <text x="100.8" y="137.8" class="s1">%</text>
+      <text x="108.0" y="137.8" class="s2 tw">=</text>
+      <text x="115.2" y="137.8" class="s2">=</text>
+      <text x="122.4" y="137.8" class="s2">w</text>
+      <text x="129.6" y="137.8" class="s2">j</text>
+      <text x="136.8" y="137.8" class="s1">%</text>
+      <text x="144.0" y="137.8" class="s2">c</text>
+      <text x="151.2" y="137.8" class="s2">%</text>
+      <text x="158.4" y="137.8" class="s2 tw">#</text>
+      <text x="165.6" y="137.8" class="s1">a</text>
+      <text x="172.8" y="137.8" class="s2">e</text>
+      <text x="115.2" y="148.4" class="s2">9</text>
+      <text x="122.4" y="148.4" class="s2">m</text>
+      <text x="129.6" y="148.4" class="s2">f</text>
+      <text x="136.8" y="148.4" class="s3 tw">8</text>
+      <text x="144.0" y="148.4" class="s2">x</text>
+      <text x="151.2" y="148.4" class="s2">#</text>
+      <text x="158.4" y="148.4" class="s2">8</text>
+      <text x="165.6" y="148.4" class="s3">c</text>
+      <text x="172.8" y="148.4" class="s2">n</text>
+      <text x="108.0" y="159.0" class="s2 tw">k</text>
+      <text x="115.2" y="159.0" class="s2">&gt;</text>
+      <text x="122.4" y="159.0" class="s2">7</text>
+      <text x="129.6" y="159.0" class="s3">&amp;</text>
+      <text x="136.8" y="159.0" class="s3">#</text>
+      <text x="144.0" y="159.0" class="s2">g</text>
+      <text x="151.2" y="159.0" class="s2">c</text>
+      <text x="158.4" y="159.0" class="s2 tw">k</text>
+      <text x="165.6" y="159.0" class="s2">6</text>
+      <text x="172.8" y="159.0" class="s2">r</text>
+      <text x="79.2" y="169.6" class="s3">v</text>
+      <text x="86.4" y="169.6" class="s3">~</text>
+      <text x="93.6" y="169.6" class="s3">8</text>
+      <text x="100.8" y="169.6" class="s2">g</text>
+      <text x="108.0" y="169.6" class="s2">9</text>
+      <text x="115.2" y="169.6" class="s2 tw">z</text>
+      <text x="122.4" y="169.6" class="s3">h</text>
+      <text x="129.6" y="169.6" class="s2">p</text>
+      <text x="136.8" y="169.6" class="s3">d</text>
+      <text x="144.0" y="169.6" class="s3">z</text>
+      <text x="151.2" y="169.6" class="s3">3</text>
+      <text x="158.4" y="169.6" class="s2">r</text>
+      <text x="165.6" y="169.6" class="s3 tw">v</text>
+      <text x="172.8" y="169.6" class="s3">@</text>
+      <text x="64.8" y="180.2" class="s3">n</text>
+      <text x="72.0" y="180.2" class="s3">y</text>
+      <text x="79.2" y="180.2" class="s3 tw">&lt;</text>
+      <text x="86.4" y="180.2" class="s2">4</text>
+      <text x="93.6" y="180.2" class="s2">o</text>
+      <text x="100.8" y="180.2" class="s3">u</text>
+      <text x="108.0" y="180.2" class="s2">c</text>
+      <text x="115.2" y="180.2" class="s3">a</text>
+      <text x="122.4" y="180.2" class="s2">k</text>
+      <text x="129.6" y="180.2" class="s3 tw">~</text>
+      <text x="136.8" y="180.2" class="s3">H</text>
+      <text x="144.0" y="180.2" class="s3">j</text>
+      <text x="151.2" y="180.2" class="s3">#</text>
+      <text x="50.4" y="190.8" class="s3">@</text>
+      <text x="57.6" y="190.8" class="s3 tw">&lt;</text>
+      <text x="64.8" y="190.8" class="s3">5</text>
+      <text x="72.0" y="190.8" class="s3">p</text>
+      <text x="79.2" y="190.8" class="s3">s</text>
+      <text x="86.4" y="190.8" class="s3">r</text>
+      <text x="93.6" y="190.8" class="s3">g</text>
+      <text x="100.8" y="190.8" class="s3">f</text>
+      <text x="108.0" y="190.8" class="s3 tw">v</text>
+      <text x="115.2" y="190.8" class="s3">e</text>
+      <text x="36.0" y="201.4" class="s3">p</text>
+      <text x="43.2" y="201.4" class="s3">*</text>
+      <text x="50.4" y="201.4" class="s3">7</text>
+      <text x="57.6" y="201.4" class="s3">8</text>
+      <text x="64.8" y="201.4" class="s3 tw">+</text>
+      <text x="72.0" y="201.4" class="s3">p</text>
+      <text x="79.2" y="201.4" class="s3">o</text>
+      <text x="21.6" y="212.0" class="s3">r</text>
+      <text x="28.8" y="212.0" class="s3">N</text>
+      <text x="36.0" y="212.0" class="s3 tw">M</text>
+      <text x="43.2" y="212.0" class="s3">o</text>
+    </g>
+  </g>
+  <g id="shark-l">
+    <g class="body">
+      <text x="280.8" y="10.6" class="s1 tw">7</text>
+      <text x="280.8" y="21.2" class="s0">o</text>
+      <text x="288.0" y="21.2" class="s1">7</text>
+      <text x="273.6" y="31.8" class="s0">4</text>
+      <text x="280.8" y="31.8" class="s0">^</text>
+      <text x="288.0" y="31.8" class="s1">f</text>
+      <text x="295.2" y="31.8" class="s1">h</text>
+      <text x="266.4" y="42.4" class="s0 tw">+</text>
+      <text x="273.6" y="42.4" class="s1">o</text>
+      <text x="280.8" y="42.4" class="s1">z</text>
+      <text x="288.0" y="42.4" class="s1">z</text>
+      <text x="295.2" y="42.4" class="s1">d</text>
+      <text x="302.4" y="42.4" class="s0">v</text>
+      <text x="259.2" y="53.0" class="s0">z</text>
+      <text x="266.4" y="53.0" class="s0 tw">6</text>
+      <text x="273.6" y="53.0" class="s1">u</text>
+      <text x="280.8" y="53.0" class="s0">#</text>
+      <text x="288.0" y="53.0" class="s1">m</text>
+      <text x="295.2" y="53.0" class="s0">6</text>
+      <text x="302.4" y="53.0" class="s1">s</text>
+      <text x="309.6" y="53.0" class="s0">i</text>
+      <text x="252.0" y="63.6" class="s0 tw">8</text>
+      <text x="259.2" y="63.6" class="s0">3</text>
+      <text x="266.4" y="63.6" class="s0">q</text>
+      <text x="273.6" y="63.6" class="s1">s</text>
+      <text x="280.8" y="63.6" class="s0">j</text>
+      <text x="288.0" y="63.6" class="s1">c</text>
+      <text x="295.2" y="63.6" class="s0">%</text>
+      <text x="302.4" y="63.6" class="s1 tw">o</text>
+      <text x="309.6" y="63.6" class="s1">y</text>
+      <text x="316.8" y="63.6" class="s1">c</text>
+      <text x="244.8" y="74.2" class="s1">j</text>
+      <text x="252.0" y="74.2" class="s0">a</text>
+      <text x="259.2" y="74.2" class="s1">a</text>
+      <text x="266.4" y="74.2" class="s1 tw">c</text>
+      <text x="273.6" y="74.2" class="s0">k</text>
+      <text x="280.8" y="74.2" class="s1">k</text>
+      <text x="288.0" y="74.2" class="s1">n</text>
+      <text x="295.2" y="74.2" class="s0">4</text>
+      <text x="302.4" y="74.2" class="s1">~</text>
+      <text x="309.6" y="74.2" class="s1">y</text>
+      <text x="316.8" y="74.2" class="s1 tw">i</text>
+      <text x="324.0" y="74.2" class="s1">6</text>
+      <text x="237.6" y="84.8" class="s0">a</text>
+      <text x="244.8" y="84.8" class="s1">s</text>
+      <text x="252.0" y="84.8" class="s1 tw">s</text>
+      <text x="259.2" y="84.8" class="s1">6</text>
+      <text x="266.4" y="84.8" class="s0">q</text>
+      <text x="273.6" y="84.8" class="s0">e</text>
+      <text x="280.8" y="84.8" class="s0">q</text>
+      <text x="288.0" y="84.8" class="s1">u</text>
+      <text x="295.2" y="84.8" class="s1">h</text>
+      <text x="302.4" y="84.8" class="s0 tw">^</text>
+      <text x="309.6" y="84.8" class="s1">b</text>
+      <text x="316.8" y="84.8" class="s1">a</text>
+      <text x="324.0" y="84.8" class="s1">a</text>
+      <text x="331.2" y="84.8" class="s0">e</text>
+      <text x="230.4" y="95.4" class="s1">q</text>
+      <text x="237.6" y="95.4" class="s1">d</text>
+      <text x="244.8" y="95.4" class="s1">&gt;</text>
+      <text x="252.0" y="95.4" class="s1">#</text>
+      <text x="259.2" y="95.4" class="s1">e</text>
+      <text x="266.4" y="95.4" class="s1 tw">o</text>
+      <text x="273.6" y="95.4" class="s1">q</text>
+      <text x="280.8" y="95.4" class="s1">d</text>
+      <text x="288.0" y="95.4" class="s1">y</text>
+      <text x="295.2" y="95.4" class="s1">h</text>
+      <text x="302.4" y="95.4" class="s1">o</text>
+      <text x="309.6" y="95.4" class="s1">c</text>
+      <text x="316.8" y="95.4" class="s1 tw">u</text>
+      <text x="324.0" y="95.4" class="s1">n</text>
+      <text x="331.2" y="95.4" class="s1">m</text>
+      <text x="338.4" y="95.4" class="s0">*</text>
+      <text x="223.2" y="106.0" class="s1">t</text>
+      <text x="230.4" y="106.0" class="s1">u</text>
+      <text x="237.6" y="106.0" class="s0">k</text>
+      <text x="244.8" y="106.0" class="s1">u</text>
+      <text x="252.0" y="106.0" class="s1 tw">s</text>
+      <text x="259.2" y="106.0" class="s1">p</text>
+      <text x="266.4" y="106.0" class="s1">v</text>
+      <text x="273.6" y="106.0" class="s0">9</text>
+      <text x="280.8" y="106.0" class="s1">~</text>
+      <text x="288.0" y="106.0" class="s1">r</text>
+      <text x="295.2" y="106.0" class="s1">5</text>
+      <text x="302.4" y="106.0" class="s0 tw">8</text>
+      <text x="309.6" y="106.0" class="s0">o</text>
+      <text x="316.8" y="106.0" class="s1">3</text>
+      <text x="324.0" y="106.0" class="s1">a</text>
+      <text x="331.2" y="106.0" class="s0">*</text>
+      <text x="338.4" y="106.0" class="s1">9</text>
+      <text x="345.6" y="106.0" class="s1">b</text>
+      <text x="129.6" y="116.6" class="s2">h</text>
+      <text x="136.8" y="116.6" class="s2">#</text>
+      <text x="144.0" y="116.6" class="s1">g</text>
+      <text x="151.2" y="116.6" class="s2">p</text>
+      <text x="158.4" y="116.6" class="s2">z</text>
+      <text x="165.6" y="116.6" class="s1 tw">h</text>
+      <text x="172.8" y="116.6" class="s1">6</text>
+      <text x="180.0" y="116.6" class="s1">n</text>
+      <text x="187.2" y="116.6" class="s1">+</text>
+      <text x="194.4" y="116.6" class="s1">p</text>
+      <text x="201.6" y="116.6" class="s1">x</text>
+      <text x="208.8" y="116.6" class="s1">v</text>
+      <text x="216.0" y="116.6" class="s1 tw">v</text>
+      <text x="223.2" y="116.6" class="s1">d</text>
+      <text x="230.4" y="116.6" class="s2">=</text>
+      <text x="237.6" y="116.6" class="s1">q</text>
+      <text x="244.8" y="116.6" class="s1">n</text>
+      <text x="252.0" y="116.6" class="s0">y</text>
+      <text x="259.2" y="116.6" class="s1">a</text>
+      <text x="266.4" y="116.6" class="s1 tw">a</text>
+      <text x="273.6" y="116.6" class="s1">w</text>
+      <text x="280.8" y="116.6" class="s2">v</text>
+      <text x="288.0" y="116.6" class="s1">n</text>
+      <text x="295.2" y="116.6" class="s1">6</text>
+      <text x="302.4" y="116.6" class="s1">m</text>
+      <text x="309.6" y="116.6" class="s1">r</text>
+      <text x="316.8" y="116.6" class="s1 tw">&gt;</text>
+      <text x="324.0" y="116.6" class="s1">e</text>
+      <text x="331.2" y="116.6" class="s1">a</text>
+      <text x="338.4" y="116.6" class="s1">2</text>
+      <text x="345.6" y="116.6" class="s1">o</text>
+      <text x="352.8" y="116.6" class="s1">f</text>
+      <text x="360.0" y="116.6" class="s1">o</text>
+      <text x="28.8" y="127.2" class="s2">r</text>
+      <text x="36.0" y="127.2" class="s2">8</text>
+      <text x="43.2" y="127.2" class="s1">y</text>
+      <text x="50.4" y="127.2" class="s2">&gt;</text>
+      <text x="57.6" y="127.2" class="s2 tw">~</text>
+      <text x="64.8" y="127.2" class="s1">p</text>
+      <text x="72.0" y="127.2" class="s3">@</text>
+      <text x="79.2" y="127.2" class="s3">@</text>
+      <text x="86.4" y="127.2" class="s3">@</text>
+      <text x="93.6" y="127.2" class="s1">6</text>
+      <text x="100.8" y="127.2" class="s1">n</text>
+      <text x="108.0" y="127.2" class="s1 tw">m</text>
+      <text x="115.2" y="127.2" class="s2">m</text>
+      <text x="122.4" y="127.2" class="s1">&lt;</text>
+      <text x="129.6" y="127.2" class="s2">b</text>
+      <text x="136.8" y="127.2" class="s2">y</text>
+      <text x="144.0" y="127.2" class="s2">g</text>
+      <text x="151.2" y="127.2" class="s2">y</text>
+      <text x="158.4" y="127.2" class="s3 tw">W</text>
+      <text x="165.6" y="127.2" class="s2">m</text>
+      <text x="172.8" y="127.2" class="s1">z</text>
+      <text x="180.0" y="127.2" class="s1">j</text>
+      <text x="187.2" y="127.2" class="s1">c</text>
+      <text x="194.4" y="127.2" class="s1">q</text>
+      <text x="201.6" y="127.2" class="s1">&gt;</text>
+      <text x="208.8" y="127.2" class="s1 tw">f</text>
+      <text x="216.0" y="127.2" class="s1">t</text>
+      <text x="223.2" y="127.2" class="s1">s</text>
+      <text x="230.4" y="127.2" class="s1">q</text>
+      <text x="237.6" y="127.2" class="s1">*</text>
+      <text x="244.8" y="127.2" class="s2">m</text>
+      <text x="252.0" y="127.2" class="s2">=</text>
+      <text x="259.2" y="127.2" class="s2 tw">p</text>
+      <text x="266.4" y="127.2" class="s2">x</text>
+      <text x="273.6" y="127.2" class="s1">8</text>
+      <text x="280.8" y="127.2" class="s1">v</text>
+      <text x="288.0" y="127.2" class="s2">=</text>
+      <text x="295.2" y="127.2" class="s1">c</text>
+      <text x="302.4" y="127.2" class="s1">h</text>
+      <text x="309.6" y="127.2" class="s1 tw">=</text>
+      <text x="316.8" y="127.2" class="s1">b</text>
+      <text x="324.0" y="127.2" class="s1">n</text>
+      <text x="331.2" y="127.2" class="s1">g</text>
+      <text x="338.4" y="127.2" class="s2">7</text>
+      <text x="345.6" y="127.2" class="s1">w</text>
+      <text x="352.8" y="127.2" class="s1">9</text>
+      <text x="360.0" y="127.2" class="s2 tw">n</text>
+      <text x="367.2" y="127.2" class="s1">b</text>
+      <text x="374.4" y="127.2" class="s1">d</text>
+      <text x="381.6" y="127.2" class="s1">z</text>
+      <text x="388.8" y="127.2" class="s1">%</text>
+      <text x="396.0" y="127.2" class="s2">z</text>
+      <text x="403.2" y="127.2" class="s2">5</text>
+      <text x="410.4" y="127.2" class="s1 tw">j</text>
+      <text x="417.6" y="127.2" class="s1">o</text>
+      <text x="424.8" y="127.2" class="s1">#</text>
+      <text x="432.0" y="127.2" class="s1">&lt;</text>
+      <text x="439.2" y="127.2" class="s2">o</text>
+      <text x="446.4" y="127.2" class="s2">=</text>
+      <text x="0.0" y="137.8" class="s2">5</text>
+      <text x="7.2" y="137.8" class="s2">+</text>
+      <text x="14.4" y="137.8" class="s2 tw">d</text>
+      <text x="21.6" y="137.8" class="s2">4</text>
+      <text x="28.8" y="137.8" class="s2">c</text>
+      <text x="36.0" y="137.8" class="s2">5</text>
+      <text x="43.2" y="137.8" class="s2">b</text>
+      <text x="50.4" y="137.8" class="s2">8</text>
+      <text x="57.6" y="137.8" class="s2">f</text>
+      <text x="64.8" y="137.8" class="s3">@</text>
+      <text x="72.0" y="137.8" class="s3">@</text>
+      <text x="79.2" y="137.8" class="s3">@</text>
+      <text x="86.4" y="137.8" class="s3">@</text>
+      <text x="93.6" y="137.8" class="s3">@</text>
+      <text x="100.8" y="137.8" class="s2">7</text>
+      <text x="108.0" y="137.8" class="s1">2</text>
+      <text x="115.2" y="137.8" class="s2 tw">o</text>
+      <text x="122.4" y="137.8" class="s1">m</text>
+      <text x="129.6" y="137.8" class="s2">z</text>
+      <text x="136.8" y="137.8" class="s2">e</text>
+      <text x="144.0" y="137.8" class="s2">p</text>
+      <text x="151.2" y="137.8" class="s2">z</text>
+      <text x="158.4" y="137.8" class="s2">k</text>
+      <text x="165.6" y="137.8" class="s2 tw">j</text>
+      <text x="172.8" y="137.8" class="s1">~</text>
+      <text x="180.0" y="137.8" class="s1">+</text>
+      <text x="187.2" y="137.8" class="s1">m</text>
+      <text x="194.4" y="137.8" class="s2">x</text>
+      <text x="201.6" y="137.8" class="s1">x</text>
+      <text x="208.8" y="137.8" class="s1">d</text>
+      <text x="216.0" y="137.8" class="s1 tw">8</text>
+      <text x="223.2" y="137.8" class="s1">c</text>
+      <text x="230.4" y="137.8" class="s2">&lt;</text>
+      <text x="237.6" y="137.8" class="s2">y</text>
+      <text x="244.8" y="137.8" class="s2">~</text>
+      <text x="252.0" y="137.8" class="s1">m</text>
+      <text x="259.2" y="137.8" class="s1">b</text>
+      <text x="266.4" y="137.8" class="s2 tw">%</text>
+      <text x="273.6" y="137.8" class="s1">m</text>
+      <text x="280.8" y="137.8" class="s1">5</text>
+      <text x="288.0" y="137.8" class="s2">4</text>
+      <text x="295.2" y="137.8" class="s2">k</text>
+      <text x="302.4" y="137.8" class="s2">v</text>
+      <text x="309.6" y="137.8" class="s1">g</text>
+      <text x="316.8" y="137.8" class="s2 tw">p</text>
+      <text x="324.0" y="137.8" class="s1">d</text>
+      <text x="331.2" y="137.8" class="s1">7</text>
+      <text x="338.4" y="137.8" class="s1">e</text>
+      <text x="345.6" y="137.8" class="s1">c</text>
+      <text x="352.8" y="137.8" class="s1">f</text>
+      <text x="360.0" y="137.8" class="s1">7</text>
+      <text x="367.2" y="137.8" class="s2 tw">=</text>
+      <text x="374.4" y="137.8" class="s2">3</text>
+      <text x="381.6" y="137.8" class="s1">d</text>
+      <text x="388.8" y="137.8" class="s2">#</text>
+      <text x="396.0" y="137.8" class="s1">w</text>
+      <text x="403.2" y="137.8" class="s1">s</text>
+      <text x="410.4" y="137.8" class="s1">e</text>
+      <text x="417.6" y="137.8" class="s1 tw">+</text>
+      <text x="424.8" y="137.8" class="s1">6</text>
+      <text x="432.0" y="137.8" class="s2">t</text>
+      <text x="439.2" y="137.8" class="s2">k</text>
+      <text x="446.4" y="137.8" class="s2">i</text>
+      <text x="453.6" y="137.8" class="s1">6</text>
+      <text x="0.0" y="148.4" class="s3">n</text>
+      <text x="7.2" y="148.4" class="s2">j</text>
+      <text x="14.4" y="148.4" class="s2">*</text>
+      <text x="21.6" y="148.4" class="s2 tw">v</text>
+      <text x="28.8" y="148.4" class="s3">2</text>
+      <text x="36.0" y="148.4" class="s2">~</text>
+      <text x="43.2" y="148.4" class="s2">=</text>
+      <text x="50.4" y="148.4" class="s2">p</text>
+      <text x="57.6" y="148.4" class="s3">+</text>
+      <text x="64.8" y="148.4" class="s3">f</text>
+      <text x="72.0" y="148.4" class="s3 tw">M</text>
+      <text x="79.2" y="148.4" class="s2">i</text>
+      <text x="86.4" y="148.4" class="s2">k</text>
+      <text x="93.6" y="148.4" class="s2">m</text>
+      <text x="100.8" y="148.4" class="s2">7</text>
+      <text x="108.0" y="148.4" class="s2">b</text>
+      <text x="115.2" y="148.4" class="s1">d</text>
+      <text x="122.4" y="148.4" class="s2 tw">2</text>
+      <text x="129.6" y="148.4" class="s3">*</text>
+      <text x="136.8" y="148.4" class="s3">&gt;</text>
+      <text x="144.0" y="148.4" class="s3">H</text>
+      <text x="151.2" y="148.4" class="s2">c</text>
+      <text x="158.4" y="148.4" class="s2">v</text>
+      <text x="165.6" y="148.4" class="s2">f</text>
+      <text x="172.8" y="148.4" class="s2 tw">w</text>
+      <text x="180.0" y="148.4" class="s2">#</text>
+      <text x="187.2" y="148.4" class="s2">8</text>
+      <text x="194.4" y="148.4" class="s1">6</text>
+      <text x="201.6" y="148.4" class="s2">4</text>
+      <text x="208.8" y="148.4" class="s2">3</text>
+      <text x="216.0" y="148.4" class="s2">%</text>
+      <text x="223.2" y="148.4" class="s2 tw">=</text>
+      <text x="230.4" y="148.4" class="s1">a</text>
+      <text x="237.6" y="148.4" class="s2">y</text>
+      <text x="244.8" y="148.4" class="s2">=</text>
+      <text x="252.0" y="148.4" class="s1">9</text>
+      <text x="259.2" y="148.4" class="s2">i</text>
+      <text x="266.4" y="148.4" class="s2">y</text>
+      <text x="273.6" y="148.4" class="s2 tw">r</text>
+      <text x="280.8" y="148.4" class="s2">8</text>
+      <text x="288.0" y="148.4" class="s1">i</text>
+      <text x="295.2" y="148.4" class="s1">&gt;</text>
+      <text x="302.4" y="148.4" class="s1">a</text>
+      <text x="309.6" y="148.4" class="s2">6</text>
+      <text x="316.8" y="148.4" class="s2">4</text>
+      <text x="324.0" y="148.4" class="s1 tw">=</text>
+      <text x="331.2" y="148.4" class="s2">m</text>
+      <text x="338.4" y="148.4" class="s2">c</text>
+      <text x="345.6" y="148.4" class="s1">c</text>
+      <text x="352.8" y="148.4" class="s1">i</text>
+      <text x="360.0" y="148.4" class="s2">h</text>
+      <text x="367.2" y="148.4" class="s2">v</text>
+      <text x="374.4" y="148.4" class="s1 tw">&gt;</text>
+      <text x="381.6" y="148.4" class="s2">y</text>
+      <text x="388.8" y="148.4" class="s1">u</text>
+      <text x="396.0" y="148.4" class="s1">=</text>
+      <text x="403.2" y="148.4" class="s2">5</text>
+      <text x="410.4" y="148.4" class="s2">k</text>
+      <text x="417.6" y="148.4" class="s2">j</text>
+      <text x="424.8" y="148.4" class="s2 tw">j</text>
+      <text x="432.0" y="148.4" class="s1">s</text>
+      <text x="439.2" y="148.4" class="s1">7</text>
+      <text x="446.4" y="148.4" class="s1">w</text>
+      <text x="453.6" y="148.4" class="s2">%</text>
+      <text x="14.4" y="159.0" class="s2 tw">6</text>
+      <text x="21.6" y="159.0" class="s3">p</text>
+      <text x="28.8" y="159.0" class="s3">d</text>
+      <text x="36.0" y="159.0" class="s2">p</text>
+      <text x="43.2" y="159.0" class="s3">z</text>
+      <text x="50.4" y="159.0" class="s2">w</text>
+      <text x="57.6" y="159.0" class="s3">%</text>
+      <text x="64.8" y="159.0" class="s3 tw">#</text>
+      <text x="72.0" y="159.0" class="s3">u</text>
+      <text x="79.2" y="159.0" class="s2">g</text>
+      <text x="86.4" y="159.0" class="s3">a</text>
+      <text x="93.6" y="159.0" class="s3">3</text>
+      <text x="100.8" y="159.0" class="s3">v</text>
+      <text x="108.0" y="159.0" class="s2">z</text>
+      <text x="115.2" y="159.0" class="s2 tw">z</text>
+      <text x="122.4" y="159.0" class="s2">k</text>
+      <text x="129.6" y="159.0" class="s2">=</text>
+      <text x="136.8" y="159.0" class="s3">+</text>
+      <text x="144.0" y="159.0" class="s3">t</text>
+      <text x="151.2" y="159.0" class="s2">u</text>
+      <text x="158.4" y="159.0" class="s3">z</text>
+      <text x="165.6" y="159.0" class="s1 tw">8</text>
+      <text x="172.8" y="159.0" class="s2">r</text>
+      <text x="180.0" y="159.0" class="s2">5</text>
+      <text x="187.2" y="159.0" class="s2">w</text>
+      <text x="194.4" y="159.0" class="s2">s</text>
+      <text x="201.6" y="159.0" class="s2">c</text>
+      <text x="208.8" y="159.0" class="s2">2</text>
+      <text x="216.0" y="159.0" class="s2 tw">3</text>
+      <text x="223.2" y="159.0" class="s2">&lt;</text>
+      <text x="230.4" y="159.0" class="s2">8</text>
+      <text x="237.6" y="159.0" class="s2">%</text>
+      <text x="244.8" y="159.0" class="s2">c</text>
+      <text x="252.0" y="159.0" class="s2">z</text>
+      <text x="259.2" y="159.0" class="s2">r</text>
+      <text x="266.4" y="159.0" class="s1 tw">c</text>
+      <text x="273.6" y="159.0" class="s2">#</text>
+      <text x="280.8" y="159.0" class="s2">=</text>
+      <text x="288.0" y="159.0" class="s2">r</text>
+      <text x="295.2" y="159.0" class="s2">&lt;</text>
+      <text x="302.4" y="159.0" class="s1">8</text>
+      <text x="309.6" y="159.0" class="s1">y</text>
+      <text x="316.8" y="159.0" class="s2 tw">c</text>
+      <text x="324.0" y="159.0" class="s2">r</text>
+      <text x="331.2" y="159.0" class="s2">%</text>
+      <text x="338.4" y="159.0" class="s1">e</text>
+      <text x="345.6" y="159.0" class="s1">b</text>
+      <text x="352.8" y="159.0" class="s1">j</text>
+      <text x="360.0" y="159.0" class="s2">m</text>
+      <text x="367.2" y="159.0" class="s2 tw">#</text>
+      <text x="374.4" y="159.0" class="s2">#</text>
+      <text x="381.6" y="159.0" class="s1">%</text>
+      <text x="388.8" y="159.0" class="s2">4</text>
+      <text x="396.0" y="159.0" class="s2">&gt;</text>
+      <text x="403.2" y="159.0" class="s1">b</text>
+      <text x="410.4" y="159.0" class="s2">e</text>
+      <text x="417.6" y="159.0" class="s2 tw">o</text>
+      <text x="424.8" y="159.0" class="s2">w</text>
+      <text x="432.0" y="159.0" class="s2">3</text>
+      <text x="439.2" y="159.0" class="s2">t</text>
+      <text x="446.4" y="159.0" class="s2">e</text>
+      <text x="453.6" y="159.0" class="s2">&gt;</text>
+      <text x="36.0" y="169.6" class="s3">#</text>
+      <text x="43.2" y="169.6" class="s3">m</text>
+      <text x="50.4" y="169.6" class="s3">j</text>
+      <text x="57.6" y="169.6" class="s3">%</text>
+      <text x="64.8" y="169.6" class="s2">y</text>
+      <text x="72.0" y="169.6" class="s3 tw">6</text>
+      <text x="79.2" y="169.6" class="s3">2</text>
+      <text x="86.4" y="169.6" class="s3">k</text>
+      <text x="93.6" y="169.6" class="s2">p</text>
+      <text x="100.8" y="169.6" class="s2">*</text>
+      <text x="108.0" y="169.6" class="s2">a</text>
+      <text x="115.2" y="169.6" class="s3">M</text>
+      <text x="122.4" y="169.6" class="s2 tw">3</text>
+      <text x="129.6" y="169.6" class="s3">m</text>
+      <text x="136.8" y="169.6" class="s3">a</text>
+      <text x="144.0" y="169.6" class="s3">&gt;</text>
+      <text x="151.2" y="169.6" class="s2">k</text>
+      <text x="158.4" y="169.6" class="s3">v</text>
+      <text x="165.6" y="169.6" class="s2">#</text>
+      <text x="172.8" y="169.6" class="s2 tw">y</text>
+      <text x="180.0" y="169.6" class="s2">=</text>
+      <text x="187.2" y="169.6" class="s2">x</text>
+      <text x="194.4" y="169.6" class="s2">3</text>
+      <text x="201.6" y="169.6" class="s2">p</text>
+      <text x="208.8" y="169.6" class="s2">6</text>
+      <text x="216.0" y="169.6" class="s2">6</text>
+      <text x="223.2" y="169.6" class="s2 tw">7</text>
+      <text x="230.4" y="169.6" class="s2">e</text>
+      <text x="237.6" y="169.6" class="s2">~</text>
+      <text x="244.8" y="169.6" class="s2">=</text>
+      <text x="252.0" y="169.6" class="s2">t</text>
+      <text x="259.2" y="169.6" class="s2">w</text>
+      <text x="266.4" y="169.6" class="s2">=</text>
+      <text x="273.6" y="169.6" class="s3 tw">x</text>
+      <text x="280.8" y="169.6" class="s2">=</text>
+      <text x="288.0" y="169.6" class="s2">c</text>
+      <text x="295.2" y="169.6" class="s2">k</text>
+      <text x="302.4" y="169.6" class="s2">4</text>
+      <text x="309.6" y="169.6" class="s2">k</text>
+      <text x="316.8" y="169.6" class="s2">=</text>
+      <text x="324.0" y="169.6" class="s2 tw">p</text>
+      <text x="331.2" y="169.6" class="s2">&gt;</text>
+      <text x="338.4" y="169.6" class="s2">%</text>
+      <text x="345.6" y="169.6" class="s3">N</text>
+      <text x="352.8" y="169.6" class="s2">e</text>
+      <text x="360.0" y="169.6" class="s2">u</text>
+      <text x="367.2" y="169.6" class="s3">@</text>
+      <text x="374.4" y="169.6" class="s2 tw">d</text>
+      <text x="381.6" y="169.6" class="s2">=</text>
+      <text x="388.8" y="169.6" class="s2">n</text>
+      <text x="396.0" y="169.6" class="s3">y</text>
+      <text x="403.2" y="169.6" class="s2">y</text>
+      <text x="410.4" y="169.6" class="s2">#</text>
+      <text x="417.6" y="169.6" class="s2">=</text>
+      <text x="424.8" y="169.6" class="s3 tw">e</text>
+      <text x="432.0" y="169.6" class="s2">b</text>
+      <text x="439.2" y="169.6" class="s2">v</text>
+      <text x="446.4" y="169.6" class="s2">c</text>
+      <text x="453.6" y="169.6" class="s3">e</text>
+      <text x="86.4" y="180.2" class="s3">b</text>
+      <text x="93.6" y="180.2" class="s2">r</text>
+      <text x="100.8" y="180.2" class="s3 tw">t</text>
+      <text x="108.0" y="180.2" class="s3">q</text>
+      <text x="115.2" y="180.2" class="s3">e</text>
+      <text x="122.4" y="180.2" class="s2">k</text>
+      <text x="129.6" y="180.2" class="s3">i</text>
+      <text x="136.8" y="180.2" class="s3">k</text>
+      <text x="144.0" y="180.2" class="s3">y</text>
+      <text x="151.2" y="180.2" class="s3 tw">k</text>
+      <text x="158.4" y="180.2" class="s3">&gt;</text>
+      <text x="165.6" y="180.2" class="s2">z</text>
+      <text x="172.8" y="180.2" class="s2">a</text>
+      <text x="180.0" y="180.2" class="s2">u</text>
+      <text x="187.2" y="180.2" class="s2">p</text>
+      <text x="194.4" y="180.2" class="s2">m</text>
+      <text x="201.6" y="180.2" class="s3 tw">s</text>
+      <text x="208.8" y="180.2" class="s3">d</text>
+      <text x="216.0" y="180.2" class="s3">9</text>
+      <text x="223.2" y="180.2" class="s2">m</text>
+      <text x="230.4" y="180.2" class="s2">~</text>
+      <text x="237.6" y="180.2" class="s3">z</text>
+      <text x="244.8" y="180.2" class="s2">3</text>
+      <text x="252.0" y="180.2" class="s3 tw">e</text>
+      <text x="259.2" y="180.2" class="s3">m</text>
+      <text x="266.4" y="180.2" class="s2">x</text>
+      <text x="273.6" y="180.2" class="s2">z</text>
+      <text x="280.8" y="180.2" class="s2">m</text>
+      <text x="288.0" y="180.2" class="s2">s</text>
+      <text x="295.2" y="180.2" class="s2">o</text>
+      <text x="302.4" y="180.2" class="s2 tw">~</text>
+      <text x="309.6" y="180.2" class="s2">u</text>
+      <text x="316.8" y="180.2" class="s2">j</text>
+      <text x="324.0" y="180.2" class="s2">x</text>
+      <text x="331.2" y="180.2" class="s3">6</text>
+      <text x="338.4" y="180.2" class="s2">i</text>
+      <text x="345.6" y="180.2" class="s3">4</text>
+      <text x="352.8" y="180.2" class="s3 tw">@</text>
+      <text x="360.0" y="180.2" class="s2">j</text>
+      <text x="367.2" y="180.2" class="s3">=</text>
+      <text x="374.4" y="180.2" class="s2">6</text>
+      <text x="381.6" y="180.2" class="s3">&amp;</text>
+      <text x="388.8" y="180.2" class="s2">a</text>
+      <text x="396.0" y="180.2" class="s2">c</text>
+      <text x="403.2" y="180.2" class="s2 tw">8</text>
+      <text x="410.4" y="180.2" class="s2">&gt;</text>
+      <text x="417.6" y="180.2" class="s2">%</text>
+      <text x="424.8" y="180.2" class="s3">d</text>
+      <text x="432.0" y="180.2" class="s2">&gt;</text>
+      <text x="439.2" y="180.2" class="s2">q</text>
+      <text x="446.4" y="180.2" class="s2">8</text>
+      <text x="136.8" y="190.8" class="s3">%</text>
+      <text x="144.0" y="190.8" class="s3 tw">z</text>
+      <text x="151.2" y="190.8" class="s3">n</text>
+      <text x="158.4" y="190.8" class="s3">*</text>
+      <text x="165.6" y="190.8" class="s3">4</text>
+      <text x="172.8" y="190.8" class="s3">d</text>
+      <text x="180.0" y="190.8" class="s3">k</text>
+      <text x="187.2" y="190.8" class="s3">4</text>
+      <text x="194.4" y="190.8" class="s3 tw">5</text>
+      <text x="201.6" y="190.8" class="s2">=</text>
+      <text x="208.8" y="190.8" class="s3">f</text>
+      <text x="216.0" y="190.8" class="s3">@</text>
+      <text x="223.2" y="190.8" class="s2">j</text>
+      <text x="230.4" y="190.8" class="s3">N</text>
+      <text x="237.6" y="190.8" class="s3">7</text>
+      <text x="244.8" y="190.8" class="s2 tw">i</text>
+      <text x="252.0" y="190.8" class="s2">r</text>
+      <text x="259.2" y="190.8" class="s2">b</text>
+      <text x="266.4" y="190.8" class="s3">n</text>
+      <text x="273.6" y="190.8" class="s3">c</text>
+      <text x="280.8" y="190.8" class="s3">a</text>
+      <text x="288.0" y="190.8" class="s2">u</text>
+      <text x="295.2" y="190.8" class="s2 tw">4</text>
+      <text x="302.4" y="190.8" class="s3">W</text>
+      <text x="309.6" y="190.8" class="s3">b</text>
+      <text x="316.8" y="190.8" class="s2">c</text>
+      <text x="324.0" y="190.8" class="s2">+</text>
+      <text x="331.2" y="190.8" class="s2">3</text>
+      <text x="338.4" y="190.8" class="s3">z</text>
+      <text x="345.6" y="190.8" class="s2 tw">z</text>
+      <text x="352.8" y="190.8" class="s2">x</text>
+      <text x="360.0" y="190.8" class="s3">u</text>
+      <text x="367.2" y="190.8" class="s2">v</text>
+      <text x="374.4" y="190.8" class="s3">3</text>
+      <text x="381.6" y="190.8" class="s2">y</text>
+      <text x="388.8" y="190.8" class="s2">=</text>
+      <text x="187.2" y="201.4" class="s3">%</text>
+      <text x="194.4" y="201.4" class="s3">%</text>
+      <text x="201.6" y="201.4" class="s3">%</text>
+      <text x="208.8" y="201.4" class="s3">&gt;</text>
+      <text x="216.0" y="201.4" class="s3 tw">e</text>
+      <text x="223.2" y="201.4" class="s3">u</text>
+      <text x="230.4" y="201.4" class="s3">s</text>
+      <text x="237.6" y="201.4" class="s3">#</text>
+      <text x="244.8" y="201.4" class="s2">f</text>
+      <text x="252.0" y="201.4" class="s3">~</text>
+      <text x="259.2" y="201.4" class="s2">%</text>
+      <text x="266.4" y="201.4" class="s3 tw">7</text>
+      <text x="273.6" y="201.4" class="s3">4</text>
+      <text x="280.8" y="201.4" class="s2">b</text>
+      <text x="288.0" y="201.4" class="s3">m</text>
+      <text x="295.2" y="201.4" class="s3">H</text>
+      <text x="302.4" y="201.4" class="s3">y</text>
+      <text x="309.6" y="201.4" class="s3">q</text>
+      <text x="316.8" y="201.4" class="s3 tw">W</text>
+      <text x="324.0" y="201.4" class="s3">5</text>
+      <text x="331.2" y="201.4" class="s2">c</text>
+      <text x="338.4" y="201.4" class="s2">d</text>
+      <text x="345.6" y="201.4" class="s2">z</text>
+      <text x="180.0" y="212.0" class="s3">2</text>
+      <text x="187.2" y="212.0" class="s3">&amp;</text>
+      <text x="194.4" y="212.0" class="s3 tw">2</text>
+      <text x="201.6" y="212.0" class="s3">%</text>
+      <text x="208.8" y="212.0" class="s3">7</text>
+      <text x="216.0" y="212.0" class="s2">y</text>
+      <text x="223.2" y="212.0" class="s3">r</text>
+      <text x="331.2" y="212.0" class="s2">j</text>
+      <text x="338.4" y="212.0" class="s2">9</text>
+      <text x="172.8" y="222.6" class="s3">h</text>
+      <text x="180.0" y="222.6" class="s3">j</text>
+      <text x="187.2" y="222.6" class="s3">8</text>
+      <text x="194.4" y="222.6" class="s3 tw">j</text>
+      <text x="201.6" y="222.6" class="s3">t</text>
+      <text x="208.8" y="222.6" class="s3">3</text>
+      <text x="172.8" y="233.2" class="s3">6</text>
+      <text x="180.0" y="233.2" class="s3">t</text>
+      <text x="187.2" y="233.2" class="s3">s</text>
+      <text x="194.4" y="233.2" class="s3">v</text>
+      <text x="165.6" y="243.8" class="s3 tw">b</text>
+      <text x="172.8" y="243.8" class="s3">w</text>
+      <text x="180.0" y="243.8" class="s3">c</text>
+      <text x="158.4" y="254.4" class="s3">8</text>
+      <text x="165.6" y="254.4" class="s3">8</text>
+    </g>
+    <g class="tail" style="transform-origin: 460.8px 147.5px;">
+      <text x="633.6" y="63.6" class="s0">s</text>
+      <text x="604.8" y="74.2" class="s1">3</text>
+      <text x="612.0" y="74.2" class="s1">e</text>
+      <text x="619.2" y="74.2" class="s1">&lt;</text>
+      <text x="583.2" y="84.8" class="s1">j</text>
+      <text x="590.4" y="84.8" class="s1">3</text>
+      <text x="597.6" y="84.8" class="s1 tw">g</text>
+      <text x="604.8" y="84.8" class="s1">g</text>
+      <text x="554.4" y="95.4" class="s1">w</text>
+      <text x="561.6" y="95.4" class="s1">8</text>
+      <text x="568.8" y="95.4" class="s2">g</text>
+      <text x="576.0" y="95.4" class="s1 tw">c</text>
+      <text x="583.2" y="95.4" class="s1">y</text>
+      <text x="590.4" y="95.4" class="s2">g</text>
+      <text x="525.6" y="106.0" class="s1 tw">&gt;</text>
+      <text x="532.8" y="106.0" class="s1">f</text>
+      <text x="540.0" y="106.0" class="s2">w</text>
+      <text x="547.2" y="106.0" class="s2">2</text>
+      <text x="554.4" y="106.0" class="s2">w</text>
+      <text x="561.6" y="106.0" class="s2">p</text>
+      <text x="568.8" y="106.0" class="s1">&lt;</text>
+      <text x="576.0" y="106.0" class="s2 tw">x</text>
+      <text x="583.2" y="106.0" class="s2">#</text>
+      <text x="504.0" y="116.6" class="s1 tw">c</text>
+      <text x="511.2" y="116.6" class="s2">i</text>
+      <text x="518.4" y="116.6" class="s2">~</text>
+      <text x="525.6" y="116.6" class="s1">p</text>
+      <text x="532.8" y="116.6" class="s2">t</text>
+      <text x="540.0" y="116.6" class="s1">c</text>
+      <text x="547.2" y="116.6" class="s1">&lt;</text>
+      <text x="554.4" y="116.6" class="s2 tw">&gt;</text>
+      <text x="561.6" y="116.6" class="s2">p</text>
+      <text x="568.8" y="116.6" class="s2">w</text>
+      <text x="468.0" y="127.2" class="s2">g</text>
+      <text x="475.2" y="127.2" class="s1 tw">&gt;</text>
+      <text x="482.4" y="127.2" class="s2">4</text>
+      <text x="489.6" y="127.2" class="s2">&gt;</text>
+      <text x="496.8" y="127.2" class="s1">2</text>
+      <text x="504.0" y="127.2" class="s2">&lt;</text>
+      <text x="511.2" y="127.2" class="s1">h</text>
+      <text x="518.4" y="127.2" class="s2">r</text>
+      <text x="525.6" y="127.2" class="s1 tw">e</text>
+      <text x="532.8" y="127.2" class="s2">a</text>
+      <text x="540.0" y="127.2" class="s2">7</text>
+      <text x="547.2" y="127.2" class="s1">n</text>
+      <text x="554.4" y="127.2" class="s2">i</text>
+      <text x="460.8" y="137.8" class="s2">y</text>
+      <text x="468.0" y="137.8" class="s1 tw">+</text>
+      <text x="475.2" y="137.8" class="s2">2</text>
+      <text x="482.4" y="137.8" class="s2">5</text>
+      <text x="489.6" y="137.8" class="s2">#</text>
+      <text x="496.8" y="137.8" class="s1">2</text>
+      <text x="504.0" y="137.8" class="s2">7</text>
+      <text x="511.2" y="137.8" class="s2">p</text>
+      <text x="518.4" y="137.8" class="s2 tw">s</text>
+      <text x="525.6" y="137.8" class="s2">u</text>
+      <text x="532.8" y="137.8" class="s1">d</text>
+      <text x="540.0" y="137.8" class="s2">#</text>
+      <text x="460.8" y="148.4" class="s2">d</text>
+      <text x="468.0" y="148.4" class="s3">o</text>
+      <text x="475.2" y="148.4" class="s2 tw">%</text>
+      <text x="482.4" y="148.4" class="s2">p</text>
+      <text x="489.6" y="148.4" class="s2">h</text>
+      <text x="496.8" y="148.4" class="s3">*</text>
+      <text x="504.0" y="148.4" class="s2">7</text>
+      <text x="511.2" y="148.4" class="s2">z</text>
+      <text x="518.4" y="148.4" class="s2">k</text>
+      <text x="460.8" y="159.0" class="s2">r</text>
+      <text x="468.0" y="159.0" class="s2 tw">x</text>
+      <text x="475.2" y="159.0" class="s2">4</text>
+      <text x="482.4" y="159.0" class="s2">t</text>
+      <text x="489.6" y="159.0" class="s2">c</text>
+      <text x="496.8" y="159.0" class="s3">H</text>
+      <text x="504.0" y="159.0" class="s3">#</text>
+      <text x="511.2" y="159.0" class="s2">+</text>
+      <text x="518.4" y="159.0" class="s2 tw">r</text>
+      <text x="525.6" y="159.0" class="s2">p</text>
+      <text x="460.8" y="169.6" class="s3">k</text>
+      <text x="468.0" y="169.6" class="s3">%</text>
+      <text x="475.2" y="169.6" class="s2 tw">b</text>
+      <text x="482.4" y="169.6" class="s3">u</text>
+      <text x="489.6" y="169.6" class="s3">a</text>
+      <text x="496.8" y="169.6" class="s3">v</text>
+      <text x="504.0" y="169.6" class="s2">%</text>
+      <text x="511.2" y="169.6" class="s3">k</text>
+      <text x="518.4" y="169.6" class="s2">x</text>
+      <text x="525.6" y="169.6" class="s2 tw">#</text>
+      <text x="532.8" y="169.6" class="s2">j</text>
+      <text x="540.0" y="169.6" class="s3">x</text>
+      <text x="547.2" y="169.6" class="s3">x</text>
+      <text x="554.4" y="169.6" class="s3">d</text>
+      <text x="482.4" y="180.2" class="s3 tw">p</text>
+      <text x="489.6" y="180.2" class="s3">b</text>
+      <text x="496.8" y="180.2" class="s3">*</text>
+      <text x="504.0" y="180.2" class="s3">%</text>
+      <text x="511.2" y="180.2" class="s2">s</text>
+      <text x="518.4" y="180.2" class="s3">6</text>
+      <text x="525.6" y="180.2" class="s2">k</text>
+      <text x="532.8" y="180.2" class="s3 tw">y</text>
+      <text x="540.0" y="180.2" class="s2">b</text>
+      <text x="547.2" y="180.2" class="s2">f</text>
+      <text x="554.4" y="180.2" class="s3">m</text>
+      <text x="561.6" y="180.2" class="s3">&amp;</text>
+      <text x="568.8" y="180.2" class="s3">4</text>
+      <text x="518.4" y="190.8" class="s3 tw">#</text>
+      <text x="525.6" y="190.8" class="s3">t</text>
+      <text x="532.8" y="190.8" class="s3">y</text>
+      <text x="540.0" y="190.8" class="s3">g</text>
+      <text x="547.2" y="190.8" class="s3">9</text>
+      <text x="554.4" y="190.8" class="s3">~</text>
+      <text x="561.6" y="190.8" class="s3">W</text>
+      <text x="568.8" y="190.8" class="s3 tw">y</text>
+      <text x="576.0" y="190.8" class="s3">x</text>
+      <text x="583.2" y="190.8" class="s3">6</text>
+      <text x="554.4" y="201.4" class="s3">W</text>
+      <text x="561.6" y="201.4" class="s3">n</text>
+      <text x="568.8" y="201.4" class="s3 tw">t</text>
+      <text x="576.0" y="201.4" class="s3">j</text>
+      <text x="583.2" y="201.4" class="s3">y</text>
+      <text x="590.4" y="201.4" class="s3">=</text>
+      <text x="597.6" y="201.4" class="s3">v</text>
+      <text x="590.4" y="212.0" class="s3 tw">N</text>
+      <text x="597.6" y="212.0" class="s3">u</text>
+      <text x="604.8" y="212.0" class="s3">f</text>
+      <text x="612.0" y="212.0" class="s3">h</text>
+    </g>
+  </g>
+  </defs>
+
+  <g class="swimmer a"><use href="#shark-r" xlink:href="#shark-r"/></g>
+  <g class="swimmer b"><use href="#shark-l" xlink:href="#shark-l"/></g>
+  <g class="swimmer c"><use href="#shark-r" xlink:href="#shark-r"/></g>
+  <g class="swimmer d"><use href="#shark-l" xlink:href="#shark-l"/></g>
+</svg>
