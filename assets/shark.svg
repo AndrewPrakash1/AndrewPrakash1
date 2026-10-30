@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg width="1000" height="180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 180">
   <style>
     @keyframes swim {
@@ -98,14 +99,14 @@
       <text x="0" y="145" class="shark-fill" xml:space="preserve">                        `-.__,--'</text>
     </g>
     
-    <!-- Trailing bubbles -->
+    <!-- Trailing bubbles - using 'o' for all bubbles to avoid encoding issues -->
     <g class="bubbles">
       <text x="-35" y="75" class="bubble-fill bubble bubble-1" xml:space="preserve">o</text>
-      <text x="-50" y="95" class="bubble-fill bubble bubble-2" xml:space="preserve">°</text>
+      <text x="-50" y="95" class="bubble-fill bubble bubble-2" xml:space="preserve">o</text>
       <text x="-28" y="110" class="bubble-fill bubble bubble-3" xml:space="preserve">o</text>
-      <text x="-60" y="85" class="bubble-fill bubble bubble-4" xml:space="preserve">°</text>
+      <text x="-60" y="85" class="bubble-fill bubble bubble-4" xml:space="preserve">o</text>
       <text x="-42" y="120" class="bubble-fill bubble bubble-5" xml:space="preserve">o</text>
-      <text x="-55" y="105" class="bubble-fill bubble bubble-6" xml:space="preserve">°</text>
+      <text x="-55" y="105" class="bubble-fill bubble bubble-6" xml:space="preserve">o</text>
     </g>
   </g>
 </svg>
