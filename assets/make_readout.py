@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
-"""Build Stranger Things-style READ OUT banner (GitHub-safe SVG)."""
+"""Build Stranger Things-style profile banner SVG."""
 
 from __future__ import annotations
 
 import html
-import json
-import subprocess
-import sys
 from pathlib import Path
 
 from fontTools.pens.svgPathPen import SVGPathPen
@@ -17,27 +14,8 @@ ROOT = Path(__file__).resolve().parent
 FONT_PATH = Path("/tmp/fonts/CormorantGaramond.ttf")
 OUT_SVG = ROOT / "readout.svg"
 
-
-def fetch_contributions() -> int:
-    try:
-        out = subprocess.check_output(
-            [
-                "gh",
-                "api",
-                "graphql",
-                "-f",
-                'query=query { user(login: "AndrewPrakash1") { contributionsCollection { contributionCalendar { totalContributions } } } }',
-            ],
-            text=True,
-        )
-        data = json.loads(out)
-        return int(
-            data["data"]["user"]["contributionsCollection"]["contributionCalendar"][
-                "totalContributions"
-            ]
-        )
-    except (subprocess.CalledProcessError, KeyError, TypeError, ValueError):
-        return 121
+LINE1 = "WORK LIKE HELL"
+LINE2 = "- ELON MUSK"
 
 
 def load_font():
@@ -49,7 +27,7 @@ def load_font():
     cmap = font.getBestCmap()
     gs = font.getGlyphSet()
     hmtx = font["hmtx"]
-    return font, upem, cmap, gs, hmtx
+    return upem, cmap, gs, hmtx
 
 
 def word_paths(text: str, cmap, gs, hmtx, tracking: int = 70) -> tuple[str, float]:
@@ -99,64 +77,76 @@ def emit(
     ), width
 
 
+def layer(
+    text: str,
+    baseline: float,
+    size: float,
+    cx: float,
+    upem: int,
+    cmap,
+    gs,
+    hmtx,
+    tracking: int,
+    fill: str,
+    stroke: str | None = None,
+    sw: float = 0,
+    extra: str = "",
+) -> str:
+    g, _ = emit(
+        text,
+        cx,
+        baseline,
+        size,
+        fill,
+        upem,
+        cmap,
+        gs,
+        hmtx,
+        stroke,
+        sw,
+        extra,
+        tracking,
+    )
+    return g
+
+
 def main() -> None:
-    contrib = fetch_contributions()
-    _, upem, cmap, gs, hmtx = load_font()
+    upem, cmap, gs, hmtx = load_font()
 
     w, h = 1200, 420
     cx = w / 2
+    size1, track1 = 78, 38
+    size2, track2 = 56, 42
 
-    def t(
-        text: str,
-        baseline: float,
-        size: float,
-        fill: str,
-        stroke: str | None = None,
-        sw: float = 0,
-        extra: str = "",
-        tracking: int = 70,
-    ) -> str:
-        g, _ = emit(
-            text,
-            cx,
-            baseline,
-            size,
-            fill,
-            upem,
-            cmap,
-            gs,
-            hmtx,
-            stroke,
-            sw,
-            extra,
-            tracking,
-        )
-        return g
+    line1_main = layer(LINE1, 178, size1, cx, upem, cmap, gs, hmtx, track1, "#ff3a4a", "#ff6b78", 2.0, "")
+    line2_main = layer(LINE2, 288, size2, cx, upem, cmap, gs, hmtx, track2, "#ff3a4a", "#ff6b78", 1.8, "")
+    main_title = line1_main + line2_main
 
-    read = t("READ", 168, 118, "#ff3a4a", "#ff6b78", 2.2)
-    out = t("OUT", 292, 118, "#ff3a4a", "#ff6b78", 2.2)
-    read_glow = t("READ", 168, 118, "#ff3a4a", extra='opacity="0.45"')
-    out_glow = t("OUT", 292, 118, "#ff3a4a", extra='opacity="0.45"')
-    read_cyan = t("READ", 168, 118, "#5dfff2", extra='class="ghost-a"')
-    read_hot = t("READ", 168, 118, "#ff1744", extra='class="ghost-b"')
-    out_cyan = t("OUT", 292, 118, "#5dfff2", extra='class="ghost-a"')
-    out_hot = t("OUT", 292, 118, "#ff1744", extra='class="ghost-b"')
-    num = t(str(contrib), 248, 280, "#ff2a3c", extra='opacity="0.14"')
+    glow_l1 = layer(LINE1, 178, size1, cx, upem, cmap, gs, hmtx, track1, "#ff3a4a", extra='opacity="0.45"')
+    glow_l2 = layer(LINE2, 288, size2, cx, upem, cmap, gs, hmtx, track2, "#ff3a4a", extra='opacity="0.45"')
+    glow = glow_l1 + glow_l2
 
-    footer_label = (
-        f'<text x="{cx}" y="382" fill="#a88490" font-family="Courier New, Courier, monospace" '
-        f'font-size="14" letter-spacing="2" text-anchor="middle">'
-        f"GITHUB CONTRIBUTIONS {contrib}</text>"
+    ghost_cyan = (
+        layer(LINE1, 178, size1, cx, upem, cmap, gs, hmtx, track1, "#5dfff2", extra='class="ghost-a"')
+        + layer(LINE2, 288, size2, cx, upem, cmap, gs, hmtx, track2, "#5dfff2", extra='class="ghost-a"')
+    )
+    ghost_hot = (
+        layer(LINE1, 178, size1, cx, upem, cmap, gs, hmtx, track1, "#ff1744", extra='class="ghost-b"')
+        + layer(LINE2, 288, size2, cx, upem, cmap, gs, hmtx, track2, "#ff1744", extra='class="ghost-b"')
     )
 
-    rule_w = 520
+    _, w1 = emit(LINE1, cx, 178, size1, "#ff3a4a", upem, cmap, gs, hmtx, tracking=track1)
+    _, w2 = emit(LINE2, cx, 288, size2, "#ff3a4a", upem, cmap, gs, hmtx, tracking=track2)
+    rule_w = min(max(w1, w2) + 80, w - 80)
     x0 = cx - rule_w / 2
     x1 = cx + rule_w / 2
 
+    aria = f"{LINE1} {LINE2.strip()}"
+
     svg = f"""<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-label="READ OUT, {contrib} GitHub contributions">
-  <title>READ OUT</title>
-  <desc>Neon title card. GitHub contributions: {contrib}.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-label="{aria}">
+  <title>{LINE1}</title>
+  <desc>Neon quote banner: {aria}</desc>
   <style>
     @keyframes glitch-a {{
       0%, 83%, 100% {{ opacity: 0; transform: translate(0, 0); }}
@@ -175,10 +165,6 @@ def main() -> None:
       93% {{ opacity: 0.72; }}
       94% {{ opacity: 0.95; }}
     }}
-    @keyframes drift {{
-      0%, 100% {{ opacity: 0.12; }}
-      50% {{ opacity: 0.17; }}
-    }}
     .ghost-a, .ghost-b {{
       transform-box: fill-box;
       transform-origin: center;
@@ -186,7 +172,6 @@ def main() -> None:
     .ghost-a {{ animation: glitch-a 4.5s infinite; }}
     .ghost-b {{ animation: glitch-b 4.5s infinite 0.08s; }}
     .title {{ animation: flicker 8s infinite; }}
-    .bgnum {{ animation: drift 6s ease-in-out infinite; }}
   </style>
   <defs>
     <radialGradient id="mist" cx="50%" cy="45%" r="55%">
@@ -196,18 +181,16 @@ def main() -> None:
   </defs>
   <rect width="{w}" height="{h}" fill="#0d1117"/>
   <rect width="{w}" height="{h}" fill="url(#mist)"/>
-  <g class="bgnum">{num}</g>
-  <line x1="{x0}" y1="98" x2="{x1}" y2="98" stroke="#ff4a5a" stroke-width="2.5" opacity="0.9"/>
-  <line x1="{x0}" y1="338" x2="{x1}" y2="338" stroke="#ff4a5a" stroke-width="2.5" opacity="0.9"/>
-  <g class="ghost-a">{read_cyan}{out_cyan}</g>
-  <g class="ghost-b">{read_hot}{out_hot}</g>
-  <g opacity="0.55">{read_glow}{out_glow}</g>
-  <g class="title">{read}{out}</g>
-  {footer_label}
+  <line x1="{x0}" y1="108" x2="{x1}" y2="108" stroke="#ff4a5a" stroke-width="2.5" opacity="0.9"/>
+  <line x1="{x0}" y1="328" x2="{x1}" y2="328" stroke="#ff4a5a" stroke-width="2.5" opacity="0.9"/>
+  <g class="ghost-a">{ghost_cyan}</g>
+  <g class="ghost-b">{ghost_hot}</g>
+  <g opacity="0.55">{glow}</g>
+  <g class="title">{main_title}</g>
 </svg>
 """
     OUT_SVG.write_text(svg, encoding="utf-8")
-    print(f"wrote {OUT_SVG} ({len(svg.encode())} bytes), contributions={contrib}")
+    print(f"wrote {OUT_SVG} ({len(svg.encode())} bytes)")
 
 
 if __name__ == "__main__":

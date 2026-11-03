@@ -2,7 +2,7 @@
 
 <picture>
   <source srcset="./assets/readout.svg" type="image/svg+xml">
-  <img src="./assets/readout.png" alt="READ OUT title card with GitHub contribution count" width="1200" style="max-width: 100%; height: auto;">
+  <img src="./assets/readout.png" alt="WORK LIKE HELL - Elon Musk quote in Stranger Things-style neon lettering" width="1200" style="max-width: 100%; height: auto;">
 </picture>
 
 </div>
