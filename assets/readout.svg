@@ -4,52 +4,60 @@
   <desc>Neon quote banner with lightning: WORK LIKE HELL - ELON MUSK</desc>
   <style>
     @keyframes neon-flicker {
-      0%, 90%, 100% { opacity: 1; }
-      91% { opacity: 0.78; }
-      92% { opacity: 0.95; }
-      93% { opacity: 0.65; }
-      94% { opacity: 1; }
+      0%, 83%, 100% { opacity: 1; }
+      84% { opacity: 0.72; }
+      86% { opacity: 0.95; }
+      88% { opacity: 0.55; }
+      91% { opacity: 1; }
     }
-    @keyframes strike {
-      0%, 88%, 100% { opacity: 0; }
-      89% { opacity: 0.15; }
-      89.5% { opacity: 0.95; }
-      90% { opacity: 0.25; }
-      90.5% { opacity: 0.85; }
+    @keyframes strike-major {
+      0%, 83%, 100% { opacity: 0; }
+      84% { opacity: 0.92; }
+      86% { opacity: 0.38; }
+      88% { opacity: 0.68; }
       91% { opacity: 0; }
-      96% { opacity: 0; }
-      96.3% { opacity: 0.7; }
-      96.6% { opacity: 0; }
     }
-    @keyframes strike-dim {
-      0%, 100% { opacity: 0.08; }
-      50% { opacity: 0.14; }
+    @keyframes strike-minor {
+      0%, 100% { opacity: 0; }
+      17.8% { opacity: 0; }
+      18.4% { opacity: 0.42; }
+      19% { opacity: 0; }
+      34.8% { opacity: 0; }
+      35.3% { opacity: 0.32; }
+      35.8% { opacity: 0; }
+      51.5% { opacity: 0; }
+      52% { opacity: 0.36; }
+      52.5% { opacity: 0; }
+      68.2% { opacity: 0; }
+      68.7% { opacity: 0.28; }
+      69.2% { opacity: 0; }
+      83%, 91% { opacity: 0; }
     }
-    .title { animation: neon-flicker 6s infinite; }
-    .lightning {
-      animation: strike 7s infinite;
+    .title { animation: neon-flicker 4.5s infinite; }
+    .lightning.major {
+      animation: strike-major 4.5s infinite;
+      opacity: 0;
+    }
+    .lightning.minor {
+      animation: strike-minor 4.5s infinite;
       opacity: 0;
     }
     .bolt-core {
       fill: none;
       stroke: #ff5060;
-      stroke-width: 2.2;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
     .bolt-glow {
       fill: none;
       stroke: #ff1a30;
-      stroke-width: 7;
       stroke-linecap: round;
       stroke-linejoin: round;
       opacity: 0.35;
     }
-    .lightning.bolt-e, .lightning.bolt-f {
-      animation: strike 9s infinite;
-    }
     .ambient-bolt {
-      animation: strike-dim 4s ease-in-out infinite;
+      animation: strike-minor 4.5s infinite;
+      opacity: 0;
     }
   </style>
   <defs>
@@ -64,12 +72,12 @@
     <path d="M 450 0 L 465 180 L 440 195 L 470 420" fill="none" stroke="#ff3040" stroke-width="1.5"/>
     <path d="M 750 0 L 735 200 L 760 215 L 730 420" fill="none" stroke="#ff3040" stroke-width="1.5"/>
   </g>
-  <g class="lightning bolt-a" style="animation-delay:0.0s"><path d="M 180.0 0.0 L 198.0 62.0 L 172.0 78.0 L 205.0 145.0 L 188.0 158.0 L 215.0 230.0 L 192.0 248.0 L 220.0 320.0 L 200.0 335.0 L 228.0 420.0" class="bolt-glow"/><path d="M 180.0 0.0 L 198.0 62.0 L 172.0 78.0 L 205.0 145.0 L 188.0 158.0 L 215.0 230.0 L 192.0 248.0 L 220.0 320.0 L 200.0 335.0 L 228.0 420.0" class="bolt-core"/></g>
-  <g class="lightning bolt-b" style="animation-delay:1.7s"><path d="M 1020.0 20.0 L 1002.0 95.0 L 1030.0 110.0 L 998.0 190.0 L 1025.0 205.0 L 1005.0 280.0 L 1035.0 295.0 L 1010.0 360.0 L 1040.0 380.0 L 1015.0 420.0" class="bolt-glow"/><path d="M 1020.0 20.0 L 1002.0 95.0 L 1030.0 110.0 L 998.0 190.0 L 1025.0 205.0 L 1005.0 280.0 L 1035.0 295.0 L 1010.0 360.0 L 1040.0 380.0 L 1015.0 420.0" class="bolt-core"/></g>
-  <g class="lightning bolt-c" style="animation-delay:3.4s"><path d="M 320.0 40.0 L 338.0 120.0 L 312.0 132.0 L 345.0 210.0 L 328.0 225.0 L 352.0 300.0" class="bolt-glow"/><path d="M 320.0 40.0 L 338.0 120.0 L 312.0 132.0 L 345.0 210.0 L 328.0 225.0 L 352.0 300.0" class="bolt-core"/></g>
-  <g class="lightning bolt-d" style="animation-delay:2.2s"><path d="M 880.0 55.0 L 862.0 130.0 L 890.0 145.0 L 868.0 220.0 L 895.0 240.0 L 875.0 310.0" class="bolt-glow"/><path d="M 880.0 55.0 L 862.0 130.0 L 890.0 145.0 L 868.0 220.0 L 895.0 240.0 L 875.0 310.0" class="bolt-core"/></g>
-  <g class="lightning bolt-e" style="animation-delay:4.8s"><path d="M 560.0 0.0 L 548.0 70.0 L 572.0 85.0 L 545.0 160.0 L 568.0 175.0 L 550.0 250.0 L 575.0 265.0 L 552.0 340.0" class="bolt-glow"/><path d="M 560.0 0.0 L 548.0 70.0 L 572.0 85.0 L 545.0 160.0 L 568.0 175.0 L 550.0 250.0 L 575.0 265.0 L 552.0 340.0" class="bolt-core"/></g>
-  <g class="lightning bolt-f" style="animation-delay:5.5s"><path d="M 680.0 0.0 L 698.0 88.0 L 672.0 102.0 L 705.0 185.0 L 688.0 198.0 L 710.0 275.0" class="bolt-glow"/><path d="M 680.0 0.0 L 698.0 88.0 L 672.0 102.0 L 705.0 185.0 L 688.0 198.0 L 710.0 275.0" class="bolt-core"/></g>
+  <g class="lightning major bolt-a" style="animation-delay:0.0s"><path d="M 180.0 0.0 L 198.0 62.0 L 172.0 78.0 L 205.0 145.0 L 188.0 158.0 L 215.0 230.0 L 192.0 248.0 L 220.0 320.0 L 200.0 335.0 L 228.0 420.0" class="bolt-glow" stroke-width="8"/><path d="M 180.0 0.0 L 198.0 62.0 L 172.0 78.0 L 205.0 145.0 L 188.0 158.0 L 215.0 230.0 L 192.0 248.0 L 220.0 320.0 L 200.0 335.0 L 228.0 420.0" class="bolt-core" stroke-width="2.4"/></g>
+  <g class="lightning major bolt-b" style="animation-delay:0.08s"><path d="M 1020.0 20.0 L 1002.0 95.0 L 1030.0 110.0 L 998.0 190.0 L 1025.0 205.0 L 1005.0 280.0 L 1035.0 295.0 L 1010.0 360.0 L 1040.0 380.0 L 1015.0 420.0" class="bolt-glow" stroke-width="8"/><path d="M 1020.0 20.0 L 1002.0 95.0 L 1030.0 110.0 L 998.0 190.0 L 1025.0 205.0 L 1005.0 280.0 L 1035.0 295.0 L 1010.0 360.0 L 1040.0 380.0 L 1015.0 420.0" class="bolt-core" stroke-width="2.4"/></g>
+  <g class="lightning minor bolt-c" style="animation-delay:0.0s"><path d="M 320.0 40.0 L 338.0 120.0 L 312.0 132.0 L 345.0 210.0 L 328.0 225.0 L 352.0 300.0" class="bolt-glow" stroke-width="5"/><path d="M 320.0 40.0 L 338.0 120.0 L 312.0 132.0 L 345.0 210.0 L 328.0 225.0 L 352.0 300.0" class="bolt-core" stroke-width="1.6"/></g>
+  <g class="lightning minor bolt-d" style="animation-delay:0.05s"><path d="M 880.0 55.0 L 862.0 130.0 L 890.0 145.0 L 868.0 220.0 L 895.0 240.0 L 875.0 310.0" class="bolt-glow" stroke-width="5"/><path d="M 880.0 55.0 L 862.0 130.0 L 890.0 145.0 L 868.0 220.0 L 895.0 240.0 L 875.0 310.0" class="bolt-core" stroke-width="1.6"/></g>
+  <g class="lightning minor bolt-e" style="animation-delay:0.1s"><path d="M 560.0 0.0 L 548.0 70.0 L 572.0 85.0 L 545.0 160.0 L 568.0 175.0 L 550.0 250.0 L 575.0 265.0 L 552.0 340.0" class="bolt-glow" stroke-width="5"/><path d="M 560.0 0.0 L 548.0 70.0 L 572.0 85.0 L 545.0 160.0 L 568.0 175.0 L 550.0 250.0 L 575.0 265.0 L 552.0 340.0" class="bolt-core" stroke-width="1.6"/></g>
+  <g class="lightning minor bolt-f" style="animation-delay:0.15s"><path d="M 680.0 0.0 L 698.0 88.0 L 672.0 102.0 L 705.0 185.0 L 688.0 198.0 L 710.0 275.0" class="bolt-glow" stroke-width="5"/><path d="M 680.0 0.0 L 698.0 88.0 L 672.0 102.0 L 705.0 185.0 L 688.0 198.0 L 710.0 275.0" class="bolt-core" stroke-width="1.6"/></g>
   <line x1="228.812" y1="108" x2="971.188" y2="108" stroke="#ff4a5a" stroke-width="2.5" opacity="0.9"/>
   <line x1="228.812" y1="328" x2="971.188" y2="328" stroke="#ff4a5a" stroke-width="2.5" opacity="0.9"/>
   <g opacity="0.55"><g fill="#ff3a4a" transform="translate(268.81,178.00) scale(0.078000,-0.078000)" opacity="0.45">

@@ -17,8 +17,8 @@ OUT_SVG = ROOT / "readout.svg"
 LINE1 = "WORK LIKE HELL"
 LINE2 = "- ELON MUSK"
 
-# Jagged bolt polylines: list of (x,y) points from top toward bottom
-BOLTS: list[tuple[str, list[tuple[float, float]], float]] = [
+# (id, points, delay seconds, major | minor)
+BOLTS: list[tuple[str, list[tuple[float, float]], float, str]] = [
     (
         "bolt-a",
         [
@@ -34,6 +34,7 @@ BOLTS: list[tuple[str, list[tuple[float, float]], float]] = [
             (228, 420),
         ],
         0.0,
+        "major",
     ),
     (
         "bolt-b",
@@ -49,7 +50,8 @@ BOLTS: list[tuple[str, list[tuple[float, float]], float]] = [
             (1040, 380),
             (1015, 420),
         ],
-        1.7,
+        0.08,
+        "major",
     ),
     (
         "bolt-c",
@@ -61,7 +63,8 @@ BOLTS: list[tuple[str, list[tuple[float, float]], float]] = [
             (328, 225),
             (352, 300),
         ],
-        3.4,
+        0.0,
+        "minor",
     ),
     (
         "bolt-d",
@@ -73,7 +76,8 @@ BOLTS: list[tuple[str, list[tuple[float, float]], float]] = [
             (895, 240),
             (875, 310),
         ],
-        2.2,
+        0.05,
+        "minor",
     ),
     (
         "bolt-e",
@@ -87,7 +91,8 @@ BOLTS: list[tuple[str, list[tuple[float, float]], float]] = [
             (575, 265),
             (552, 340),
         ],
-        4.8,
+        0.1,
+        "minor",
     ),
     (
         "bolt-f",
@@ -99,9 +104,13 @@ BOLTS: list[tuple[str, list[tuple[float, float]], float]] = [
             (688, 198),
             (710, 275),
         ],
-        5.5,
+        0.15,
+        "minor",
     ),
 ]
+
+# Same cadence as the old RGB glitch layers (4.5s loop, burst ~84-91%).
+STRIKE_PERIOD_S = 4.5
 
 
 def points_to_path(pts: list[tuple[float, float]]) -> str:
@@ -115,12 +124,15 @@ def points_to_path(pts: list[tuple[float, float]]) -> str:
 
 def lightning_svg() -> str:
     chunks: list[str] = []
-    for bolt_id, pts, delay in BOLTS:
+    for bolt_id, pts, delay, kind in BOLTS:
         d = points_to_path(pts)
+        anim = "strike-major" if kind == "major" else "strike-minor"
+        sw_core = "2.4" if kind == "major" else "1.6"
+        sw_glow = "8" if kind == "major" else "5"
         chunks.append(
-            f'  <g class="lightning {bolt_id}" style="animation-delay:{delay}s">'
-            f'<path d="{d}" class="bolt-glow"/>'
-            f'<path d="{d}" class="bolt-core"/>'
+            f'  <g class="lightning {kind} {bolt_id}" style="animation-delay:{delay}s">'
+            f'<path d="{d}" class="bolt-glow" stroke-width="{sw_glow}"/>'
+            f'<path d="{d}" class="bolt-core" stroke-width="{sw_core}"/>'
             f"</g>"
         )
     return "\n".join(chunks)
@@ -249,52 +261,60 @@ def main() -> None:
   <desc>Neon quote banner with lightning: {aria}</desc>
   <style>
     @keyframes neon-flicker {{
-      0%, 90%, 100% {{ opacity: 1; }}
-      91% {{ opacity: 0.78; }}
-      92% {{ opacity: 0.95; }}
-      93% {{ opacity: 0.65; }}
-      94% {{ opacity: 1; }}
+      0%, 83%, 100% {{ opacity: 1; }}
+      84% {{ opacity: 0.72; }}
+      86% {{ opacity: 0.95; }}
+      88% {{ opacity: 0.55; }}
+      91% {{ opacity: 1; }}
     }}
-    @keyframes strike {{
-      0%, 88%, 100% {{ opacity: 0; }}
-      89% {{ opacity: 0.15; }}
-      89.5% {{ opacity: 0.95; }}
-      90% {{ opacity: 0.25; }}
-      90.5% {{ opacity: 0.85; }}
+    @keyframes strike-major {{
+      0%, 83%, 100% {{ opacity: 0; }}
+      84% {{ opacity: 0.92; }}
+      86% {{ opacity: 0.38; }}
+      88% {{ opacity: 0.68; }}
       91% {{ opacity: 0; }}
-      96% {{ opacity: 0; }}
-      96.3% {{ opacity: 0.7; }}
-      96.6% {{ opacity: 0; }}
     }}
-    @keyframes strike-dim {{
-      0%, 100% {{ opacity: 0.08; }}
-      50% {{ opacity: 0.14; }}
+    @keyframes strike-minor {{
+      0%, 100% {{ opacity: 0; }}
+      17.8% {{ opacity: 0; }}
+      18.4% {{ opacity: 0.42; }}
+      19% {{ opacity: 0; }}
+      34.8% {{ opacity: 0; }}
+      35.3% {{ opacity: 0.32; }}
+      35.8% {{ opacity: 0; }}
+      51.5% {{ opacity: 0; }}
+      52% {{ opacity: 0.36; }}
+      52.5% {{ opacity: 0; }}
+      68.2% {{ opacity: 0; }}
+      68.7% {{ opacity: 0.28; }}
+      69.2% {{ opacity: 0; }}
+      83%, 91% {{ opacity: 0; }}
     }}
-    .title {{ animation: neon-flicker 6s infinite; }}
-    .lightning {{
-      animation: strike 7s infinite;
+    .title {{ animation: neon-flicker {STRIKE_PERIOD_S}s infinite; }}
+    .lightning.major {{
+      animation: strike-major {STRIKE_PERIOD_S}s infinite;
+      opacity: 0;
+    }}
+    .lightning.minor {{
+      animation: strike-minor {STRIKE_PERIOD_S}s infinite;
       opacity: 0;
     }}
     .bolt-core {{
       fill: none;
       stroke: #ff5060;
-      stroke-width: 2.2;
       stroke-linecap: round;
       stroke-linejoin: round;
     }}
     .bolt-glow {{
       fill: none;
       stroke: #ff1a30;
-      stroke-width: 7;
       stroke-linecap: round;
       stroke-linejoin: round;
       opacity: 0.35;
     }}
-    .lightning.bolt-e, .lightning.bolt-f {{
-      animation: strike 9s infinite;
-    }}
     .ambient-bolt {{
-      animation: strike-dim 4s ease-in-out infinite;
+      animation: strike-minor {STRIKE_PERIOD_S}s infinite;
+      opacity: 0;
     }}
   </style>
   <defs>
