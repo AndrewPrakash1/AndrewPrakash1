@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/gate.svg" alt="Colored ASCII animation of a girl closing a burning gate" width="100%"/>
+<img src="./assets/readout.svg" alt="READ OUT title card with GitHub contribution count" width="100%"/>
 
 </div>
 
