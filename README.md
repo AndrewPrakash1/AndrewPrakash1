@@ -1,6 +1,9 @@
 <div align="center">
 
-<img src="./assets/readout.svg" alt="READ OUT title card with GitHub contribution count" width="100%"/>
+<picture>
+  <source srcset="./assets/readout.svg" type="image/svg+xml">
+  <img src="./assets/readout.png" alt="READ OUT title card with GitHub contribution count" width="1200" style="max-width: 100%; height: auto;">
+</picture>
 
 </div>
 
