@@ -17,100 +17,77 @@ OUT_SVG = ROOT / "readout.svg"
 LINE1 = "WORK LIKE HELL"
 LINE2 = "- ELON MUSK"
 
-# (id, points, delay seconds, major | minor)
-BOLTS: list[tuple[str, list[tuple[float, float]], float, str]] = [
+STRIKE_PERIOD_S = 4.5
+
+# Each bolt: id, delay, kind, list of polylines (each polyline is point list)
+BoltSpec = tuple[str, float, str, list[list[tuple[float, float]]]]
+
+BOLT_SPECS: list[BoltSpec] = [
     (
         "bolt-a",
-        [
-            (180, 0),
-            (198, 62),
-            (172, 78),
-            (205, 145),
-            (188, 158),
-            (215, 230),
-            (192, 248),
-            (220, 320),
-            (200, 335),
-            (228, 420),
-        ],
         0.0,
         "major",
+        [
+            [(0, 55), (95, 110), (62, 135), (155, 205), (118, 228), (210, 310), (175, 332), (290, 420)],
+            [(155, 205), (205, 188), (248, 165)],
+            [(118, 228), (85, 268), (55, 302)],
+            [(210, 310), (260, 295), (310, 275)],
+        ],
     ),
     (
         "bolt-b",
-        [
-            (1020, 20),
-            (1002, 95),
-            (1030, 110),
-            (998, 190),
-            (1025, 205),
-            (1005, 280),
-            (1035, 295),
-            (1010, 360),
-            (1040, 380),
-            (1015, 420),
-        ],
         0.08,
         "major",
+        [
+            [(1200, 40), (1095, 105), (1135, 128), (1040, 198), (1085, 218), (980, 295), (1025, 318), (920, 420)],
+            [(1040, 198), (990, 175), (940, 158)],
+            [(1085, 218), (1120, 255), (1155, 290)],
+            [(980, 295), (930, 278), (875, 260)],
+        ],
     ),
     (
         "bolt-c",
-        [
-            (320, 40),
-            (338, 120),
-            (312, 132),
-            (345, 210),
-            (328, 225),
-            (352, 300),
-        ],
         0.0,
         "minor",
+        [
+            [(420, 0), (445, 75), (428, 92), (460, 165), (442, 182), (468, 250)],
+            [(460, 165), (495, 148), (520, 130)],
+        ],
     ),
     (
         "bolt-d",
-        [
-            (880, 55),
-            (862, 130),
-            (890, 145),
-            (868, 220),
-            (895, 240),
-            (875, 310),
-        ],
         0.05,
         "minor",
+        [
+            [(780, 0), (758, 88), (778, 102), (745, 178), (768, 195), (738, 265)],
+            [(745, 178), (715, 160), (688, 145)],
+        ],
     ),
     (
         "bolt-e",
-        [
-            (560, 0),
-            (548, 70),
-            (572, 85),
-            (545, 160),
-            (568, 175),
-            (550, 250),
-            (575, 265),
-            (552, 340),
-        ],
         0.1,
         "minor",
+        [
+            [(600, 0), (615, 62), (598, 78), (628, 145), (608, 162), (635, 228)],
+        ],
     ),
     (
         "bolt-f",
-        [
-            (680, 0),
-            (698, 88),
-            (672, 102),
-            (705, 185),
-            (688, 198),
-            (710, 275),
-        ],
         0.15,
         "minor",
+        [
+            [(350, 25), (368, 95), (352, 110), (382, 185), (365, 200), (390, 270)],
+        ],
+    ),
+    (
+        "bolt-g",
+        0.12,
+        "minor",
+        [
+            [(850, 20), (832, 90), (848, 105), (820, 175), (838, 190), (812, 255)],
+        ],
     ),
 ]
-
-# Same cadence as the old RGB glitch layers (4.5s loop, burst ~84-91%).
-STRIKE_PERIOD_S = 4.5
 
 
 def points_to_path(pts: list[tuple[float, float]]) -> str:
@@ -122,20 +99,51 @@ def points_to_path(pts: list[tuple[float, float]]) -> str:
     return " ".join(parts)
 
 
+def bolt_group(bolt_id: str, delay: float, kind: str, polylines: list[list[tuple[float, float]]]) -> str:
+    if kind == "major":
+        outer_w, mid_w, core_w = 16, 9, 2.2
+    else:
+        outer_w, mid_w, core_w = 10, 5.5, 1.4
+
+    paths = "".join(
+        f'<path d="{points_to_path(pts)}" class="bolt-outer" stroke-width="{outer_w}"/>'
+        f'<path d="{points_to_path(pts)}" class="bolt-mid" stroke-width="{mid_w}"/>'
+        f'<path d="{points_to_path(pts)}" class="bolt-core" stroke-width="{core_w}"/>'
+        for pts in polylines
+    )
+    return f'  <g class="lightning {kind} {bolt_id}" style="animation-delay:{delay}s">{paths}</g>'
+
+
 def lightning_svg() -> str:
-    chunks: list[str] = []
-    for bolt_id, pts, delay, kind in BOLTS:
-        d = points_to_path(pts)
-        anim = "strike-major" if kind == "major" else "strike-minor"
-        sw_core = "2.4" if kind == "major" else "1.6"
-        sw_glow = "8" if kind == "major" else "5"
-        chunks.append(
-            f'  <g class="lightning {kind} {bolt_id}" style="animation-delay:{delay}s">'
-            f'<path d="{d}" class="bolt-glow" stroke-width="{sw_glow}"/>'
-            f'<path d="{d}" class="bolt-core" stroke-width="{sw_core}"/>'
-            f"</g>"
-        )
-    return "\n".join(chunks)
+    return "\n".join(bolt_group(*spec) for spec in BOLT_SPECS)
+
+
+def treeline_svg() -> str:
+    # Jagged forest silhouette along the bottom (Upside Down treeline)
+    return """
+  <path class="trees" d="M 0 420 L 0 398
+    C 35 388, 55 402, 90 392 C 120 384, 145 398, 180 388
+    C 215 378, 240 392, 275 384 C 310 376, 335 390, 370 382
+    C 405 374, 430 388, 465 380 C 500 372, 525 386, 560 378
+    C 595 370, 620 384, 655 376 C 690 368, 715 382, 750 374
+    C 785 366, 810 380, 845 372 C 880 364, 905 378, 940 370
+    C 975 362, 1000 376, 1035 368 C 1070 360, 1095 374, 1130 366
+    C 1165 358, 1185 372, 1200 365 L 1200 420 Z"/>
+"""
+
+
+def sky_svg() -> str:
+    return """
+  <rect width="1200" height="420" fill="url(#skyBase)"/>
+  <ellipse cx="280" cy="120" rx="220" ry="140" fill="url(#cloudRed)" opacity="0.55"/>
+  <ellipse cx="920" cy="100" rx="260" ry="150" fill="url(#cloudRed)" opacity="0.5"/>
+  <ellipse cx="600" cy="80" rx="180" ry="100" fill="url(#cloudBright)" opacity="0.35"/>
+  <rect width="1200" height="420" fill="url(#skyVignette)"/>
+  <g class="sky-flash">
+    <ellipse cx="300" cy="140" rx="240" ry="160" fill="#ff2840" opacity="0.25"/>
+    <ellipse cx="900" cy="130" rx="280" ry="170" fill="#ff2840" opacity="0.22"/>
+  </g>
+"""
 
 
 def load_font():
@@ -269,28 +277,36 @@ def main() -> None:
     }}
     @keyframes strike-major {{
       0%, 83%, 100% {{ opacity: 0; }}
-      84% {{ opacity: 0.92; }}
-      86% {{ opacity: 0.38; }}
-      88% {{ opacity: 0.68; }}
+      84% {{ opacity: 1; }}
+      86% {{ opacity: 0.35; }}
+      88% {{ opacity: 0.75; }}
       91% {{ opacity: 0; }}
     }}
     @keyframes strike-minor {{
       0%, 100% {{ opacity: 0; }}
       17.8% {{ opacity: 0; }}
-      18.4% {{ opacity: 0.42; }}
+      18.4% {{ opacity: 0.55; }}
       19% {{ opacity: 0; }}
       34.8% {{ opacity: 0; }}
-      35.3% {{ opacity: 0.32; }}
+      35.3% {{ opacity: 0.42; }}
       35.8% {{ opacity: 0; }}
       51.5% {{ opacity: 0; }}
-      52% {{ opacity: 0.36; }}
+      52% {{ opacity: 0.48; }}
       52.5% {{ opacity: 0; }}
       68.2% {{ opacity: 0; }}
-      68.7% {{ opacity: 0.28; }}
+      68.7% {{ opacity: 0.38; }}
       69.2% {{ opacity: 0; }}
       83%, 91% {{ opacity: 0; }}
     }}
+    @keyframes sky-pulse {{
+      0%, 83%, 100% {{ opacity: 0; }}
+      84% {{ opacity: 0.85; }}
+      86% {{ opacity: 0.25; }}
+      88% {{ opacity: 0.65; }}
+      91% {{ opacity: 0; }}
+    }}
     .title {{ animation: neon-flicker {STRIKE_PERIOD_S}s infinite; }}
+    .sky-flash {{ animation: sky-pulse {STRIKE_PERIOD_S}s infinite; opacity: 0; }}
     .lightning.major {{
       animation: strike-major {STRIKE_PERIOD_S}s infinite;
       opacity: 0;
@@ -299,37 +315,51 @@ def main() -> None:
       animation: strike-minor {STRIKE_PERIOD_S}s infinite;
       opacity: 0;
     }}
+    .bolt-outer, .bolt-mid, .bolt-core {{
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }}
+    .bolt-outer {{
+      stroke: #8b0018;
+      opacity: 0.55;
+    }}
+    .bolt-mid {{
+      stroke: #ff1a28;
+      opacity: 0.75;
+    }}
     .bolt-core {{
-      fill: none;
-      stroke: #ff5060;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+      stroke: #fff5ee;
+      opacity: 0.95;
     }}
-    .bolt-glow {{
-      fill: none;
-      stroke: #ff1a30;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      opacity: 0.35;
-    }}
-    .ambient-bolt {{
-      animation: strike-minor {STRIKE_PERIOD_S}s infinite;
-      opacity: 0;
+    .trees {{
+      fill: #050508;
+      opacity: 0.92;
     }}
   </style>
   <defs>
-    <radialGradient id="mist" cx="50%" cy="45%" r="55%">
-      <stop offset="0%" stop-color="#4a0a18" stop-opacity="0.65"/>
-      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
+    <linearGradient id="skyBase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a0818"/>
+      <stop offset="45%" stop-color="#2a0610"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+    <radialGradient id="cloudRed" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff3048" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ff3048" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cloudBright" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff5868" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ff5868" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="skyVignette" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.45"/>
     </radialGradient>
   </defs>
   <rect width="{w}" height="{h}" fill="#0d1117"/>
-  <rect width="{w}" height="{h}" fill="url(#mist)"/>
-  <g class="ambient-bolt" opacity="0.12">
-    <path d="M 450 0 L 465 180 L 440 195 L 470 420" fill="none" stroke="#ff3040" stroke-width="1.5"/>
-    <path d="M 750 0 L 735 200 L 760 215 L 730 420" fill="none" stroke="#ff3040" stroke-width="1.5"/>
-  </g>
+{sky_svg()}
 {bolts}
+{treeline_svg()}
   <line x1="{x0}" y1="108" x2="{x1}" y2="108" stroke="#ff4a5a" stroke-width="2.5" opacity="0.9"/>
   <line x1="{x0}" y1="328" x2="{x1}" y2="328" stroke="#ff4a5a" stroke-width="2.5" opacity="0.9"/>
   <g opacity="0.55">{glow}</g>
