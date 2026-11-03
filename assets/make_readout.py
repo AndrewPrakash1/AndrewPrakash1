@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Stranger Things-style profile banner SVG."""
+"""Build Stranger Things-style profile banner SVG with lightning."""
 
 from __future__ import annotations
 
@@ -16,6 +16,114 @@ OUT_SVG = ROOT / "readout.svg"
 
 LINE1 = "WORK LIKE HELL"
 LINE2 = "- ELON MUSK"
+
+# Jagged bolt polylines: list of (x,y) points from top toward bottom
+BOLTS: list[tuple[str, list[tuple[float, float]], float]] = [
+    (
+        "bolt-a",
+        [
+            (180, 0),
+            (198, 62),
+            (172, 78),
+            (205, 145),
+            (188, 158),
+            (215, 230),
+            (192, 248),
+            (220, 320),
+            (200, 335),
+            (228, 420),
+        ],
+        0.0,
+    ),
+    (
+        "bolt-b",
+        [
+            (1020, 20),
+            (1002, 95),
+            (1030, 110),
+            (998, 190),
+            (1025, 205),
+            (1005, 280),
+            (1035, 295),
+            (1010, 360),
+            (1040, 380),
+            (1015, 420),
+        ],
+        1.7,
+    ),
+    (
+        "bolt-c",
+        [
+            (320, 40),
+            (338, 120),
+            (312, 132),
+            (345, 210),
+            (328, 225),
+            (352, 300),
+        ],
+        3.4,
+    ),
+    (
+        "bolt-d",
+        [
+            (880, 55),
+            (862, 130),
+            (890, 145),
+            (868, 220),
+            (895, 240),
+            (875, 310),
+        ],
+        2.2,
+    ),
+    (
+        "bolt-e",
+        [
+            (560, 0),
+            (548, 70),
+            (572, 85),
+            (545, 160),
+            (568, 175),
+            (550, 250),
+            (575, 265),
+            (552, 340),
+        ],
+        4.8,
+    ),
+    (
+        "bolt-f",
+        [
+            (680, 0),
+            (698, 88),
+            (672, 102),
+            (705, 185),
+            (688, 198),
+            (710, 275),
+        ],
+        5.5,
+    ),
+]
+
+
+def points_to_path(pts: list[tuple[float, float]]) -> str:
+    if not pts:
+        return ""
+    parts = [f"M {pts[0][0]:.1f} {pts[0][1]:.1f}"]
+    for x, y in pts[1:]:
+        parts.append(f"L {x:.1f} {y:.1f}")
+    return " ".join(parts)
+
+
+def lightning_svg() -> str:
+    chunks: list[str] = []
+    for bolt_id, pts, delay in BOLTS:
+        d = points_to_path(pts)
+        chunks.append(
+            f'  <g class="lightning {bolt_id}" style="animation-delay:{delay}s">'
+            f'<path d="{d}" class="bolt-glow"/>'
+            f'<path d="{d}" class="bolt-core"/>'
+            f"</g>"
+        )
+    return "\n".join(chunks)
 
 
 def load_font():
@@ -126,15 +234,6 @@ def main() -> None:
     glow_l2 = layer(LINE2, 288, size2, cx, upem, cmap, gs, hmtx, track2, "#ff3a4a", extra='opacity="0.45"')
     glow = glow_l1 + glow_l2
 
-    ghost_cyan = (
-        layer(LINE1, 178, size1, cx, upem, cmap, gs, hmtx, track1, "#5dfff2", extra='class="ghost-a"')
-        + layer(LINE2, 288, size2, cx, upem, cmap, gs, hmtx, track2, "#5dfff2", extra='class="ghost-a"')
-    )
-    ghost_hot = (
-        layer(LINE1, 178, size1, cx, upem, cmap, gs, hmtx, track1, "#ff1744", extra='class="ghost-b"')
-        + layer(LINE2, 288, size2, cx, upem, cmap, gs, hmtx, track2, "#ff1744", extra='class="ghost-b"')
-    )
-
     _, w1 = emit(LINE1, cx, 178, size1, "#ff3a4a", upem, cmap, gs, hmtx, tracking=track1)
     _, w2 = emit(LINE2, cx, 288, size2, "#ff3a4a", upem, cmap, gs, hmtx, tracking=track2)
     rule_w = min(max(w1, w2) + 80, w - 80)
@@ -142,49 +241,77 @@ def main() -> None:
     x1 = cx + rule_w / 2
 
     aria = f"{LINE1} {LINE2.strip()}"
+    bolts = lightning_svg()
 
     svg = f"""<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-label="{aria}">
   <title>{LINE1}</title>
-  <desc>Neon quote banner: {aria}</desc>
+  <desc>Neon quote banner with lightning: {aria}</desc>
   <style>
-    @keyframes glitch-a {{
-      0%, 83%, 100% {{ opacity: 0; transform: translate(0, 0); }}
-      84% {{ opacity: 0.7; transform: translate(-12px, 0); }}
-      86% {{ opacity: 0.45; transform: translate(10px, 1px); }}
-      88% {{ opacity: 0.6; transform: translate(-5px, 0); }}
+    @keyframes neon-flicker {{
+      0%, 90%, 100% {{ opacity: 1; }}
+      91% {{ opacity: 0.78; }}
+      92% {{ opacity: 0.95; }}
+      93% {{ opacity: 0.65; }}
+      94% {{ opacity: 1; }}
     }}
-    @keyframes glitch-b {{
-      0%, 83%, 100% {{ opacity: 0; transform: translate(0, 0); }}
-      84% {{ opacity: 0.55; transform: translate(11px, -1px); }}
-      86% {{ opacity: 0.35; transform: translate(-9px, 0); }}
-      88% {{ opacity: 0.5; transform: translate(4px, 1px); }}
+    @keyframes strike {{
+      0%, 88%, 100% {{ opacity: 0; }}
+      89% {{ opacity: 0.15; }}
+      89.5% {{ opacity: 0.95; }}
+      90% {{ opacity: 0.25; }}
+      90.5% {{ opacity: 0.85; }}
+      91% {{ opacity: 0; }}
+      96% {{ opacity: 0; }}
+      96.3% {{ opacity: 0.7; }}
+      96.6% {{ opacity: 0; }}
     }}
-    @keyframes flicker {{
-      0%, 92%, 100% {{ opacity: 1; }}
-      93% {{ opacity: 0.72; }}
-      94% {{ opacity: 0.95; }}
+    @keyframes strike-dim {{
+      0%, 100% {{ opacity: 0.08; }}
+      50% {{ opacity: 0.14; }}
     }}
-    .ghost-a, .ghost-b {{
-      transform-box: fill-box;
-      transform-origin: center;
+    .title {{ animation: neon-flicker 6s infinite; }}
+    .lightning {{
+      animation: strike 7s infinite;
+      opacity: 0;
     }}
-    .ghost-a {{ animation: glitch-a 4.5s infinite; }}
-    .ghost-b {{ animation: glitch-b 4.5s infinite 0.08s; }}
-    .title {{ animation: flicker 8s infinite; }}
+    .bolt-core {{
+      fill: none;
+      stroke: #ff5060;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }}
+    .bolt-glow {{
+      fill: none;
+      stroke: #ff1a30;
+      stroke-width: 7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0.35;
+    }}
+    .lightning.bolt-e, .lightning.bolt-f {{
+      animation: strike 9s infinite;
+    }}
+    .ambient-bolt {{
+      animation: strike-dim 4s ease-in-out infinite;
+    }}
   </style>
   <defs>
     <radialGradient id="mist" cx="50%" cy="45%" r="55%">
-      <stop offset="0%" stop-color="#3a0814" stop-opacity="0.55"/>
+      <stop offset="0%" stop-color="#4a0a18" stop-opacity="0.65"/>
       <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
     </radialGradient>
   </defs>
   <rect width="{w}" height="{h}" fill="#0d1117"/>
   <rect width="{w}" height="{h}" fill="url(#mist)"/>
+  <g class="ambient-bolt" opacity="0.12">
+    <path d="M 450 0 L 465 180 L 440 195 L 470 420" fill="none" stroke="#ff3040" stroke-width="1.5"/>
+    <path d="M 750 0 L 735 200 L 760 215 L 730 420" fill="none" stroke="#ff3040" stroke-width="1.5"/>
+  </g>
+{bolts}
   <line x1="{x0}" y1="108" x2="{x1}" y2="108" stroke="#ff4a5a" stroke-width="2.5" opacity="0.9"/>
   <line x1="{x0}" y1="328" x2="{x1}" y2="328" stroke="#ff4a5a" stroke-width="2.5" opacity="0.9"/>
-  <g class="ghost-a">{ghost_cyan}</g>
-  <g class="ghost-b">{ghost_hot}</g>
   <g opacity="0.55">{glow}</g>
   <g class="title">{main_title}</g>
 </svg>
