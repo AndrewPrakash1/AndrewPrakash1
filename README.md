@@ -1,3 +1,9 @@
+<div align="center">
+
+<img src="./assets/gate.svg" alt="Colored ASCII animation of a girl closing a burning gate" width="100%"/>
+
+</div>
+
 # Andrew Prakash
 
 **Computer vision · machine learning**
