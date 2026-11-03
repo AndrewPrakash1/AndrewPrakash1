@@ -11,7 +11,7 @@
     }
     .bulb { animation: bulb 3.1s ease-in-out infinite; }
   </style>
-  <rect width="1200" height="78" fill="#070108"/>
+  <rect width="1200" height="78" fill="#0d1117"/>
   <g fill="none" stroke-linecap="round">
     <path d="M8 8 C 28 20, 18 48, 46 62" stroke="#1a0c10" stroke-width="6"/>
     <path d="M8 8 C 28 20, 18 48, 46 62" stroke="#5a3030" stroke-width="2"/>

@@ -14,27 +14,25 @@ Engineering student at [Thapar Institute of Engineering and Technology](https://
 
 </div>
 
-<br>
-
-> I build systems that turn real-world signals into **measurable** models — not just demos.
->
-> Somewhere under the noise there is a number that stays true when the room goes quiet. That is the work.
-
 <div align="center">
+
+<img src="./assets/quote.svg" alt="I build systems that turn real-world signals into measurable models. Not just demos." width="100%"/>
 
 <img src="./assets/lights.svg" alt="A string of red, green, blue, and amber lights, flickering out of sync" width="100%"/>
 
+<img src="./assets/casefiles.svg" alt="Case files: OnePass, Heat Sink, RegIntel, GPT, and CricScope" width="100%"/>
+
+[001 OnePass](https://github.com/AndrewPrakash1/drone-video-3d)
+&nbsp;&nbsp;·&nbsp;&nbsp;
+[002 Heat Sink](https://github.com/AndrewPrakash1/Heat_Sink)
+&nbsp;&nbsp;·&nbsp;&nbsp;
+[003 RegIntel](https://github.com/AndrewPrakash1/RegIntel)
+<br>
+[004 GPT from scratch](https://github.com/AndrewPrakash1/GPT-Implementation)
+&nbsp;&nbsp;·&nbsp;&nbsp;
+[005 CricScope](https://github.com/AndrewPrakash1/CricScope)
+
 </div>
-
-### Case files
-
-| No. | File | What it holds |
-| --- | --- | --- |
-| 001 | [**OnePass**](https://github.com/AndrewPrakash1/drone-video-3d) | Single-pass drone video → georeferenced, measurable 3D |
-| 002 | [**Heat Sink**](https://github.com/AndrewPrakash1/Heat_Sink) | Live CPU power → real-time 2D heat-sink temperature field (finite differences) |
-| 003 | [**RegIntel**](https://github.com/AndrewPrakash1/RegIntel) | Scrapes regulatory docs and turns them into structured insights |
-| 004 | [**GPT from scratch**](https://github.com/AndrewPrakash1/GPT-Implementation) | Decoder-only GPT implemented in Python |
-| 005 | [**CricScope**](https://github.com/AndrewPrakash1/CricScope) | Cricket analytics: insights, visuals, and predictions |
 
 <div align="center">
 

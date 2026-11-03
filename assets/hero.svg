@@ -107,7 +107,7 @@
     </pattern>
   </defs>
 
-  <rect width="1200" height="640" fill="#070108"/>
+  <rect width="1200" height="640" fill="#0d1117"/>
   <rect width="1200" height="640" fill="url(#fog)"/>
   <circle cx="980" cy="168" r="110" fill="#e7fff8" opacity="0.05"/>
 

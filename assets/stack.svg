@@ -9,7 +9,7 @@
     }
     .rec { animation: rec 1.3s steps(1) infinite; }
   </style>
-  <rect width="1200" height="300" fill="#070108"/>
+  <rect width="1200" height="300" fill="#0d1117"/>
   <rect x="22" y="18" width="1156" height="264" fill="none" stroke="#5c2030" stroke-width="1"/>
   <rect x="28" y="24" width="1144" height="252" fill="none" stroke="#2a1016" stroke-width="1"/>
   <g fill="none" stroke-linecap="round">

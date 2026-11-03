@@ -9,7 +9,7 @@
     }
     .pulse { animation: pulse 3.6s ease-in-out infinite; }
   </style>
-  <rect width="1200" height="170" fill="#070108"/>
+  <rect width="1200" height="170" fill="#0d1117"/>
   <line x1="80" y1="28" x2="1120" y2="28" stroke="#5c2030" stroke-width="1"/>
   <text class="pulse" x="600" y="72" fill="#ff5b6b" font-size="18" letter-spacing="5" text-anchor="middle">END OF TRANSMISSION</text>
   <text x="600" y="108" fill="#e7c9cf" font-size="15" letter-spacing="1.4" text-anchor="middle">OPEN TO COLLABORATIONS ON COMPUTER VISION AND ML</text>
