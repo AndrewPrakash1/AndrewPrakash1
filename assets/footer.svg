@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="170" viewBox="0 0 1200 170">
+  <title>End of transmission</title>
+  <style>
+    text { font-family: "Courier New", Courier, "Liberation Mono", monospace; }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.35; }
+      50% { opacity: 1; }
+    }
+    .pulse { animation: pulse 3.6s ease-in-out infinite; }
+  </style>
+  <rect width="1200" height="170" fill="#070108"/>
+  <line x1="80" y1="28" x2="1120" y2="28" stroke="#5c2030" stroke-width="1"/>
+  <text class="pulse" x="600" y="72" fill="#ff5b6b" font-size="18" letter-spacing="5" text-anchor="middle">END OF TRANSMISSION</text>
+  <text x="600" y="108" fill="#e7c9cf" font-size="15" letter-spacing="1.4" text-anchor="middle">OPEN TO COLLABORATIONS ON COMPUTER VISION AND ML</text>
+  <text x="600" y="134" fill="#a88490" font-size="14" letter-spacing="2.2" text-anchor="middle">SYSTEMS THAT HAVE TO BE CORRECT</text>
+</svg>
