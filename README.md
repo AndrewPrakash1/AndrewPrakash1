@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/hero.svg" alt="Andrew Prakash, in red neon, under a string of faulty colored lights and a line of black pines" width="100%"/>
+<img src="./assets/hero.svg" alt="Andrew Prakash, in red neon, framed by creeping vines, faulty lights, and black pines" width="100%"/>
 
 Engineering student at [Thapar Institute of Engineering and Technology](https://www.thapar.edu/)
 

@@ -12,6 +12,12 @@
     .bulb { animation: bulb 3.1s ease-in-out infinite; }
   </style>
   <rect width="1200" height="78" fill="#070108"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M8 8 C 28 20, 18 48, 46 62" stroke="#1a0c10" stroke-width="6"/>
+    <path d="M8 8 C 28 20, 18 48, 46 62" stroke="#5a3030" stroke-width="2"/>
+    <path d="M1192 10 C 1168 24, 1178 50, 1148 64" stroke="#1a0c10" stroke-width="6"/>
+    <path d="M1192 10 C 1168 24, 1178 50, 1148 64" stroke="#5a3030" stroke-width="2"/>
+  </g>
   <path d="M24 16 H1176" fill="none" stroke="#2c1a1e" stroke-width="2"/>
   <g>
     <g class="bulb" style="animation-delay:0.1s"><line x1="70" y1="16" x2="70" y2="30" stroke="#241418" stroke-width="1.3"/><circle cx="70" cy="40" r="11" fill="#ff3b3b" opacity="0.28"/><circle cx="70" cy="40" r="5.6" fill="#ff3b3b"/><circle cx="68.6" cy="38.4" r="1.8" fill="#fff" opacity="0.8"/></g>

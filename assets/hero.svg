@@ -40,6 +40,19 @@
       from { transform: translateX(0); }
       to { transform: translateX(-60px); }
     }
+    @keyframes sway {
+      0%, 100% { transform: rotate(-1.4deg); }
+      50% { transform: rotate(2.4deg); }
+    }
+    @keyframes pod {
+      0%, 100% { opacity: 0.45; }
+      50% { opacity: 1; }
+    }
+    .vine-left { transform-origin: 0px 36px; animation: sway 8.5s ease-in-out infinite; }
+    .vine-right { transform-origin: 1200px 36px; animation: sway 9.4s ease-in-out infinite reverse; }
+    .vine-low { transform-origin: 80px 640px; animation: sway 11s ease-in-out infinite; }
+    .vine-low-r { transform-origin: 1120px 640px; animation: sway 10s ease-in-out infinite reverse; }
+    .pod { animation: pod 3.8s ease-in-out infinite; }
     .title { animation: flicker 6.8s infinite; }
     .ghost { animation: glitch 6.2s infinite; }
     .bulb { animation: bulb 3.2s ease-in-out infinite; }
@@ -107,6 +120,62 @@
     <path d="M-30.0 554.0 L-5.0 640.0 L-55.0 640.0 Z M6.0 516.0 L37.0 640.0 L-25.0 640.0 Z M44.4 570.0 L65.4 640.0 L23.4 640.0 Z M80.4 494.0 L117.4 640.0 L43.4 640.0 Z M126.3 542.0 L153.3 640.0 L99.3 640.0 Z M162.3 480.0 L202.3 640.0 L122.3 640.0 Z M211.9 564.0 L233.9 640.0 L189.9 640.0 Z M247.9 508.0 L280.9 640.0 L214.9 640.0 Z M288.8 550.0 L312.8 640.0 L264.8 640.0 Z M324.8 490.0 L362.8 640.0 L286.8 640.0 Z M372.0 576.0 L392.0 640.0 L352.0 640.0 Z M408.0 532.0 L437.0 640.0 L379.0 640.0 Z M444.0 502.0 L479.0 640.0 L409.0 640.0 Z M487.4 560.0 L510.4 640.0 L464.4 640.0 Z M523.4 522.0 L555.4 640.0 L491.4 640.0 Z M563.0 546.0 L589.0 640.0 L537.0 640.0 Z M599.0 554.0 L624.0 640.0 L574.0 640.0 Z M635.0 516.0 L666.0 640.0 L604.0 640.0 Z M673.5 570.0 L694.5 640.0 L652.5 640.0 Z M709.5 494.0 L746.5 640.0 L672.5 640.0 Z M755.4 542.0 L782.4 640.0 L728.4 640.0 Z M791.4 480.0 L831.4 640.0 L751.4 640.0 Z M841.0 564.0 L863.0 640.0 L819.0 640.0 Z M877.0 508.0 L910.0 640.0 L844.0 640.0 Z M917.9 550.0 L941.9 640.0 L893.9 640.0 Z M953.9 490.0 L991.9 640.0 L915.9 640.0 Z M1001.0 576.0 L1021.0 640.0 L981.0 640.0 Z M1037.0 532.0 L1066.0 640.0 L1008.0 640.0 Z M1073.0 502.0 L1108.0 640.0 L1038.0 640.0 Z M1116.4 560.0 L1139.4 640.0 L1093.4 640.0 Z M1152.4 522.0 L1184.4 640.0 L1120.4 640.0 Z M1192.1 546.0 L1218.1 640.0 L1166.1 640.0 Z M1228.1 554.0 L1253.1 640.0 L1203.1 640.0 Z"/>
   </g>
   <rect y="500" width="1200" height="140" fill="url(#ground)"/>
+
+  <!-- creeping tendrils: thick, wet, root-like, kept off the name -->
+  <g class="vine-left">
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-16 28 C 36 48, 8 120, 62 168 C 108 208, 28 250, 78 318 C 112 364, 48 410, 86 470 C 112 512, 70 560, 96 620" stroke="#12080a" stroke-width="18"/>
+      <path d="M-16 28 C 36 48, 8 120, 62 168 C 108 208, 28 250, 78 318 C 112 364, 48 410, 86 470 C 112 512, 70 560, 96 620" stroke="#4a242c" stroke-width="7" opacity="0.85"/>
+      <path d="M-8 36 C 28 58, 18 112, 58 158 C 92 196, 40 242, 74 306" stroke="#7a4038" stroke-width="2" opacity="0.7"/>
+      <path d="M62 168 C 118 150, 156 188, 138 246 C 126 286, 156 318, 132 352" stroke="#12080a" stroke-width="10"/>
+      <path d="M62 168 C 118 150, 156 188, 138 246 C 126 286, 156 318, 132 352" stroke="#5a3030" stroke-width="3.5"/>
+      <path d="M138 246 C 176 236, 188 268, 168 300" stroke="#12080a" stroke-width="5"/>
+      <path d="M78 318 C 36 340, 18 390, 40 440 C 54 472, 24 510, 46 548" stroke="#12080a" stroke-width="8"/>
+      <path d="M78 318 C 36 340, 18 390, 40 440" stroke="#5c3030" stroke-width="2.5"/>
+      <path d="M86 470 C 130 488, 150 530, 124 572" stroke="#12080a" stroke-width="5"/>
+      <path d="M-4 92 C 24 108, 14 150, 36 176" stroke="#12080a" stroke-width="4"/>
+    </g>
+    <g fill="#2a1216" stroke="#6a3430" stroke-width="1">
+      <ellipse class="pod" cx="64" cy="166" rx="8" ry="5.5" transform="rotate(-28 64 166)"/>
+      <ellipse class="pod" cx="136" cy="248" rx="6.5" ry="4.5" transform="rotate(18 136 248)" style="animation-delay:0.8s"/>
+      <ellipse class="pod" cx="76" cy="322" rx="7" ry="4.5" transform="rotate(-12 76 322)" style="animation-delay:1.4s"/>
+      <ellipse class="pod" cx="42" cy="438" rx="5.5" ry="4" transform="rotate(24 42 438)" style="animation-delay:0.4s"/>
+      <ellipse class="pod" cx="98" cy="560" rx="6" ry="4" transform="rotate(-8 98 560)" style="animation-delay:1.8s"/>
+    </g>
+  </g>
+  <g class="vine-right">
+    <g transform="translate(1200,0) scale(-1,1)">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M-16 28 C 36 48, 8 120, 62 168 C 108 208, 28 250, 78 318 C 112 364, 48 410, 86 470 C 112 512, 70 560, 96 620" stroke="#12080a" stroke-width="18"/>
+        <path d="M-16 28 C 36 48, 8 120, 62 168 C 108 208, 28 250, 78 318 C 112 364, 48 410, 86 470 C 112 512, 70 560, 96 620" stroke="#4a242c" stroke-width="7" opacity="0.85"/>
+        <path d="M-8 36 C 28 58, 18 112, 58 158 C 92 196, 40 242, 74 306" stroke="#7a4038" stroke-width="2" opacity="0.7"/>
+        <path d="M62 168 C 118 150, 156 188, 138 246 C 126 286, 156 318, 132 352" stroke="#12080a" stroke-width="10"/>
+        <path d="M62 168 C 118 150, 156 188, 138 246 C 126 286, 156 318, 132 352" stroke="#5a3030" stroke-width="3.5"/>
+        <path d="M138 246 C 176 236, 188 268, 168 300" stroke="#12080a" stroke-width="5"/>
+        <path d="M78 318 C 36 340, 18 390, 40 440 C 54 472, 24 510, 46 548" stroke="#12080a" stroke-width="8"/>
+        <path d="M78 318 C 36 340, 18 390, 40 440" stroke="#5c3030" stroke-width="2.5"/>
+        <path d="M86 470 C 130 488, 150 530, 124 572" stroke="#12080a" stroke-width="5"/>
+      </g>
+      <g fill="#2a1216" stroke="#6a3430" stroke-width="1">
+        <ellipse class="pod" cx="64" cy="166" rx="8" ry="5.5" transform="rotate(-28 64 166)" style="animation-delay:0.5s"/>
+        <ellipse class="pod" cx="136" cy="248" rx="6.5" ry="4.5" transform="rotate(18 136 248)" style="animation-delay:1.2s"/>
+        <ellipse class="pod" cx="76" cy="322" rx="7" ry="4.5" transform="rotate(-12 76 322)" style="animation-delay:0.2s"/>
+        <ellipse class="pod" cx="90" cy="500" rx="6" ry="4" transform="rotate(16 90 500)" style="animation-delay:1.6s"/>
+      </g>
+    </g>
+  </g>
+  <g class="vine-low" fill="none" stroke-linecap="round">
+    <path d="M20 648 C 70 600, 40 560, 110 530 C 160 508, 130 548, 180 520" stroke="#14080c" stroke-width="9"/>
+    <path d="M20 648 C 70 600, 40 560, 110 530" stroke="#5a3030" stroke-width="3"/>
+    <path d="M110 530 C 90 500, 140 490, 120 460" stroke="#14080c" stroke-width="4"/>
+    <path d="M260 650 C 300 590, 250 560, 320 540" stroke="#14080c" stroke-width="6"/>
+    <path d="M880 652 C 840 600, 900 560, 860 530" stroke="#14080c" stroke-width="7"/>
+  </g>
+  <g class="vine-low-r" fill="none" stroke-linecap="round">
+    <path d="M1188 646 C 1120 590, 1160 550, 1088 524 C 1040 506, 1076 548, 1020 528" stroke="#14080c" stroke-width="10"/>
+    <path d="M1188 646 C 1120 590, 1160 550, 1088 524" stroke="#5a3030" stroke-width="3.2"/>
+    <path d="M1088 524 C 1110 490, 1060 478, 1084 450" stroke="#14080c" stroke-width="4.5"/>
+  </g>
 
   <g class="mist" opacity="0.16" fill="#ffd5de">
     <ellipse cx="240" cy="250" rx="200" ry="26"/>
